@@ -28,6 +28,7 @@ namespace CombatGame
             MessageBox.Show("HA HA HA");
             MessageBox.Show("Sinhroniziraj");
             MessageBox.Show("asdasdasdas");
+            MessageBox.Show("MAFziN");
         }
     }
 }
