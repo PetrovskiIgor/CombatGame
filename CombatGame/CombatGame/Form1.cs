@@ -19,7 +19,7 @@ namespace CombatGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Moja losa kopija");
+            MessageBox.Show("Dupla shkorpija");
         }
     }
 }
