@@ -93,7 +93,10 @@ namespace CombatGame
 
         public void Move(Direction dir)
         {
-            if(dir == Direction.JUMP)
+            if (dir == Direction.JUMP)
+            {
+
+            }
         }
 
     }

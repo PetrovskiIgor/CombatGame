@@ -17,6 +17,33 @@ namespace CombatGame
             InitializeComponent();
         }
 
+        private void lblNewGame_Click(object sender, EventArgs e)
+        {
+            frmPickPlayer fpp = new frmPickPlayer();
+            this.Hide();
+            fpp.Show();
+           
+        }
+
+        private void lblOptions_Click(object sender, EventArgs e)
+        {
+            frmOptions fo = new frmOptions();
+            this.Hide();
+            fo.Show();
+            
+            
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

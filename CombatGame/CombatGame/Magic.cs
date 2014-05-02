@@ -13,8 +13,19 @@ namespace CombatGame
         public string Name { get; set; } // Name of the Magic
         public string Description { get; set; } // Magic Description
         public int Power { get; set; } //Power of the Magic
-        public Image MacigImage;
-        public PictureBox picBoxImage;
+        public Image MagicImage; // Image of the Magic
+        public PictureBox PicBoxImage; // Picture Box for the Image 
+
+        public Magic (string Name, string Description, int Power, Image MagicImage, PictureBox picBoxImage) //constructor
+        {
+            this.Name = Name;
+            this.Description = Description;
+            this.Power = Power;
+            this.MagicImage = MagicImage;
+            this.PicBoxImage = picBoxImage;
+        } 
+
+
 
     }
 }
