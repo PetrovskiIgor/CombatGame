@@ -17,18 +17,6 @@ namespace CombatGame
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Dupla shkorpija");
-            MessageBox.Show("Moja losha kopija");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("HA HA HA");
-            MessageBox.Show("Sinhroniziraj");
-            MessageBox.Show("asdasdasdas");
-            MessageBox.Show("MAFziN");
-        }
+        
     }
 }
