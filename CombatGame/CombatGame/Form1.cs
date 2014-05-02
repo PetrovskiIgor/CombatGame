@@ -22,5 +22,10 @@ namespace CombatGame
             MessageBox.Show("Dupla shkorpija");
             MessageBox.Show("Moja losha kopija");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("HA HA HA");
+        }
     }
 }
