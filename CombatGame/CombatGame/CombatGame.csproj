@@ -50,6 +50,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Magic.cs" />
     <Compile Include="frmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
