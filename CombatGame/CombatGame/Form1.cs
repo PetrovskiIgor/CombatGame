@@ -25,6 +25,7 @@ namespace CombatGame
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("HA HA HA");
+            MessageBox.Show("Sinhroniziraj");
         }
     }
 }
