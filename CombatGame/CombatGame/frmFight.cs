@@ -42,7 +42,8 @@ namespace CombatGame
             playerTwo.pbPlayer = pbPlayerTwo;
 
 
-
+            this.lblPlayerOneName.Text = playerOne.Name;
+            this.lblPlayerTwoName.Text = playerTwo.Name;
 
             soundPlayer.Play();
             timer = new Timer();
