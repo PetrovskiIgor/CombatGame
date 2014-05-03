@@ -15,7 +15,6 @@ namespace CombatGame
         ATTACKLEG,
         ATTACKMAGIC,
         DEFENSE,
-        JUMP,
         KNEEL
     }
 
@@ -23,7 +22,6 @@ namespace CombatGame
     {
         LEFT,
         RIGHT,
-        JUMP,
         UNDEFINED
     }
 
@@ -34,6 +32,13 @@ namespace CombatGame
         public String Description { get; set; }
         public PictureBox pbPlayer;
         public List<Magic> magicList;
+        public int Velocity { get; set; }
+        public int JumpForce = 30;
+        public bool IsJumped { get; set; }
+        public int StandPosition { get; set; }
+        public Direction DirectionPlayer { get; set; }
+        State statePerson { get; set; }
+
         public Image stand;
         public Image attack;
         public Image attackLeg;
@@ -41,9 +46,6 @@ namespace CombatGame
         public Image defense;
         public Image jump;
         public Image kneel;
-
-
-        State statePerson { get; set; }
 
         public Player(string name, string description, Magic mOne, Magic mTwo, Magic mThree)
         {
@@ -56,11 +58,21 @@ namespace CombatGame
             magicList.Add(mThree);
             statePerson = State.STAND;
             pbPlayer = new PictureBox();
-            
+            IsJumped = false;
+            StandPosition = pbPlayer.Bottom;
+            DirectionPlayer = Direction.UNDEFINED;
         }
 
         public void check()
         {
+            if (IsJumped)
+            {
+                Jump();
+            }
+            else
+            {
+                JumpForce = 30;
+            }
             if (statePerson == State.STAND)
             {
                 pbPlayer.BackColor = Color.Black;
@@ -76,15 +88,11 @@ namespace CombatGame
             else if (statePerson == State.ATTACKMAGIC)
             {
                 pbPlayer.BackColor = Color.Yellow;
-
+                AttackMagic();
             }
             else if (statePerson == State.DEFENSE)
             {
                 pbPlayer.BackColor = Color.White;
-            }
-            else if (statePerson == State.JUMP)
-            {
-                pbPlayer.BackColor = Color.Pink;
             }
             else if (statePerson == State.KNEEL)
             {
@@ -94,10 +102,39 @@ namespace CombatGame
 
         public void Move(Direction dir)
         {
-            if (dir == Direction.JUMP)
+            this.DirectionPlayer = dir;
+            this.statePerson = State.STAND;
+            if (this.DirectionPlayer == Direction.LEFT)
             {
-
+                this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
+            else if (this.DirectionPlayer == Direction.RIGHT)
+            {
+                this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
+            }
+        }
+
+        public void Jump()
+        {
+            this.pbPlayer.Top -= JumpForce;
+            JumpForce--;
+            this.pbPlayer.Top += 5;
+            if (pbPlayer.Bottom <= StandPosition)
+            {
+                pbPlayer.Top = StandPosition + pbPlayer.Height;
+                IsJumped = false;
+            }
+        }
+
+        public void AttackMagic()
+        {
+            magicList.ElementAt(0).ShowMagic(this.pbPlayer, this.DirectionPlayer);
+            statePerson = State.STAND;
+        }
+
+        public void ChangeState(State state)
+        {
+            statePerson = state;
         }
 
     }

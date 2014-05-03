@@ -79,10 +79,17 @@ namespace CombatGame
             }
         }
 
-        public void ShowMagic (PictureBox playerPictureBox) // Displaing the Magic which the Player is using for attack
+        public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaing the Magic which the Player is using for attack
         {
-            this.PicBoxImage.Left = playerPictureBox.Right;
-            this.PicBoxImage.Top = (playerPictureBox.Bottom + playerPictureBox.Right) / 2;
+            if (dir == Direction.LEFT)
+            {
+                this.PicBoxImage.Left = playerPictureBox.Left - this.PicBoxImage.Width;
+            }
+            else if (dir == Direction.RIGHT)
+            {
+                this.PicBoxImage.Left = playerPictureBox.Right;
+            }
+            this.PicBoxImage.Top = (playerPictureBox.Bottom + playerPictureBox.Top) / 2;
             this.PicBoxImage.Show();
         }
 
