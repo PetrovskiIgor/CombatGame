@@ -23,7 +23,8 @@ namespace CombatGame
     {
         LEFT,
         RIGHT,
-        JUMP
+        JUMP,
+        UNDEFINED
     }
 
     public class Player
