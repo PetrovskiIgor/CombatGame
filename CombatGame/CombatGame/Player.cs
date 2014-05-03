@@ -101,7 +101,7 @@ namespace CombatGame
         {
             if (IsJumped)
             {
-                MessageBox.Show(String.Format("{0}", JumpForce));
+                //MessageBox.Show(String.Format("{0}", JumpForce));
                 Jump();
             }
             else
