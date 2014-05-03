@@ -128,8 +128,16 @@ namespace CombatGame
 
         public void AttackMagic()
         {
-            magicList.ElementAt(0).ShowMagic(this.pbPlayer, this.DirectionPlayer);
-            statePerson = State.STAND;
+            if (magicList != null)
+            {
+                magicList.ElementAt(0).ShowMagic(this.pbPlayer, this.DirectionPlayer);
+                statePerson = State.STAND;
+            }
+        }
+
+        public void Attack(Player p)
+        {
+
         }
 
         public void ChangeState(State state)
