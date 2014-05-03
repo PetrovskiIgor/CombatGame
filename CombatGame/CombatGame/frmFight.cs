@@ -16,6 +16,14 @@ namespace CombatGame
     {
         
         SoundPlayer soundPlayer;
+        Player playerOne;
+        Player playerTwo;
+        Magic startedMagic;
+        bool a, d, left, right;
+        bool gameIsFinished;
+        Timer timer;
+
+
         public frmFight()
         {
             InitializeComponent();
@@ -28,6 +36,9 @@ namespace CombatGame
             
             
             soundPlayer.Play();
+            timer = new Timer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
         }
 
 
@@ -36,6 +47,45 @@ namespace CombatGame
         {
             
             Application.Exit();
+        }
+
+        private void frmFight_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.W)
+            {
+                playerOne.IsJumped = true;
+            }
+            else if(e.KeyCode==Keys.Up)
+            {
+                playerTwo.IsJumped = true;
+            }
+            else if (e.KeyCode==Keys.A)
+            {
+                a = true;
+            }
+            else if(e.KeyCode==Keys.D)
+            {
+                d = true;
+            }
+            else if(e.KeyCode==Keys.Left)
+            {
+                left = true;
+            }
+            else if (e.KeyCode==Keys.Right)
+            {
+                right = true;
+            }
+            
+        }
+
+        private void frmFight_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

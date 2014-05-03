@@ -130,7 +130,7 @@ namespace CombatGame
 
         public void AttackMagic()
         {
-            if (magicList != null)
+            if (magicList.Count!=0)
             {
                 magicList.ElementAt(0).ShowMagic(this.pbPlayer, this.DirectionPlayer);
                 statePerson = State.STAND;
