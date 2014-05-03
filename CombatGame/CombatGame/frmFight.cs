@@ -20,6 +20,10 @@ namespace CombatGame
         {
             InitializeComponent();
 
+
+            // za da go prepoznae file-ot  EyeOfTheTiger.wav
+            //
+            // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
             soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
             
             

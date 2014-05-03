@@ -22,7 +22,7 @@ namespace CombatGame
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             MainMenu.Show();
         }
 
@@ -33,6 +33,11 @@ namespace CombatGame
 
             Game.Show();
 
+        }
+
+        private void frmPickPlayer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -14,14 +14,20 @@ namespace CombatGame
     {
         frmPickPlayer fPickPlayer;
         frmOptions fOptions;
+        PPPBitmap bmBackground;
         public frmMenu()
         {
             InitializeComponent();
+          
+       
+            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+            Invalidate();
+           
         }
 
         private void lblNewGame_Click(object sender, EventArgs e)
         {
-            frmPickPlayer fPickPlayer = new frmPickPlayer(this);
+            fPickPlayer = new frmPickPlayer(this);
             this.Hide();
             fPickPlayer.Show();
            
@@ -44,6 +50,13 @@ namespace CombatGame
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmMenu_Paint(object sender, PaintEventArgs e)
+        {
+           // MessageBox.Show(this.Left + " " + this.Bottom + " " + this.Width + " " + this.Height);
+           // e.Graphics.DrawImage(bitmapHorny.Bitmap, xHorny, yHorny, 100, 100);
+            e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
         }
 
         
