@@ -14,11 +14,23 @@ namespace CombatGame
     {
         frmMenu MainMenu { get; set; } // formata roditel (MENU)
         frmFight Game;
+        PPPBitmap bmBackground;
         public frmPickPlayer(frmMenu menu)
         {
             InitializeComponent();
             MainMenu = menu;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+
+            pb1.BackColor = Color.Red;
+            pb2.BackColor = Color.Red;
+            pb3.BackColor = Color.Red;
+            pb4.BackColor = Color.Red;
+            pb1Parent.BackColor = Color.Yellow;
+            pb2Parent.BackColor = Color.Green;
+            pb3Parent.BackColor = Color.Transparent;
+            pb4Parent.BackColor = Color.Transparent;
+            Invalidate();
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -39,6 +51,16 @@ namespace CombatGame
         private void frmPickPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPickPlayer_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
         }
     }
 }
