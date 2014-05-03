@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPickPlayer));
             this.lblBack = new System.Windows.Forms.Label();
             this.lblStart = new System.Windows.Forms.Label();
             this.pb1Parent = new System.Windows.Forms.PictureBox();
@@ -38,6 +39,10 @@
             this.pb3Parent = new System.Windows.Forms.PictureBox();
             this.pb4 = new System.Windows.Forms.PictureBox();
             this.pb4Parent = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.rtbFirstPlayer = new System.Windows.Forms.RichTextBox();
+            this.rtbSecPlayer = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb1Parent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -78,17 +83,21 @@
             // 
             // pb1
             // 
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
             this.pb1.Location = new System.Drawing.Point(41, 55);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(154, 119);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
             // 
             // pb2
             // 
+            this.pb2.Image = ((System.Drawing.Image)(resources.GetObject("pb2.Image")));
             this.pb2.Location = new System.Drawing.Point(258, 55);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(154, 119);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 5;
             this.pb2.TabStop = false;
             // 
@@ -102,9 +111,11 @@
             // 
             // pb3
             // 
+            this.pb3.Image = ((System.Drawing.Image)(resources.GetObject("pb3.Image")));
             this.pb3.Location = new System.Drawing.Point(470, 55);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(154, 119);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 7;
             this.pb3.TabStop = false;
             // 
@@ -118,9 +129,11 @@
             // 
             // pb4
             // 
+            this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
             this.pb4.Location = new System.Drawing.Point(684, 55);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(154, 119);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 9;
             this.pb4.TabStop = false;
             // 
@@ -132,11 +145,55 @@
             this.pb4Parent.TabIndex = 8;
             this.pb4Parent.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(29, 257);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "First player";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(684, 257);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 11;
+            this.textBox2.Text = "Second player";
+            // 
+            // rtbFirstPlayer
+            // 
+            this.rtbFirstPlayer.Enabled = false;
+            this.rtbFirstPlayer.Location = new System.Drawing.Point(29, 283);
+            this.rtbFirstPlayer.Name = "rtbFirstPlayer";
+            this.rtbFirstPlayer.ReadOnly = true;
+            this.rtbFirstPlayer.Size = new System.Drawing.Size(196, 134);
+            this.rtbFirstPlayer.TabIndex = 12;
+            this.rtbFirstPlayer.Text = "";
+            // 
+            // rtbSecPlayer
+            // 
+            this.rtbSecPlayer.Enabled = false;
+            this.rtbSecPlayer.Location = new System.Drawing.Point(684, 283);
+            this.rtbSecPlayer.Name = "rtbSecPlayer";
+            this.rtbSecPlayer.ReadOnly = true;
+            this.rtbSecPlayer.Size = new System.Drawing.Size(196, 134);
+            this.rtbSecPlayer.TabIndex = 13;
+            this.rtbSecPlayer.Text = "";
+            // 
             // frmPickPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 482);
+            this.Controls.Add(this.rtbSecPlayer);
+            this.Controls.Add(this.rtbFirstPlayer);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb4Parent);
             this.Controls.Add(this.pb3);
@@ -181,5 +238,9 @@
         private System.Windows.Forms.PictureBox pb3Parent;
         private System.Windows.Forms.PictureBox pb4;
         private System.Windows.Forms.PictureBox pb4Parent;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RichTextBox rtbFirstPlayer;
+        private System.Windows.Forms.RichTextBox rtbSecPlayer;
     }
 }
