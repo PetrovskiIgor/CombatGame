@@ -37,7 +37,7 @@ namespace CombatGame
         public int Velocity { get; set; }
         public int JumpForce = 30;
         public bool IsJumped { get; set; }
-        public int StandPosition { get; set; }
+        public static int StandPosition = 450;
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
         public static int HandPower = 8 ;
@@ -62,7 +62,6 @@ namespace CombatGame
             statePerson = State.STAND;
             pbPlayer = null;
             IsJumped = false;
-            StandPosition = 100;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10;
         }
@@ -79,7 +78,6 @@ namespace CombatGame
             statePerson = State.STAND;
             pbPlayer = null;
             IsJumped = false;
-            StandPosition = 100;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
         }
@@ -96,7 +94,6 @@ namespace CombatGame
             statePerson = State.STAND;
             pbPlayer = pb;
             IsJumped = false;
-            StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
         }
@@ -110,7 +107,6 @@ namespace CombatGame
             statePerson = State.STAND;
             pbPlayer = null;
             IsJumped = false;
-            StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10;
         }

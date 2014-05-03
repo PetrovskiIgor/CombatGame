@@ -38,6 +38,11 @@ namespace CombatGame
             bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
             numPlayers = 4;
 
+            pb1.Image = Image.FromFile("imgVikiPeeva.jpg");
+            pb2.Image = Image.FromFile("imgPetrovPetre.jpg");
+            pb3.Image = Image.FromFile("imgIgorPetrovski.jpg");
+            pb4.Image = Image.FromFile("imgDavidHorny.jpg");
+
        
             firstDone = false;
             secDone = false;
@@ -53,6 +58,8 @@ namespace CombatGame
             pb[1] = new PictureBox[2];
             pb[2] = new PictureBox[2];
             pb[3] = new PictureBox[2];
+
+            
 
             pb[0][0] = pb1; pb[0][1] = pb1Parent;
             pb[1][0] = pb2; pb[1][1] = pb2Parent;
@@ -103,6 +110,8 @@ namespace CombatGame
         private void lblStart_Click(object sender, EventArgs e)
         {
             this.Hide();
+            firstDone = true; // nepotrebno, no neka stoi
+            secDone = true;// nepotrebno, no neka stoi
             Game = new frmFight(players[currPosFirst],players[currPosSec]);
 
             Game.Show();
@@ -187,23 +196,36 @@ namespace CombatGame
             else if(e.KeyCode == Keys.Left)
             {
                 if(!firstDone)
-                currPosFirst = moveInNextField(currPosFirst,currPosSec,true,true);
+                {
+                    currPosFirst = moveInNextField(currPosFirst, currPosSec, true, true);
+                    rtbFirstPlayer.Text = players[currPosFirst].Description;
+                }
+                
             }
             else if (e.KeyCode == Keys.Right)
             {
                 if (!firstDone)
-                currPosFirst = moveInNextField(currPosFirst, currPosSec, true, false);
+                {
+                    currPosFirst = moveInNextField(currPosFirst, currPosSec, true, false);
+                    rtbFirstPlayer.Text = players[currPosFirst].Description;
+                }
+               
             }
             else if (e.KeyCode == Keys.A)
             {
                 if (!secDone)
-                currPosSec = moveInNextField(currPosSec, currPosFirst,false,true);
+                {
+                    currPosSec = moveInNextField(currPosSec, currPosFirst, false, true);
+                    rtbSecPlayer.Text = players[currPosSec].Description;
+                }
+               
             }
             else if (e.KeyCode == Keys.D)
             {
                 if (!secDone)
                 {
                     currPosSec = moveInNextField(currPosSec, currPosFirst, false, false);
+                    rtbSecPlayer.Text = players[currPosSec].Description;
                 }
                 
             }
