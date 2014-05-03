@@ -18,7 +18,8 @@ namespace CombatGame
         SoundPlayer soundPlayer;
         Player playerOne;
         Player playerTwo;
-        Magic startedMagic;
+        Magic playerOneMagic;
+        Magic playerTwoMagic;
         bool a, d, left, right;
         bool gameIsFinished;
         Timer timer;
@@ -53,11 +54,11 @@ namespace CombatGame
         {
             if(e.KeyCode==Keys.W)
             {
-                playerOne.IsJumped = true;
+                playerTwo.IsJumped = true;
             }
             else if(e.KeyCode==Keys.Up)
             {
-                playerTwo.IsJumped = true;
+                playerOne.IsJumped = true;
             }
             else if (e.KeyCode==Keys.A)
             {
@@ -75,6 +76,44 @@ namespace CombatGame
             {
                 right = true;
             }
+            else if(e.KeyCode== Keys.F)
+            {
+                playerTwo.ChangeState(State.ATTACK);
+                if (playerTwo.Attack(playerOne))
+                    playerOne.DecreaseHealth(Player.HandPower);
+            }
+            else if (e.KeyCode==Keys.G)
+            {
+                playerTwo.ChangeState(State.ATTACKLEG);
+                if (playerTwo.AttackLeg(playerOne))
+                    playerOne.DecreaseHealth(Player.LegPower);
+            }
+            else if(e.KeyCode==Keys.V)
+            {
+                playerTwo.ChangeState(State.ATTACKMAGIC);
+                playerTwoMagic=playerTwo.AttackMagic();
+            }
+            else if(e.KeyCode==Keys.H)
+            {
+                playerTwo.ChangeState(State.DEFENSE);
+            }
+            else if(e.KeyCode==Keys.D1)
+            {
+                playerOne.ChangeState(State.ATTACK);
+                if (playerOne.Attack(playerTwo))
+                    playerTwo.DecreaseHealth(Player.HandPower);
+            }
+            else if(e.KeyCode==Keys.D2)
+            {
+                playerOne.ChangeState(State.ATTACKLEG);
+                if (playerOne.AttackLeg(playerTwo))
+                    playerTwo.DecreaseHealth(Player.LegPower);
+            }
+            else if(e.KeyCode==Keys.D0)
+            {
+                playerOne.ChangeState(State.ATTACKMAGIC);
+                playerOneMagic = playerOne.AttackMagic();
+            }
             
         }
 
@@ -85,7 +124,13 @@ namespace CombatGame
 
         void timer_Tick(object sender, EventArgs e)
         {
-            
+            playerOne.Check();
+            playerTwo.Check();
+        }
+
+        public void doIt ()
+        {
+
         }
     }
 }

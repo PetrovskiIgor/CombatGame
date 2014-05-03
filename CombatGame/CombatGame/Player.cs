@@ -38,6 +38,8 @@ namespace CombatGame
         public int StandPosition { get; set; }
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
+        public static int HandPower = 8 ;
+        public static int LegPower = 13;
 
         public Image stand;
         public Image attack;
@@ -90,7 +92,6 @@ namespace CombatGame
             else if (statePerson == State.ATTACKMAGIC)
             {
                 pbPlayer.BackColor = Color.Yellow;
-                AttackMagic();
             }
             else if (statePerson == State.DEFENSE)
             {
