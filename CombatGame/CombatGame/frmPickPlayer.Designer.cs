@@ -147,12 +147,15 @@
             this.Controls.Add(this.pb1Parent);
             this.Controls.Add(this.lblStart);
             this.Controls.Add(this.lblBack);
+            this.DoubleBuffered = true;
             this.Name = "frmPickPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PICK A PLAYER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPickPlayer_FormClosing);
             this.Load += new System.EventHandler(this.frmPickPlayer_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmPickPlayer_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPickPlayer_KeyDown);
+            this.Resize += new System.EventHandler(this.frmPickPlayer_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pb1Parent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
