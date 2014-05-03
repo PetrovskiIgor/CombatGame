@@ -137,5 +137,10 @@ namespace CombatGame
             statePerson = state;
         }
 
+        public void DecreaseHealth(int decrease)
+        {
+            Health -= decrease;
+        }
+
     }
 }
