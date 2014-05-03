@@ -15,13 +15,16 @@ namespace CombatGame
     public partial class frmFight : Form
     {
         String path = Path.GetFullPath("EyeOfTheTiger.wav");
+        
        
         SoundPlayer soundPlayer;
         public frmFight()
         {
             InitializeComponent();
-           
-            soundPlayer = new SoundPlayer(path);
+
+            soundPlayer = new SoundPlayer();
+            soundPlayer.SoundLocation = "EyeOfTheTiger.wav";
+
             
             soundPlayer.Play();
         }
