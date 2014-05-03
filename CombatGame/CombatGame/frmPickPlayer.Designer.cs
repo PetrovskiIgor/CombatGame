@@ -151,6 +151,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PICK A PLAYER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPickPlayer_FormClosing);
+            this.Load += new System.EventHandler(this.frmPickPlayer_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmPickPlayer_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pb1Parent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
