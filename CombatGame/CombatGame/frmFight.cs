@@ -26,7 +26,7 @@ namespace CombatGame
         public static int INTERVAL = 10;
 
 
-        public frmFight()
+        public frmFight(Player first, Player second)
         {
             InitializeComponent();
 
@@ -36,8 +36,10 @@ namespace CombatGame
             // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
             soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
 
-            playerOne = new Player("Petre", "aaa",pbPlayerOne,new Magic (),new Magic (),new Magic ());
-            playerTwo = new Player("Igor", "aaa",pbPlayerTwo, new Magic(), new Magic (), new Magic ());
+            playerOne = first;
+            playerOne.pbPlayer = pbPlayerOne;
+            playerTwo = second;
+            playerTwo.pbPlayer = pbPlayerTwo;
 
 
 
