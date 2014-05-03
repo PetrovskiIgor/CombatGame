@@ -12,10 +12,27 @@ namespace CombatGame
 {
     public partial class frmPickPlayer : Form
     {
-        
-        public frmPickPlayer()
+        frmMenu MainMenu { get; set; } // formata roditel (MENU)
+        frmFight Game;
+        public frmPickPlayer(frmMenu menu)
         {
             InitializeComponent();
+            MainMenu = menu;
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainMenu.Show();
+        }
+
+        private void lblStart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Game = new frmFight();
+
+            Game.Show();
+
         }
     }
 }

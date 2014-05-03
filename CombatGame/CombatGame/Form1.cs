@@ -12,6 +12,8 @@ namespace CombatGame
 {
     public partial class frmMenu : Form
     {
+        frmPickPlayer fPickPlayer;
+        frmOptions fOptions;
         public frmMenu()
         {
             InitializeComponent();
@@ -19,17 +21,17 @@ namespace CombatGame
 
         private void lblNewGame_Click(object sender, EventArgs e)
         {
-            frmPickPlayer fpp = new frmPickPlayer();
+            frmPickPlayer fPickPlayer = new frmPickPlayer(this);
             this.Hide();
-            fpp.Show();
+            fPickPlayer.Show();
            
         }
 
         private void lblOptions_Click(object sender, EventArgs e)
         {
-            frmOptions fo = new frmOptions();
+            fOptions = new frmOptions(this);
             this.Hide();
-            fo.Show();
+            fOptions.Show();
             
             
         }

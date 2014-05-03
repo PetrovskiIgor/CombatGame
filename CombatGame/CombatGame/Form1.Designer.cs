@@ -36,7 +36,7 @@
             // lblNewGame
             // 
             this.lblNewGame.AutoSize = true;
-            this.lblNewGame.Location = new System.Drawing.Point(91, 74);
+            this.lblNewGame.Location = new System.Drawing.Point(312, 188);
             this.lblNewGame.Name = "lblNewGame";
             this.lblNewGame.Size = new System.Drawing.Size(67, 13);
             this.lblNewGame.TabIndex = 0;
@@ -46,7 +46,7 @@
             // lblOptions
             // 
             this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(91, 113);
+            this.lblOptions.Location = new System.Drawing.Point(312, 227);
             this.lblOptions.Name = "lblOptions";
             this.lblOptions.Size = new System.Drawing.Size(55, 13);
             this.lblOptions.TabIndex = 1;
@@ -56,7 +56,7 @@
             // lblExit
             // 
             this.lblExit.AutoSize = true;
-            this.lblExit.Location = new System.Drawing.Point(91, 155);
+            this.lblExit.Location = new System.Drawing.Point(312, 269);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(31, 13);
             this.lblExit.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(739, 482);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblOptions);
             this.Controls.Add(this.lblNewGame);
