@@ -52,6 +52,7 @@
             this.Text = "OPTIONS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOptions_FormClosing);
             this.Load += new System.EventHandler(this.frmOptions_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
