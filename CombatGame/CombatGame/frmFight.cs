@@ -20,9 +20,10 @@ namespace CombatGame
         Player playerTwo;
         Magic playerOneMagic;
         Magic playerTwoMagic;
-        bool a, d, left, right;
+        bool a, s, d, left, right, down;
         bool gameIsFinished;
         Timer timer;
+        public static int INTERVAL = 10;
 
 
         public frmFight()
@@ -34,10 +35,14 @@ namespace CombatGame
             //
             // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
             soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
-            
-            
+
+            playerOne = new Player("Petre", "aaa", null, null, null);
+            playerTwo = new Player("Igor", "aaa", null, null, null);
+
+            PictureBox proba = new PictureBox();
             soundPlayer.Play();
             timer = new Timer();
+            timer.Interval = INTERVAL;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
@@ -62,19 +67,31 @@ namespace CombatGame
             }
             else if (e.KeyCode==Keys.A)
             {
+                playerTwo.ChangeState(State.MOVINGLEFT);
                 a = true;
             }
             else if(e.KeyCode==Keys.D)
             {
+                playerTwo.ChangeState(State.MOVINGRIGHT);
                 d = true;
+            }
+            else if (e.KeyCode==Keys.S)
+            {
+                playerTwo.ChangeState(State.KNEEL);
             }
             else if(e.KeyCode==Keys.Left)
             {
+                playerOne.ChangeState(State.MOVINGLEFT);
                 left = true;
             }
             else if (e.KeyCode==Keys.Right)
             {
+                playerOne.ChangeState(State.MOVINGRIGHT);
                 right = true;
+            }
+            else if(e.KeyCode==Keys.Down)
+            {
+                playerOne.ChangeState(State.KNEEL);
             }
             else if(e.KeyCode== Keys.F)
             {
@@ -119,13 +136,45 @@ namespace CombatGame
 
         private void frmFight_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if(e.KeyCode==Keys.A)
+            {
+                a = false;
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if (e.KeyCode==Keys.D)
+            {
+                d = false;
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.S)
+            {
+                s = false;
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.Left)
+            {
+                left = false;
+                playerOne.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.Right)
+            {
+                right = false;
+                playerOne.ChangeState(State.STAND);
+            }
+            else if (e.KeyCode==Keys.Down)
+            {
+                down = false;
+                playerOne.ChangeState(State.STAND);
+            }
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
             playerOne.Check();
             playerTwo.Check();
+
+
+
         }
 
         public void doIt ()
