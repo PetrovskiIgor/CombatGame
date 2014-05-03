@@ -39,7 +39,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Combat Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmFight_FormClosing);
-           
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmFight_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmFight_KeyUp);
             this.ResumeLayout(false);
 
         }

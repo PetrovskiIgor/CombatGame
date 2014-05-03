@@ -11,6 +11,8 @@ namespace CombatGame
     public enum State
     {
         STAND,          //player is steady
+        MOVINGLEFT,
+        MOVINGRIGHT,
         ATTACK,
         ATTACKLEG,
         ATTACKMAGIC,
@@ -38,6 +40,8 @@ namespace CombatGame
         public int StandPosition { get; set; }
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
+        public static int HandPower = 8 ;
+        public static int LegPower = 13;
 
         public Image stand;
         public Image attack;
@@ -90,7 +94,6 @@ namespace CombatGame
             else if (statePerson == State.ATTACKMAGIC)
             {
                 pbPlayer.BackColor = Color.Yellow;
-                AttackMagic();
             }
             else if (statePerson == State.DEFENSE)
             {
@@ -100,19 +103,28 @@ namespace CombatGame
             {
                 pbPlayer.BackColor = Color.Blue;
             }
+            else if (statePerson == State.MOVINGLEFT)
+            {
+
+            }
+            else if (statePerson == State.MOVINGRIGHT)
+            {
+
+            }
         }
 
         //The player moves in the given direction
         public void Move(Direction dir)
         {
             this.DirectionPlayer = dir;
-            this.statePerson = State.STAND;
             if (this.DirectionPlayer == Direction.LEFT)
             {
+                this.statePerson = State.MOVINGLEFT;
                 this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
             else if (this.DirectionPlayer == Direction.RIGHT)
             {
+                this.statePerson = State.MOVINGRIGHT;
                 this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
             }
         }
@@ -133,7 +145,7 @@ namespace CombatGame
         //Shows the magic and returns its reference
         public Magic AttackMagic()
         {
-            if (magicList != null)
+            if (magicList.Count!=0)
             {
                 Magic m = magicList.ElementAt(0);
                 m.ShowMagic(this.pbPlayer, this.DirectionPlayer);
