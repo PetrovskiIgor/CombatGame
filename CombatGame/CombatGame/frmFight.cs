@@ -36,8 +36,8 @@ namespace CombatGame
             // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
             soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
 
-            playerOne = new Player("Petre", "aaa",pbPlayerOne,null,null,null);
-            playerTwo = new Player("Igor", "aaa",pbPlayerTwo, null, null, null);
+            playerOne = new Player("Petre", "aaa",pbPlayerOne,new Magic (),new Magic (),new Magic ());
+            playerTwo = new Player("Igor", "aaa",pbPlayerTwo, new Magic(), new Magic (), new Magic ());
 
 
 
@@ -116,22 +116,26 @@ namespace CombatGame
             {
                 playerTwo.ChangeState(State.DEFENSE);
             }
-            else if(e.KeyCode==Keys.D0)
+            else if(e.KeyCode==Keys.NumPad1)
             {
                 playerOne.ChangeState(State.ATTACK);
                 if (playerOne.Attack(playerTwo))
                     playerTwo.DecreaseHealth(Player.HandPower);
             }
-            else if(e.KeyCode==Keys.D2)
+            else if(e.KeyCode==Keys.NumPad2)
             {
                 playerOne.ChangeState(State.ATTACKLEG);
                 if (playerOne.AttackLeg(playerTwo))
                     playerTwo.DecreaseHealth(Player.LegPower);
             }
-            else if(e.KeyCode==Keys.D0)
+            else if(e.KeyCode==Keys.NumPad0)
             {
                 playerOne.ChangeState(State.ATTACKMAGIC);
                 playerOneMagic = playerOne.AttackMagic();
+            }
+            else if (e.KeyCode==Keys.NumPad3)
+            {
+                playerOne.ChangeState(State.DEFENSE);
             }
             
         }

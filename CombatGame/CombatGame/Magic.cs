@@ -27,7 +27,7 @@ namespace CombatGame
             this.Description = null;
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
-            this.PicBoxImage = null;
+            this.PicBoxImage = new PictureBox();
             DirOfMoving = Direction.UNDEFINED;
         }
 
