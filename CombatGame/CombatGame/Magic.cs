@@ -18,7 +18,7 @@ namespace CombatGame
         public Image MagicImageRight { get; set; }      // Image of the Magic (Right)
         public PictureBox PicBoxImage { get; set; }     // Picture Box for the Image 
         public int Velocity { get; set; }               // Velocity of magic moving
-        Direction DirOfMoving;                          // Direcetion of Magic moving
+        public Direction DirOfMoving { get; set; }                          // Direcetion of Magic moving
 
 
         public Magic () // Default Constructor
@@ -68,9 +68,8 @@ namespace CombatGame
             this.PicBoxImage = null;
         }
 
-        public void Move (Direction dir) // Moving the Magic 
+        public void Move () // Moving the Magic 
         {
-            this.DirOfMoving = dir;
             if (DirOfMoving == Direction.LEFT)
             {
                 this.PicBoxImage.Left -= Velocity;
@@ -83,6 +82,7 @@ namespace CombatGame
 
         public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaing the Magic which the Player is using for attack
         {
+            this.DirOfMoving = dir;
             if (dir == Direction.LEFT)
             {
                 this.PicBoxImage.Left = playerPictureBox.Left - this.PicBoxImage.Width;

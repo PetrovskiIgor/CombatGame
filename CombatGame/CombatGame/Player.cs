@@ -66,6 +66,7 @@ namespace CombatGame
             IsJumped = false;
             StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10; // treba da se smeni!!!!!!!!!
         }
 
         //Checks in which state the player is and acts if needed
