@@ -10,7 +10,7 @@ namespace CombatGame
 {
     public enum State
     {
-        STAND,
+        STAND,          //player is steady
         ATTACK,
         ATTACKLEG,
         ATTACKMAGIC,
@@ -47,6 +47,7 @@ namespace CombatGame
         public Image jump;
         public Image kneel;
 
+        //Constructor
         public Player(string name, string description, Magic mOne, Magic mTwo, Magic mThree)
         {
             Name = name;
@@ -116,6 +117,7 @@ namespace CombatGame
             }
         }
 
+        //Simulates jumping
         public void Jump()
         {
             this.pbPlayer.Top -= JumpForce;
@@ -128,15 +130,21 @@ namespace CombatGame
             }
         }
 
-        public void AttackMagic()
+        //Shows the magic and returns its reference
+        public Magic AttackMagic()
         {
             if (magicList.Count!=0)
             {
-                magicList.ElementAt(0).ShowMagic(this.pbPlayer, this.DirectionPlayer);
+                Magic m = magicList.ElementAt(0);
+                m.ShowMagic(this.pbPlayer, this.DirectionPlayer);
                 statePerson = State.STAND;
+                magicList.RemoveAt(0);
+                return m;
             }
+            return null;
         }
 
+        //Checks if the opponent was hurt
         public bool IsSuccessfulAttack(Player opponent)
         {
             if (this.DirectionPlayer == Direction.LEFT)
@@ -162,12 +170,14 @@ namespace CombatGame
             return false;
         }
 
-        public bool AttacLeg(Player opponent)
+        //Changes statePerson and attacks opponent
+        public bool AttackLeg(Player opponent)
         {
             this.statePerson = State.ATTACKLEG;
             return IsSuccessfulAttack(opponent);
         }
 
+        //Changes statePerson and attacks opponent
         public bool Attack(Player opponent)
         {
             this.statePerson = State.ATTACK;
