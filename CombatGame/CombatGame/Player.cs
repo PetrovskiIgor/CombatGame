@@ -80,6 +80,7 @@ namespace CombatGame
             IsJumped = false;
             StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10; // treba da se smeni!!!!!!!!!
         }
 
         public Player(string name, string description)

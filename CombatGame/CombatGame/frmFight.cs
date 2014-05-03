@@ -110,7 +110,7 @@ namespace CombatGame
             else if(e.KeyCode==Keys.V)
             {
                 playerTwo.ChangeState(State.ATTACKMAGIC);
-                playerTwoMagic=playerTwo.AttackMagic();
+                playerTwoMagic=playerTwo.AttackMagic();                
             }
             else if(e.KeyCode==Keys.H)
             {
@@ -179,10 +179,10 @@ namespace CombatGame
             playerOne.CheckAndActs();
             playerTwo.CheckAndActs();
 
-
+            this.Moving();
         }
 
-        public void doIt ()
+        public void Moving()
         {
             if (a)
             {
@@ -199,6 +199,22 @@ namespace CombatGame
             if(right)
             {
                 playerOne.Move(Direction.RIGHT);
+            }
+
+            if(playerOneMagic!=null)
+            {
+                playerOneMagic.Move();
+                if(playerOneMagic.DirOfMoving==Direction.LEFT)
+                {
+                    if(playerOneMagic.PicBoxImage.Left>playerTwo.pbPlayer.Right)
+                    {
+
+                    }
+                }
+                else
+                {
+                    
+                }
             }
         }
     }
