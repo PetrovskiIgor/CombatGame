@@ -63,7 +63,8 @@ namespace CombatGame
             DirectionPlayer = Direction.UNDEFINED;
         }
 
-        public void check()
+        //Checks in which state the player is and acts if needed
+        public void Check()
         {
             if (IsJumped)
             {
@@ -100,6 +101,7 @@ namespace CombatGame
             }
         }
 
+        //The player moves in the given direction
         public void Move(Direction dir)
         {
             this.DirectionPlayer = dir;
@@ -135,9 +137,41 @@ namespace CombatGame
             }
         }
 
-        public void Attack(Player p)
+        public bool IsSuccessfulAttack(Player opponent)
         {
+            if (this.DirectionPlayer == Direction.LEFT)
+            {
+                if (this.pbPlayer.Left < opponent.pbPlayer.Left + opponent.pbPlayer.Width && this.pbPlayer.Left > opponent.pbPlayer.Left)
+                {
+                    if (opponent.statePerson != State.DEFENSE)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else if (this.DirectionPlayer == Direction.LEFT)
+            {
+                if (this.pbPlayer.Left + this.pbPlayer.Width > opponent.pbPlayer.Left && this.pbPlayer.Left + this.pbPlayer.Width < opponent.pbPlayer.Right)
+                {
+                    if (opponent.statePerson != State.DEFENSE)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
+        public bool AttacLeg(Player opponent)
+        {
+            this.statePerson = State.ATTACKLEG;
+            return IsSuccessfulAttack(opponent);
+        }
+
+        public bool Attack(Player opponent)
+        {
+            this.statePerson = State.ATTACK;
+            return IsSuccessfulAttack(opponent);
         }
 
         public void ChangeState(State state)
