@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.pbName = new System.Windows.Forms.PictureBox();
+            this.pbNewGame = new System.Windows.Forms.PictureBox();
             this.pbOptions = new System.Windows.Forms.PictureBox();
             this.pbExit = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbName
+            // pbNewGame
             // 
-            this.pbName.Image = ((System.Drawing.Image)(resources.GetObject("pbName.Image")));
-            this.pbName.Location = new System.Drawing.Point(233, 138);
-            this.pbName.Name = "pbName";
-            this.pbName.Size = new System.Drawing.Size(222, 50);
-            this.pbName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbName.TabIndex = 3;
-            this.pbName.TabStop = false;
-            this.pbName.Click += new System.EventHandler(this.pbNewGame_Click);
+            this.pbNewGame.Image = ((System.Drawing.Image)(resources.GetObject("pbNewGame.Image")));
+            this.pbNewGame.Location = new System.Drawing.Point(233, 138);
+            this.pbNewGame.Name = "pbNewGame";
+            this.pbNewGame.Size = new System.Drawing.Size(222, 50);
+            this.pbNewGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbNewGame.TabIndex = 3;
+            this.pbNewGame.TabStop = false;
+            this.pbNewGame.Click += new System.EventHandler(this.pbNewGame_Click);
+            this.pbNewGame.MouseHover += new System.EventHandler(this.pbNewGame_MouseHover);
             // 
             // pbOptions
             // 
@@ -58,6 +59,7 @@
             this.pbOptions.TabIndex = 4;
             this.pbOptions.TabStop = false;
             this.pbOptions.Click += new System.EventHandler(this.pbOptions_Click);
+            this.pbOptions.MouseHover += new System.EventHandler(this.pbOptions_MouseHover);
             // 
             // pbExit
             // 
@@ -78,15 +80,16 @@
             this.ClientSize = new System.Drawing.Size(739, 482);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.pbOptions);
-            this.Controls.Add(this.pbName);
+            this.Controls.Add(this.pbNewGame);
             this.DoubleBuffered = true;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "x";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMenu_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMenu_KeyDown);
             this.Resize += new System.EventHandler(this.frmMenu_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pbName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             this.ResumeLayout(false);
@@ -95,7 +98,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbName;
+        private System.Windows.Forms.PictureBox pbNewGame;
         private System.Windows.Forms.PictureBox pbOptions;
         private System.Windows.Forms.PictureBox pbExit;
 
