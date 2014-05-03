@@ -174,9 +174,40 @@ namespace CombatGame
             else if (e.KeyCode==Keys.Down)
             {
                 down = false;
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.F)
+            {
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.G)
+            {
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if (e.KeyCode==Keys.H)
+            {
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if (e.KeyCode==Keys.V)
+            {
+                playerTwo.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.Enter)
+            {
                 playerOne.ChangeState(State.STAND);
             }
-            
+            else if(e.KeyCode==Keys.NumPad0)
+            {
+                playerOne.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.NumPad1)
+            {
+                playerOne.ChangeState(State.STAND);
+            }
+            else if(e.KeyCode==Keys.Add)
+            {
+                playerOne.ChangeState(State.STAND);
+            }
         }
 
         void timer_Tick(object sender, EventArgs e)
