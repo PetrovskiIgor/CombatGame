@@ -64,6 +64,24 @@ namespace CombatGame
             IsJumped = false;
             StandPosition = 100;
             DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10;
+        }
+
+        public Player(string name, string description, Magic mOne, Magic mTwo, Magic mThree)
+        {
+            Name = name;
+            Description = description;
+            Health = 100;
+            magicList = new List<Magic>();
+            magicList.Add(mOne);
+            magicList.Add(mTwo);
+            magicList.Add(mThree);
+            statePerson = State.STAND;
+            pbPlayer = null;
+            IsJumped = false;
+            StandPosition = 100;
+            DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10; // treba da se smeni!!!!!!!!!
         }
 
         public Player(string name, string description, PictureBox pb, Magic mOne, Magic mTwo, Magic mThree)
@@ -94,6 +112,7 @@ namespace CombatGame
             IsJumped = false;
             StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10;
         }
 
         //Checks in which state the player is and acts if needed
