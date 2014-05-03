@@ -18,6 +18,7 @@ namespace CombatGame
         {
             InitializeComponent();
             MainMenu = menu;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void lblBack_Click(object sender, EventArgs e)

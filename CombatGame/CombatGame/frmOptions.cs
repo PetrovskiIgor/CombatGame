@@ -17,6 +17,7 @@ namespace CombatGame
         {
             InitializeComponent();
             MainMenu  = menu;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void frmOptions_Load(object sender, EventArgs e)

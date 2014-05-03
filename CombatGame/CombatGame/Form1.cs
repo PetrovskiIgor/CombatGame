@@ -21,23 +21,22 @@ namespace CombatGame
           
        
             bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+            
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             Invalidate();
+            
            
         }
 
         private void lblNewGame_Click(object sender, EventArgs e)
         {
-            fPickPlayer = new frmPickPlayer(this);
-            this.Hide();
-            fPickPlayer.Show();
+            
            
         }
 
         private void lblOptions_Click(object sender, EventArgs e)
         {
-            fOptions = new frmOptions(this);
-            this.Hide();
-            fOptions.Show();
+            
             
             
         }
@@ -54,9 +53,39 @@ namespace CombatGame
 
         private void frmMenu_Paint(object sender, PaintEventArgs e)
         {
-           // MessageBox.Show(this.Left + " " + this.Bottom + " " + this.Width + " " + this.Height);
-           // e.Graphics.DrawImage(bitmapHorny.Bitmap, xHorny, yHorny, 100, 100);
+            e.Graphics.Clear(Color.White);
             e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
+        }
+
+        private void pbOptions_Click(object sender, EventArgs e)
+        {
+            fOptions = new frmOptions(this);
+            this.Hide();
+            fOptions.Show();
+        }
+
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pbNewGame_Click(object sender, EventArgs e)
+        {
+            fPickPlayer = new frmPickPlayer(this);
+            this.Hide();
+            fPickPlayer.Show();
+        }
+
+        private void frmMenu_Resize(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        private void pbExit_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+
+            tt.SetToolTip(pbExit, "Don't exit, you will regret it..");
         }
 
         
