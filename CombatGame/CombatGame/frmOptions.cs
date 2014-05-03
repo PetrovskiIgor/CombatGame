@@ -26,8 +26,13 @@ namespace CombatGame
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             MainMenu.Show();
+        }
+
+        private void frmOptions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

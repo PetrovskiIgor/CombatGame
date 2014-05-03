@@ -35,32 +35,35 @@
             // 
             // lblNewGame
             // 
-            this.lblNewGame.AutoSize = true;
-            this.lblNewGame.Location = new System.Drawing.Point(312, 188);
+            this.lblNewGame.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewGame.Location = new System.Drawing.Point(144, 142);
             this.lblNewGame.Name = "lblNewGame";
-            this.lblNewGame.Size = new System.Drawing.Size(67, 13);
+            this.lblNewGame.Size = new System.Drawing.Size(446, 52);
             this.lblNewGame.TabIndex = 0;
             this.lblNewGame.Text = "NEW GAME";
+            this.lblNewGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNewGame.Click += new System.EventHandler(this.lblNewGame_Click);
             // 
             // lblOptions
             // 
-            this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(312, 227);
+            this.lblOptions.BackColor = System.Drawing.Color.Transparent;
+            this.lblOptions.Location = new System.Drawing.Point(144, 223);
             this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(55, 13);
+            this.lblOptions.Size = new System.Drawing.Size(446, 52);
             this.lblOptions.TabIndex = 1;
             this.lblOptions.Text = "OPTIONS";
+            this.lblOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblOptions.Click += new System.EventHandler(this.lblOptions_Click);
             // 
             // lblExit
             // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Location = new System.Drawing.Point(312, 269);
+            this.lblExit.BackColor = System.Drawing.Color.Transparent;
+            this.lblExit.Location = new System.Drawing.Point(144, 324);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(31, 13);
+            this.lblExit.Size = new System.Drawing.Size(446, 52);
             this.lblExit.TabIndex = 2;
             this.lblExit.Text = "EXIT";
+            this.lblExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // frmMenu
@@ -71,12 +74,13 @@
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblOptions);
             this.Controls.Add(this.lblNewGame);
+            this.DoubleBuffered = true;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "x";
             this.Load += new System.EventHandler(this.frmMenu_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMenu_Paint);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

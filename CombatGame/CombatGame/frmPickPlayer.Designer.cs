@@ -62,6 +62,7 @@
             this.Name = "frmPickPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PICK A PLAYER";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPickPlayer_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
