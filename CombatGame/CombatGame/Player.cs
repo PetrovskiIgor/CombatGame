@@ -69,7 +69,7 @@ namespace CombatGame
         }
 
         //Checks in which state the player is and acts if needed
-        public void Check()
+        public void CheckAndActs()
         {
             if (IsJumped)
             {

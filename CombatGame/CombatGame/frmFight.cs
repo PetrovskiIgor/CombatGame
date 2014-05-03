@@ -172,8 +172,8 @@ namespace CombatGame
 
         void timer_Tick(object sender, EventArgs e)
         {
-            playerOne.Check();
-            playerTwo.Check();
+            playerOne.CheckAndActs();
+            playerTwo.CheckAndActs();
 
 
 
