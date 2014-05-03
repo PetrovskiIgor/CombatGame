@@ -120,7 +120,6 @@ namespace CombatGame
         {
             if (IsJumped)
             {
-                //MessageBox.Show(String.Format("{0}", JumpForce));
                 Jump();
             }
             else
@@ -255,5 +254,12 @@ namespace CombatGame
             Health -= decrease;
         }
 
+        //Checks if the player is in defense or kneel state
+        public bool AvoidMagicAttack()
+        {
+            if (statePerson == State.DEFENSE || statePerson == State.KNEEL)
+                return true;
+            return false;
+        }
     }
 }
