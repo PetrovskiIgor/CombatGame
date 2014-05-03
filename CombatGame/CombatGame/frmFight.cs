@@ -20,7 +20,7 @@ namespace CombatGame
         {
             InitializeComponent();
 
-            soundPlayer = new SoundPlayer(Properties.Resources.EyeOfTheTiger);
+            soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
             
             
             soundPlayer.Play();
