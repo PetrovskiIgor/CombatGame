@@ -180,12 +180,26 @@ namespace CombatGame
             playerTwo.CheckAndActs();
 
 
-
         }
 
         public void doIt ()
         {
-
+            if (a)
+            {
+                playerTwo.Move(Direction.LEFT);
+            }
+            if (d)
+            {
+                playerTwo.Move(Direction.RIGHT);
+            }
+            if (left)
+            {
+                playerOne.Move(Direction.LEFT);
+            }
+            if(right)
+            {
+                playerOne.Move(Direction.RIGHT);
+            }
         }
     }
 }
