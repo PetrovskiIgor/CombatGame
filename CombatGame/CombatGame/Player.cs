@@ -135,7 +135,7 @@ namespace CombatGame
             this.pbPlayer.Top -= JumpForce;
             JumpForce--;
             this.pbPlayer.Top += 5;
-            if (pbPlayer.Bottom <= StandPosition)
+            if (pbPlayer.Bottom >= StandPosition)
             {
                 pbPlayer.Top = StandPosition + pbPlayer.Height;
                 IsJumped = false;
