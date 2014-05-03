@@ -45,5 +45,10 @@ namespace CombatGame
             e.Graphics.Clear(Color.White);
             e.Graphics.DrawImage(this.optionsBackground.Bitmap, 0, 0, this.Width, this.Height);
         }
+
+        private void frmOptionsResize(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
     }
 }
