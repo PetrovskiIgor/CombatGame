@@ -52,7 +52,7 @@ namespace CombatGame
         public Image kneel;
 
         //Constructor
-        public Player(string name, string description, Magic mOne, Magic mTwo, Magic mThree)
+        public Player(string name, string description, PictureBox pb, Magic mOne, Magic mTwo, Magic mThree)
         {
             Name = name;
             Description = description;
@@ -62,7 +62,7 @@ namespace CombatGame
             magicList.Add(mTwo);
             magicList.Add(mThree);
             statePerson = State.STAND;
-            pbPlayer = new PictureBox();
+            pbPlayer = pb;
             IsJumped = false;
             StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
