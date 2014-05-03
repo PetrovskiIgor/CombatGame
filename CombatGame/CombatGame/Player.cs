@@ -62,7 +62,7 @@ namespace CombatGame
             statePerson = State.STAND;
             pbPlayer = null;
             IsJumped = false;
-            StandPosition = pbPlayer.Bottom;
+            StandPosition = 100;
             DirectionPlayer = Direction.UNDEFINED;
         }
 
@@ -101,11 +101,13 @@ namespace CombatGame
         {
             if (IsJumped)
             {
+                MessageBox.Show(String.Format("{0}", JumpForce));
                 Jump();
             }
             else
             {
                 JumpForce = 30;
+                
             }
             if (statePerson == State.STAND)
             {
@@ -165,7 +167,7 @@ namespace CombatGame
             this.pbPlayer.Top += 5;
             if (pbPlayer.Bottom >= StandPosition)
             {
-                pbPlayer.Top = StandPosition + pbPlayer.Height;
+                pbPlayer.Top = StandPosition - pbPlayer.Height;
                 IsJumped = false;
             }
         }
