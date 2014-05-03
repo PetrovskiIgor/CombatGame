@@ -88,6 +88,9 @@ namespace CombatGame
             players[3] = new Player("David", "Jas sum Horny i mnogu sum crazy!", magicTricks[9], magicTricks[10], magicTricks[11]);
 
 
+            rtbFirstPlayer.Text = players[currPosFirst].Description;
+            rtbSecPlayer.Text = players[currPosSec].Description;
+
 
 
             pb1.BackColor = Color.Red;
