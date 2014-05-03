@@ -51,7 +51,21 @@ namespace CombatGame
         public Image jump;
         public Image kneel;
 
+
         //Constructor
+        public Player()
+        {
+            Name = "";
+            Description = "";
+            Health = 100;
+            magicList = new List<Magic>();
+            statePerson = State.STAND;
+            pbPlayer = null;
+            IsJumped = false;
+            StandPosition = pbPlayer.Bottom;
+            DirectionPlayer = Direction.UNDEFINED;
+        }
+
         public Player(string name, string description, PictureBox pb, Magic mOne, Magic mTwo, Magic mThree)
         {
             Name = name;
@@ -63,6 +77,19 @@ namespace CombatGame
             magicList.Add(mThree);
             statePerson = State.STAND;
             pbPlayer = pb;
+            IsJumped = false;
+            StandPosition = pbPlayer.Bottom;
+            DirectionPlayer = Direction.UNDEFINED;
+        }
+
+        public Player(string name, string description)
+        {
+            this.Name = name;
+            this.Description = description;
+            Health = 100;
+            magicList = new List<Magic>();
+            statePerson = State.STAND;
+            pbPlayer = null;
             IsJumped = false;
             StandPosition = pbPlayer.Bottom;
             DirectionPlayer = Direction.UNDEFINED;
