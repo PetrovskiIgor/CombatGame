@@ -11,6 +11,8 @@ namespace CombatGame
     public enum State
     {
         STAND,          //player is steady
+        MOVINGLEFT,
+        MOVINGRIGHT,
         ATTACK,
         ATTACKLEG,
         ATTACKMAGIC,
@@ -100,19 +102,28 @@ namespace CombatGame
             {
                 pbPlayer.BackColor = Color.Blue;
             }
+            else if (statePerson == State.MOVINGLEFT)
+            {
+
+            }
+            else if (statePerson == State.MOVINGRIGHT)
+            {
+
+            }
         }
 
         //The player moves in the given direction
         public void Move(Direction dir)
         {
             this.DirectionPlayer = dir;
-            this.statePerson = State.STAND;
             if (this.DirectionPlayer == Direction.LEFT)
             {
+                this.statePerson = State.MOVINGLEFT;
                 this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
             else if (this.DirectionPlayer == Direction.RIGHT)
             {
+                this.statePerson = State.MOVINGRIGHT;
                 this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
             }
         }
