@@ -18,7 +18,7 @@ namespace CombatGame
         public Image MagicImageRight { get; set; }      // Image of the Magic (Right)
         public PictureBox PicBoxImage { get; set; }     // Picture Box for the Image 
         public int Velocity { get; set; }               // Velocity of magic moving
-        public Direction DirOfMoving { get; set; }                          // Direcetion of Magic moving
+        public Direction DirOfMoving { get; set; }      // Direcetion of Magic moving
 
 
         public Magic () // Default Constructor

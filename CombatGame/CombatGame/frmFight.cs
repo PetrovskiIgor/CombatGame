@@ -95,6 +95,7 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.Down)
             {
+                down = true;
                 playerOne.ChangeState(State.KNEEL);
             }
             else if(e.KeyCode== Keys.F)
@@ -118,24 +119,25 @@ namespace CombatGame
             {
                 playerTwo.ChangeState(State.DEFENSE);
             }
-            else if(e.KeyCode==Keys.NumPad1)
+            else if(e.KeyCode==Keys.Enter)
             {
                 playerOne.ChangeState(State.ATTACK);
                 if (playerOne.Attack(playerTwo))
                     playerTwo.DecreaseHealth(Player.HandPower);
             }
-            else if(e.KeyCode==Keys.NumPad2)
+            else if(e.KeyCode==Keys.Add)
             {
                 playerOne.ChangeState(State.ATTACKLEG);
                 if (playerOne.AttackLeg(playerTwo))
                     playerTwo.DecreaseHealth(Player.LegPower);
             }
-            else if(e.KeyCode==Keys.NumPad0)
+            else if(e.KeyCode==Keys.NumPad1)
             {
+
                 playerOne.ChangeState(State.ATTACKMAGIC);
                 playerOneMagic = playerOne.AttackMagic();
             }
-            else if (e.KeyCode==Keys.NumPad3)
+            else if (e.KeyCode==Keys.NumPad0)
             {
                 playerOne.ChangeState(State.DEFENSE);
             }
@@ -174,6 +176,7 @@ namespace CombatGame
                 down = false;
                 playerOne.ChangeState(State.STAND);
             }
+            
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -208,14 +211,64 @@ namespace CombatGame
                 playerOneMagic.Move();
                 if(playerOneMagic.DirOfMoving==Direction.LEFT)
                 {
-                    if(playerOneMagic.PicBoxImage.Left>playerTwo.pbPlayer.Right)
+                    if(playerOneMagic.PicBoxImage.Left>pbPlayerTwo.Right && playerOneMagic.PicBoxImage.Right<=pbPlayerTwo.Right)
                     {
-
+                        if(playerTwo.AvoidMagicAttack())
+                        {
+                            if(pbPlayerTwo.Bottom>=playerOneMagic.PicBoxImage.Top)
+                            {
+                                playerTwo.DecreaseHealth(playerOneMagic.Power);
+                                playerOneMagic = null;
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    
+                    if(playerOneMagic.PicBoxImage.Right>pbPlayerTwo.Left && playerOneMagic.PicBoxImage.Left>=pbPlayerTwo.Left)
+                    {
+                        if(playerTwo.AvoidMagicAttack())
+                        {
+                            if (pbPlayerTwo.Bottom >= playerOneMagic.PicBoxImage.Top)
+                            {
+                                playerTwo.DecreaseHealth(playerOneMagic.Power);
+                                playerOneMagic = null;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(playerTwoMagic!=null)
+            {
+                playerTwoMagic.Move();
+                if(playerTwoMagic.DirOfMoving==Direction.LEFT)
+                {
+                    if (playerTwoMagic.PicBoxImage.Left > pbPlayerOne.Right && playerTwoMagic.PicBoxImage.Right <= pbPlayerOne.Right)
+                    {
+                        if (playerOne.AvoidMagicAttack())
+                        {
+                            if (pbPlayerOne.Bottom >= playerTwoMagic.PicBoxImage.Top)
+                            {
+                                playerOne.DecreaseHealth(playerTwoMagic.Power);
+                                playerTwoMagic = null;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (playerTwoMagic.PicBoxImage.Right > pbPlayerOne.Left && playerTwoMagic.PicBoxImage.Left >= pbPlayerOne.Left)
+                    {
+                        if (playerOne.AvoidMagicAttack())
+                        {
+                            if (pbPlayerOne.Bottom >= playerTwoMagic.PicBoxImage.Top)
+                            {
+                                playerOne.DecreaseHealth(playerTwoMagic.Power);
+                                playerTwoMagic = null;
+                            }
+                        }
+                    }
                 }
             }
         }
