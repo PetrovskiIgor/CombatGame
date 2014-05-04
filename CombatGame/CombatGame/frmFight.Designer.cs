@@ -35,7 +35,7 @@
             this.pbarPlayerOne = new System.Windows.Forms.ProgressBar();
             this.pbarPlayerTwo = new System.Windows.Forms.ProgressBar();
             this.lblHelthPlayerOne = new System.Windows.Forms.Label();
-            this.lblPlayerTwo = new System.Windows.Forms.Label();
+            this.lblHealthPlayerTwo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             // pbPlayerOne
             // 
             this.pbPlayerOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pbPlayerOne.Location = new System.Drawing.Point(108, 308);
+            this.pbPlayerOne.Location = new System.Drawing.Point(534, 356);
             this.pbPlayerOne.Name = "pbPlayerOne";
             this.pbPlayerOne.Size = new System.Drawing.Size(74, 95);
             this.pbPlayerOne.TabIndex = 0;
@@ -52,7 +52,7 @@
             // pbPlayerTwo
             // 
             this.pbPlayerTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pbPlayerTwo.Location = new System.Drawing.Point(453, 308);
+            this.pbPlayerTwo.Location = new System.Drawing.Point(95, 356);
             this.pbPlayerTwo.Name = "pbPlayerTwo";
             this.pbPlayerTwo.Size = new System.Drawing.Size(70, 95);
             this.pbPlayerTwo.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblPlayerOneName
             // 
             this.lblPlayerOneName.AutoSize = true;
-            this.lblPlayerOneName.Location = new System.Drawing.Point(25, 21);
+            this.lblPlayerOneName.Location = new System.Drawing.Point(643, 19);
             this.lblPlayerOneName.Name = "lblPlayerOneName";
             this.lblPlayerOneName.Size = new System.Drawing.Size(35, 13);
             this.lblPlayerOneName.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblPlayerTwoName
             // 
             this.lblPlayerTwoName.AutoSize = true;
-            this.lblPlayerTwoName.Location = new System.Drawing.Point(658, 21);
+            this.lblPlayerTwoName.Location = new System.Drawing.Point(46, 19);
             this.lblPlayerTwoName.Name = "lblPlayerTwoName";
             this.lblPlayerTwoName.Size = new System.Drawing.Size(35, 13);
             this.lblPlayerTwoName.TabIndex = 3;
@@ -78,14 +78,14 @@
             // 
             // pbarPlayerOne
             // 
-            this.pbarPlayerOne.Location = new System.Drawing.Point(28, 46);
+            this.pbarPlayerOne.Location = new System.Drawing.Point(521, 46);
             this.pbarPlayerOne.Name = "pbarPlayerOne";
             this.pbarPlayerOne.Size = new System.Drawing.Size(173, 23);
             this.pbarPlayerOne.TabIndex = 4;
             // 
             // pbarPlayerTwo
             // 
-            this.pbarPlayerTwo.Location = new System.Drawing.Point(520, 46);
+            this.pbarPlayerTwo.Location = new System.Drawing.Point(49, 46);
             this.pbarPlayerTwo.Name = "pbarPlayerTwo";
             this.pbarPlayerTwo.Size = new System.Drawing.Size(173, 23);
             this.pbarPlayerTwo.TabIndex = 5;
@@ -93,27 +93,27 @@
             // lblHelthPlayerOne
             // 
             this.lblHelthPlayerOne.AutoSize = true;
-            this.lblHelthPlayerOne.Location = new System.Drawing.Point(219, 46);
+            this.lblHelthPlayerOne.Location = new System.Drawing.Point(470, 56);
             this.lblHelthPlayerOne.Name = "lblHelthPlayerOne";
             this.lblHelthPlayerOne.Size = new System.Drawing.Size(35, 13);
             this.lblHelthPlayerOne.TabIndex = 6;
             this.lblHelthPlayerOne.Text = "label3";
             // 
-            // lblPlayerTwo
+            // lblHealthPlayerTwo
             // 
-            this.lblPlayerTwo.AutoSize = true;
-            this.lblPlayerTwo.Location = new System.Drawing.Point(467, 46);
-            this.lblPlayerTwo.Name = "lblPlayerTwo";
-            this.lblPlayerTwo.Size = new System.Drawing.Size(35, 13);
-            this.lblPlayerTwo.TabIndex = 7;
-            this.lblPlayerTwo.Text = "label4";
+            this.lblHealthPlayerTwo.AutoSize = true;
+            this.lblHealthPlayerTwo.Location = new System.Drawing.Point(244, 56);
+            this.lblHealthPlayerTwo.Name = "lblHealthPlayerTwo";
+            this.lblHealthPlayerTwo.Size = new System.Drawing.Size(35, 13);
+            this.lblHealthPlayerTwo.TabIndex = 7;
+            this.lblHealthPlayerTwo.Text = "label4";
             // 
             // frmFight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 482);
-            this.Controls.Add(this.lblPlayerTwo);
+            this.Controls.Add(this.lblHealthPlayerTwo);
             this.Controls.Add(this.lblHelthPlayerOne);
             this.Controls.Add(this.pbarPlayerTwo);
             this.Controls.Add(this.pbarPlayerOne);
@@ -143,7 +143,7 @@
         private System.Windows.Forms.ProgressBar pbarPlayerOne;
         private System.Windows.Forms.ProgressBar pbarPlayerTwo;
         private System.Windows.Forms.Label lblHelthPlayerOne;
-        private System.Windows.Forms.Label lblPlayerTwo;
+        private System.Windows.Forms.Label lblHealthPlayerTwo;
 
 
     }
