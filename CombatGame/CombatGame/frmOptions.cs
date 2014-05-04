@@ -50,5 +50,10 @@ namespace CombatGame
         {
             Invalidate();
         }
+
+        private void changeMusicOnOff(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

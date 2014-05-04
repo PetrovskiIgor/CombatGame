@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptions));
             this.pbBack = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbMusic = new System.Windows.Forms.PictureBox();
+            this.pbSound = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBack
@@ -47,31 +47,32 @@
             this.pbBack.TabStop = false;
             this.pbBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
-            // pictureBox1
+            // pbMusic
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(272, 229);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 53);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pbMusic.Image = ((System.Drawing.Image)(resources.GetObject("pbMusic.Image")));
+            this.pbMusic.Location = new System.Drawing.Point(272, 229);
+            this.pbMusic.Name = "pbMusic";
+            this.pbMusic.Size = new System.Drawing.Size(216, 53);
+            this.pbMusic.TabIndex = 2;
+            this.pbMusic.TabStop = false;
+            this.pbMusic.Click += new System.EventHandler(this.changeMusicOnOff);
             // 
-            // pictureBox2
+            // pbSound
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(272, 304);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(216, 53);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pbSound.Image = ((System.Drawing.Image)(resources.GetObject("pbSound.Image")));
+            this.pbSound.Location = new System.Drawing.Point(272, 304);
+            this.pbSound.Name = "pbSound";
+            this.pbSound.Size = new System.Drawing.Size(216, 53);
+            this.pbSound.TabIndex = 3;
+            this.pbSound.TabStop = false;
             // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 482);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbSound);
+            this.Controls.Add(this.pbMusic);
             this.Controls.Add(this.pbBack);
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -81,8 +82,8 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
             this.Resize += new System.EventHandler(this.frmOptionsResize);
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbBack;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbMusic;
+        private System.Windows.Forms.PictureBox pbSound;
     }
 }
