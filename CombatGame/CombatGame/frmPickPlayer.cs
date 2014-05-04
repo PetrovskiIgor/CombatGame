@@ -91,8 +91,8 @@ namespace CombatGame
             players[3] = new Player("David", "Jas sum Horny i mnogu sum crazy!", magicTricks[9], magicTricks[10], magicTricks[11]);
 
 
-            rtbFirstPlayer.Text = players[currPosFirst].Description;
-            rtbSecPlayer.Text = players[currPosSec].Description;
+            
+           
 
 
 
@@ -104,14 +104,17 @@ namespace CombatGame
             pb2Parent.BackColor = Color.Green;
             pb3Parent.BackColor = Color.Transparent;
             pb4Parent.BackColor = Color.Transparent;
+
+
+
+
+            lblPlayerOneDesc.Text = players[0].Description;
+            lblPlayerTwoDesc.Text = players[1].Description;
+
             Invalidate();
         }
 
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainMenu.Show();
-        }
+        
 
         private void lblStart_Click(object sender, EventArgs e)
         {
@@ -210,7 +213,9 @@ namespace CombatGame
                 if(!firstDone)
                 {
                     currPosFirst = moveInNextField(currPosFirst, currPosSec, true, true);
-                    rtbFirstPlayer.Text = players[currPosFirst].Description;
+                    
+                    lblPlayerOneDesc.Text = players[currPosFirst].Description;
+                    
                     putAbovePictureBox(currPosFirst, true);
                 }
                 
@@ -220,8 +225,10 @@ namespace CombatGame
                 if (!firstDone)
                 {
                     currPosFirst = moveInNextField(currPosFirst, currPosSec, true, false);
-                    rtbFirstPlayer.Text = players[currPosFirst].Description;
+                    
                     putAbovePictureBox(currPosFirst, true);
+                    lblPlayerOneDesc.Text = players[currPosSec].Description;
+           
                 }
                
             }
@@ -230,7 +237,8 @@ namespace CombatGame
                 if (!secDone)
                 {
                     currPosSec = moveInNextField(currPosSec, currPosFirst, false, true);
-                    rtbSecPlayer.Text = players[currPosSec].Description;
+                     
+                    lblPlayerTwoDesc.Text = players[currPosSec].Description;
                     putAbovePictureBox(currPosSec, false);
                 }
                
@@ -240,7 +248,8 @@ namespace CombatGame
                 if (!secDone)
                 {
                     currPosSec = moveInNextField(currPosSec, currPosFirst, false, false);
-                    rtbSecPlayer.Text = players[currPosSec].Description;
+                     
+                    lblPlayerTwoDesc.Text = players[currPosSec].Description;
                     putAbovePictureBox(currPosSec, false);
                 }
                 
@@ -291,6 +300,12 @@ namespace CombatGame
         private void frmPickPlayer_Resize(object sender, EventArgs e)
         {
             Validate();
+        }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenu.Show();
         }
     }
 }
