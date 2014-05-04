@@ -48,6 +48,22 @@
             this.pbKeyG = new System.Windows.Forms.PictureBox();
             this.pbKeyF = new System.Windows.Forms.PictureBox();
             this.pbKeyV = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
@@ -72,7 +88,7 @@
             // pbBack
             // 
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
-            this.pbBack.Location = new System.Drawing.Point(13, 417);
+            this.pbBack.Location = new System.Drawing.Point(550, 613);
             this.pbBack.Name = "pbBack";
             this.pbBack.Size = new System.Drawing.Size(216, 53);
             this.pbBack.TabIndex = 1;
@@ -82,7 +98,7 @@
             // pbMusic
             // 
             this.pbMusic.Image = ((System.Drawing.Image)(resources.GetObject("pbMusic.Image")));
-            this.pbMusic.Location = new System.Drawing.Point(272, 266);
+            this.pbMusic.Location = new System.Drawing.Point(550, 443);
             this.pbMusic.Name = "pbMusic";
             this.pbMusic.Size = new System.Drawing.Size(216, 53);
             this.pbMusic.TabIndex = 2;
@@ -92,7 +108,7 @@
             // pbSound
             // 
             this.pbSound.Image = ((System.Drawing.Image)(resources.GetObject("pbSound.Image")));
-            this.pbSound.Location = new System.Drawing.Point(272, 343);
+            this.pbSound.Location = new System.Drawing.Point(550, 528);
             this.pbSound.Name = "pbSound";
             this.pbSound.Size = new System.Drawing.Size(216, 53);
             this.pbSound.TabIndex = 3;
@@ -102,7 +118,7 @@
             // pbRightKey
             // 
             this.pbRightKey.Image = ((System.Drawing.Image)(resources.GetObject("pbRightKey.Image")));
-            this.pbRightKey.Location = new System.Drawing.Point(105, 197);
+            this.pbRightKey.Location = new System.Drawing.Point(49, 382);
             this.pbRightKey.Name = "pbRightKey";
             this.pbRightKey.Size = new System.Drawing.Size(40, 40);
             this.pbRightKey.TabIndex = 4;
@@ -111,7 +127,7 @@
             // pbLeftKey
             // 
             this.pbLeftKey.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftKey.Image")));
-            this.pbLeftKey.Location = new System.Drawing.Point(13, 197);
+            this.pbLeftKey.Location = new System.Drawing.Point(49, 292);
             this.pbLeftKey.Name = "pbLeftKey";
             this.pbLeftKey.Size = new System.Drawing.Size(40, 40);
             this.pbLeftKey.TabIndex = 5;
@@ -120,7 +136,7 @@
             // pbDownKey
             // 
             this.pbDownKey.Image = ((System.Drawing.Image)(resources.GetObject("pbDownKey.Image")));
-            this.pbDownKey.Location = new System.Drawing.Point(59, 197);
+            this.pbDownKey.Location = new System.Drawing.Point(49, 201);
             this.pbDownKey.Name = "pbDownKey";
             this.pbDownKey.Size = new System.Drawing.Size(40, 40);
             this.pbDownKey.TabIndex = 6;
@@ -129,7 +145,7 @@
             // pbUpKey
             // 
             this.pbUpKey.Image = ((System.Drawing.Image)(resources.GetObject("pbUpKey.Image")));
-            this.pbUpKey.Location = new System.Drawing.Point(59, 151);
+            this.pbUpKey.Location = new System.Drawing.Point(49, 122);
             this.pbUpKey.Name = "pbUpKey";
             this.pbUpKey.Size = new System.Drawing.Size(40, 40);
             this.pbUpKey.TabIndex = 7;
@@ -138,7 +154,7 @@
             // pbKeyEnter
             // 
             this.pbKeyEnter.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyEnter.Image")));
-            this.pbKeyEnter.Location = new System.Drawing.Point(248, 157);
+            this.pbKeyEnter.Location = new System.Drawing.Point(251, 122);
             this.pbKeyEnter.Name = "pbKeyEnter";
             this.pbKeyEnter.Size = new System.Drawing.Size(40, 80);
             this.pbKeyEnter.TabIndex = 8;
@@ -147,7 +163,7 @@
             // pbKeyPlus
             // 
             this.pbKeyPlus.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyPlus.Image")));
-            this.pbKeyPlus.Location = new System.Drawing.Point(248, 71);
+            this.pbKeyPlus.Location = new System.Drawing.Point(251, 220);
             this.pbKeyPlus.Name = "pbKeyPlus";
             this.pbKeyPlus.Size = new System.Drawing.Size(40, 80);
             this.pbKeyPlus.TabIndex = 9;
@@ -156,7 +172,7 @@
             // pbKey0
             // 
             this.pbKey0.Image = ((System.Drawing.Image)(resources.GetObject("pbKey0.Image")));
-            this.pbKey0.Location = new System.Drawing.Point(162, 197);
+            this.pbKey0.Location = new System.Drawing.Point(251, 382);
             this.pbKey0.Name = "pbKey0";
             this.pbKey0.Size = new System.Drawing.Size(80, 40);
             this.pbKey0.TabIndex = 10;
@@ -165,7 +181,7 @@
             // pbKey1
             // 
             this.pbKey1.Image = ((System.Drawing.Image)(resources.GetObject("pbKey1.Image")));
-            this.pbKey1.Location = new System.Drawing.Point(162, 151);
+            this.pbKey1.Location = new System.Drawing.Point(251, 318);
             this.pbKey1.Name = "pbKey1";
             this.pbKey1.Size = new System.Drawing.Size(40, 40);
             this.pbKey1.TabIndex = 11;
@@ -174,7 +190,7 @@
             // pbKeyA
             // 
             this.pbKeyA.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyA.Image")));
-            this.pbKeyA.Location = new System.Drawing.Point(446, 151);
+            this.pbKeyA.Location = new System.Drawing.Point(920, 292);
             this.pbKeyA.Name = "pbKeyA";
             this.pbKeyA.Size = new System.Drawing.Size(40, 40);
             this.pbKeyA.TabIndex = 12;
@@ -183,7 +199,7 @@
             // pbKeyS
             // 
             this.pbKeyS.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyS.Image")));
-            this.pbKeyS.Location = new System.Drawing.Point(492, 151);
+            this.pbKeyS.Location = new System.Drawing.Point(920, 201);
             this.pbKeyS.Name = "pbKeyS";
             this.pbKeyS.Size = new System.Drawing.Size(40, 40);
             this.pbKeyS.TabIndex = 13;
@@ -192,7 +208,7 @@
             // pbKeyD
             // 
             this.pbKeyD.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyD.Image")));
-            this.pbKeyD.Location = new System.Drawing.Point(538, 151);
+            this.pbKeyD.Location = new System.Drawing.Point(920, 382);
             this.pbKeyD.Name = "pbKeyD";
             this.pbKeyD.Size = new System.Drawing.Size(40, 40);
             this.pbKeyD.TabIndex = 14;
@@ -201,7 +217,7 @@
             // pbKeyW
             // 
             this.pbKeyW.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyW.Image")));
-            this.pbKeyW.Location = new System.Drawing.Point(478, 105);
+            this.pbKeyW.Location = new System.Drawing.Point(920, 122);
             this.pbKeyW.Name = "pbKeyW";
             this.pbKeyW.Size = new System.Drawing.Size(40, 40);
             this.pbKeyW.TabIndex = 15;
@@ -210,7 +226,7 @@
             // pbKeyH
             // 
             this.pbKeyH.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyH.Image")));
-            this.pbKeyH.Location = new System.Drawing.Point(685, 151);
+            this.pbKeyH.Location = new System.Drawing.Point(1116, 382);
             this.pbKeyH.Name = "pbKeyH";
             this.pbKeyH.Size = new System.Drawing.Size(40, 40);
             this.pbKeyH.TabIndex = 18;
@@ -219,7 +235,7 @@
             // pbKeyG
             // 
             this.pbKeyG.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyG.Image")));
-            this.pbKeyG.Location = new System.Drawing.Point(639, 151);
+            this.pbKeyG.Location = new System.Drawing.Point(1116, 201);
             this.pbKeyG.Name = "pbKeyG";
             this.pbKeyG.Size = new System.Drawing.Size(40, 40);
             this.pbKeyG.TabIndex = 17;
@@ -228,7 +244,7 @@
             // pbKeyF
             // 
             this.pbKeyF.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyF.Image")));
-            this.pbKeyF.Location = new System.Drawing.Point(593, 151);
+            this.pbKeyF.Location = new System.Drawing.Point(1116, 122);
             this.pbKeyF.Name = "pbKeyF";
             this.pbKeyF.Size = new System.Drawing.Size(40, 40);
             this.pbKeyF.TabIndex = 16;
@@ -237,17 +253,225 @@
             // pbKeyV
             // 
             this.pbKeyV.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyV.Image")));
-            this.pbKeyV.Location = new System.Drawing.Point(623, 197);
+            this.pbKeyV.Location = new System.Drawing.Point(1116, 292);
             this.pbKeyV.Name = "pbKeyV";
             this.pbKeyV.Size = new System.Drawing.Size(40, 40);
             this.pbKeyV.TabIndex = 19;
             this.pbKeyV.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gold;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(107, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 19);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Jump";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gold;
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(107, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Kneel";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Gold;
+            this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(107, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 19);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Left";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Gold;
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(107, 398);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 19);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Right";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Gold;
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(314, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 19);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Punch";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Gold;
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(314, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 19);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Leg attack";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Gold;
+            this.label7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(314, 329);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 19);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Magic attack";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Gold;
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
+            this.label8.Location = new System.Drawing.Point(352, 398);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 19);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Defense";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Gold;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(1190, 398);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 19);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Defense";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Gold;
+            this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(1190, 304);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 19);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Magic attack";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Gold;
+            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.Maroon;
+            this.label11.Location = new System.Drawing.Point(1190, 211);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 19);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Leg attack";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Gold;
+            this.label12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.Maroon;
+            this.label12.Location = new System.Drawing.Point(1190, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 19);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Punch";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Gold;
+            this.label13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.Maroon;
+            this.label13.Location = new System.Drawing.Point(983, 398);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 19);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Right";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Gold;
+            this.label14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.Maroon;
+            this.label14.Location = new System.Drawing.Point(983, 304);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 19);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Left";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Gold;
+            this.label15.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.Color.Maroon;
+            this.label15.Location = new System.Drawing.Point(983, 211);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 19);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Kneel";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Gold;
+            this.label16.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.Maroon;
+            this.label16.Location = new System.Drawing.Point(983, 132);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 19);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Jump";
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 482);
+            this.ClientSize = new System.Drawing.Size(1322, 694);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbKeyV);
             this.Controls.Add(this.pbKeyH);
             this.Controls.Add(this.pbKeyG);
@@ -270,6 +494,7 @@
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OPTIONS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOptions_FormClosing);
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
@@ -294,6 +519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -318,5 +544,21 @@
         private System.Windows.Forms.PictureBox pbKeyG;
         private System.Windows.Forms.PictureBox pbKeyF;
         private System.Windows.Forms.PictureBox pbKeyV;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
