@@ -14,13 +14,17 @@ namespace CombatGame
     {
         public frmMenu MainMenu {get; set;} // ova e formata roditel (Menu)
         PPPBitmap optionsBackground;
-        
+        bool musicOn;
+        bool soundOn;
+
         public frmOptions(frmMenu menu)
         {
             InitializeComponent();
             MainMenu  = menu;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             optionsBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+            musicOn = true;
+            soundOn = true;
             Invalidate();
         }
 
@@ -53,7 +57,31 @@ namespace CombatGame
 
         private void changeMusicOnOff(object sender, EventArgs e)
         {
-            
+            if (musicOn)
+            {
+                pbMusic.Image = Image.FromFile("imgMusicOff.png");
+                musicOn = false;
+            }
+            else
+            {
+                pbMusic.Image = Image.FromFile("imgMusicOn.png");
+                musicOn = true;
+            }
+        }
+
+        private void changeSound(object sender, EventArgs e)
+        {
+            if (soundOn)
+            {
+                pbSound.Image = Image.FromFile("imgSoundOff.png");
+                soundOn = false;
+            }
+            else
+            {
+                pbSound.Image = Image.FromFile("imgSoundOn.png");
+                soundOn = true;
+
+            }
         }
     }
 }
