@@ -32,25 +32,41 @@
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.pbMusic = new System.Windows.Forms.PictureBox();
             this.pbSound = new System.Windows.Forms.PictureBox();
+            this.pbRightKey = new System.Windows.Forms.PictureBox();
             this.pbLeftKey = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pbDownKey = new System.Windows.Forms.PictureBox();
+            this.pbUpKey = new System.Windows.Forms.PictureBox();
+            this.pbKeyEnter = new System.Windows.Forms.PictureBox();
+            this.pbKeyPlus = new System.Windows.Forms.PictureBox();
+            this.pbKey0 = new System.Windows.Forms.PictureBox();
+            this.pbKey1 = new System.Windows.Forms.PictureBox();
+            this.pbKeyA = new System.Windows.Forms.PictureBox();
+            this.pbKeyS = new System.Windows.Forms.PictureBox();
+            this.pbKeyD = new System.Windows.Forms.PictureBox();
+            this.pbKeyW = new System.Windows.Forms.PictureBox();
+            this.pbKeyH = new System.Windows.Forms.PictureBox();
+            this.pbKeyG = new System.Windows.Forms.PictureBox();
+            this.pbKeyF = new System.Windows.Forms.PictureBox();
+            this.pbKeyV = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRightKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftKey)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDownKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUpKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyEnter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyPlus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKey0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKey1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBack
@@ -83,91 +99,171 @@
             this.pbSound.TabStop = false;
             this.pbSound.Click += new System.EventHandler(this.changeSound);
             // 
+            // pbRightKey
+            // 
+            this.pbRightKey.Image = ((System.Drawing.Image)(resources.GetObject("pbRightKey.Image")));
+            this.pbRightKey.Location = new System.Drawing.Point(105, 197);
+            this.pbRightKey.Name = "pbRightKey";
+            this.pbRightKey.Size = new System.Drawing.Size(40, 40);
+            this.pbRightKey.TabIndex = 4;
+            this.pbRightKey.TabStop = false;
+            // 
             // pbLeftKey
             // 
             this.pbLeftKey.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftKey.Image")));
-            this.pbLeftKey.Location = new System.Drawing.Point(105, 197);
+            this.pbLeftKey.Location = new System.Drawing.Point(13, 197);
             this.pbLeftKey.Name = "pbLeftKey";
             this.pbLeftKey.Size = new System.Drawing.Size(40, 40);
-            this.pbLeftKey.TabIndex = 4;
+            this.pbLeftKey.TabIndex = 5;
             this.pbLeftKey.TabStop = false;
             // 
-            // pictureBox1
+            // pbDownKey
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 197);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pbDownKey.Image = ((System.Drawing.Image)(resources.GetObject("pbDownKey.Image")));
+            this.pbDownKey.Location = new System.Drawing.Point(59, 197);
+            this.pbDownKey.Name = "pbDownKey";
+            this.pbDownKey.Size = new System.Drawing.Size(40, 40);
+            this.pbDownKey.TabIndex = 6;
+            this.pbDownKey.TabStop = false;
             // 
-            // pictureBox2
+            // pbUpKey
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(59, 197);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.pbUpKey.Image = ((System.Drawing.Image)(resources.GetObject("pbUpKey.Image")));
+            this.pbUpKey.Location = new System.Drawing.Point(59, 151);
+            this.pbUpKey.Name = "pbUpKey";
+            this.pbUpKey.Size = new System.Drawing.Size(40, 40);
+            this.pbUpKey.TabIndex = 7;
+            this.pbUpKey.TabStop = false;
             // 
-            // pictureBox3
+            // pbKeyEnter
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(59, 151);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
+            this.pbKeyEnter.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyEnter.Image")));
+            this.pbKeyEnter.Location = new System.Drawing.Point(248, 157);
+            this.pbKeyEnter.Name = "pbKeyEnter";
+            this.pbKeyEnter.Size = new System.Drawing.Size(40, 80);
+            this.pbKeyEnter.TabIndex = 8;
+            this.pbKeyEnter.TabStop = false;
             // 
-            // pictureBox4
+            // pbKeyPlus
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(248, 157);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 80);
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
+            this.pbKeyPlus.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyPlus.Image")));
+            this.pbKeyPlus.Location = new System.Drawing.Point(248, 71);
+            this.pbKeyPlus.Name = "pbKeyPlus";
+            this.pbKeyPlus.Size = new System.Drawing.Size(40, 80);
+            this.pbKeyPlus.TabIndex = 9;
+            this.pbKeyPlus.TabStop = false;
             // 
-            // pictureBox5
+            // pbKey0
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(248, 71);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 80);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
+            this.pbKey0.Image = ((System.Drawing.Image)(resources.GetObject("pbKey0.Image")));
+            this.pbKey0.Location = new System.Drawing.Point(162, 197);
+            this.pbKey0.Name = "pbKey0";
+            this.pbKey0.Size = new System.Drawing.Size(80, 40);
+            this.pbKey0.TabIndex = 10;
+            this.pbKey0.TabStop = false;
             // 
-            // pictureBox6
+            // pbKey1
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(162, 197);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(80, 40);
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.pbKey1.Image = ((System.Drawing.Image)(resources.GetObject("pbKey1.Image")));
+            this.pbKey1.Location = new System.Drawing.Point(162, 151);
+            this.pbKey1.Name = "pbKey1";
+            this.pbKey1.Size = new System.Drawing.Size(40, 40);
+            this.pbKey1.TabIndex = 11;
+            this.pbKey1.TabStop = false;
             // 
-            // pictureBox7
+            // pbKeyA
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(162, 151);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
+            this.pbKeyA.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyA.Image")));
+            this.pbKeyA.Location = new System.Drawing.Point(446, 151);
+            this.pbKeyA.Name = "pbKeyA";
+            this.pbKeyA.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyA.TabIndex = 12;
+            this.pbKeyA.TabStop = false;
+            // 
+            // pbKeyS
+            // 
+            this.pbKeyS.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyS.Image")));
+            this.pbKeyS.Location = new System.Drawing.Point(492, 151);
+            this.pbKeyS.Name = "pbKeyS";
+            this.pbKeyS.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyS.TabIndex = 13;
+            this.pbKeyS.TabStop = false;
+            // 
+            // pbKeyD
+            // 
+            this.pbKeyD.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyD.Image")));
+            this.pbKeyD.Location = new System.Drawing.Point(538, 151);
+            this.pbKeyD.Name = "pbKeyD";
+            this.pbKeyD.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyD.TabIndex = 14;
+            this.pbKeyD.TabStop = false;
+            // 
+            // pbKeyW
+            // 
+            this.pbKeyW.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyW.Image")));
+            this.pbKeyW.Location = new System.Drawing.Point(478, 105);
+            this.pbKeyW.Name = "pbKeyW";
+            this.pbKeyW.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyW.TabIndex = 15;
+            this.pbKeyW.TabStop = false;
+            // 
+            // pbKeyH
+            // 
+            this.pbKeyH.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyH.Image")));
+            this.pbKeyH.Location = new System.Drawing.Point(685, 151);
+            this.pbKeyH.Name = "pbKeyH";
+            this.pbKeyH.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyH.TabIndex = 18;
+            this.pbKeyH.TabStop = false;
+            // 
+            // pbKeyG
+            // 
+            this.pbKeyG.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyG.Image")));
+            this.pbKeyG.Location = new System.Drawing.Point(639, 151);
+            this.pbKeyG.Name = "pbKeyG";
+            this.pbKeyG.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyG.TabIndex = 17;
+            this.pbKeyG.TabStop = false;
+            // 
+            // pbKeyF
+            // 
+            this.pbKeyF.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyF.Image")));
+            this.pbKeyF.Location = new System.Drawing.Point(593, 151);
+            this.pbKeyF.Name = "pbKeyF";
+            this.pbKeyF.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyF.TabIndex = 16;
+            this.pbKeyF.TabStop = false;
+            // 
+            // pbKeyV
+            // 
+            this.pbKeyV.Image = ((System.Drawing.Image)(resources.GetObject("pbKeyV.Image")));
+            this.pbKeyV.Location = new System.Drawing.Point(623, 197);
+            this.pbKeyV.Name = "pbKeyV";
+            this.pbKeyV.Size = new System.Drawing.Size(40, 40);
+            this.pbKeyV.TabIndex = 19;
+            this.pbKeyV.TabStop = false;
             // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 482);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbKeyV);
+            this.Controls.Add(this.pbKeyH);
+            this.Controls.Add(this.pbKeyG);
+            this.Controls.Add(this.pbKeyF);
+            this.Controls.Add(this.pbKeyW);
+            this.Controls.Add(this.pbKeyD);
+            this.Controls.Add(this.pbKeyS);
+            this.Controls.Add(this.pbKeyA);
+            this.Controls.Add(this.pbKey1);
+            this.Controls.Add(this.pbKey0);
+            this.Controls.Add(this.pbKeyPlus);
+            this.Controls.Add(this.pbKeyEnter);
+            this.Controls.Add(this.pbUpKey);
+            this.Controls.Add(this.pbDownKey);
             this.Controls.Add(this.pbLeftKey);
+            this.Controls.Add(this.pbRightKey);
             this.Controls.Add(this.pbSound);
             this.Controls.Add(this.pbMusic);
             this.Controls.Add(this.pbBack);
@@ -181,14 +277,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRightKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftKey)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDownKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUpKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyEnter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKey0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKey1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,13 +302,21 @@
         private System.Windows.Forms.PictureBox pbBack;
         private System.Windows.Forms.PictureBox pbMusic;
         private System.Windows.Forms.PictureBox pbSound;
+        private System.Windows.Forms.PictureBox pbRightKey;
         private System.Windows.Forms.PictureBox pbLeftKey;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pbDownKey;
+        private System.Windows.Forms.PictureBox pbUpKey;
+        private System.Windows.Forms.PictureBox pbKeyEnter;
+        private System.Windows.Forms.PictureBox pbKeyPlus;
+        private System.Windows.Forms.PictureBox pbKey0;
+        private System.Windows.Forms.PictureBox pbKey1;
+        private System.Windows.Forms.PictureBox pbKeyA;
+        private System.Windows.Forms.PictureBox pbKeyS;
+        private System.Windows.Forms.PictureBox pbKeyD;
+        private System.Windows.Forms.PictureBox pbKeyW;
+        private System.Windows.Forms.PictureBox pbKeyH;
+        private System.Windows.Forms.PictureBox pbKeyG;
+        private System.Windows.Forms.PictureBox pbKeyF;
+        private System.Windows.Forms.PictureBox pbKeyV;
     }
 }
