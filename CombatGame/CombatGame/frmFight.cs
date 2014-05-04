@@ -266,7 +266,7 @@ namespace CombatGame
             else if (e.KeyCode==Keys.Down)
             {
                 down = false;
-                playerTwo.ChangeState(State.STAND);
+                playerOne.ChangeState(State.STAND);
             }
             else if(e.KeyCode==Keys.F)
             {
