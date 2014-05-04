@@ -74,6 +74,10 @@ namespace CombatGame
                 playerOne.imgDefense = Image.FromFile("petreGardTrans.png");
                 playerOne.imgStand = Image.FromFile("petreStandTrans.png");
                 playerOne.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+                
+                
+                
+                
 
                 playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
                 playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
@@ -91,19 +95,23 @@ namespace CombatGame
                 pbarPlayerTwo.Value = 0;
                 pbarPlayerOne.Value = playerOne.Health;
 
+
+                // TREBA DA SE DOPOLNI ( DA SE OZNACHI KRAJ NA IGRATA)
+
             }
             else if (playerOne.Health == 0)
             {
                 gameIsFinished = true;
                 pbarPlayerOne.Value = 0;
                 pbarPlayerTwo.Value = playerTwo.Health;
+
+                // TREBA DA SE DOPOLNI ( DA SE OZNACHI KRAJ NA IGRATA)
             }
             else { 
                 this.pbarPlayerOne.Value = playerOne.Health;
                 this.pbarPlayerTwo.Value = playerTwo.Health;
             }   
-            this.lblHealthPlayerTwo.Text = "";
-            this.lblHelthPlayerOne.Text = "";
+            
             this.lblHelthPlayerOne.Text = playerOne.Health.ToString() + "%";
             this.lblHealthPlayerTwo.Text = playerTwo.Health.ToString() + "%";
         }
@@ -318,7 +326,7 @@ namespace CombatGame
                 playerOneMagic.Move();
                 if(playerOneMagic.DirOfMoving==Direction.LEFT)
                 {
-                    if(playerOneMagic.PicBoxImage.Left>pbPlayerTwo.Right && playerOneMagic.PicBoxImage.Right<=pbPlayerTwo.Right)
+                    if((playerOneMagic.PicBoxImage.Left < pbPlayerTwo.Right - 10) && playerOneMagic.PicBoxImage.Right >=pbPlayerTwo.Right)
                     {
                         if(playerTwo.AvoidMagicAttack())
                         {
@@ -332,12 +340,13 @@ namespace CombatGame
                 }
                 else
                 {
-                    if(playerOneMagic.PicBoxImage.Right>pbPlayerTwo.Left && playerOneMagic.PicBoxImage.Left>=pbPlayerTwo.Left)
+                    if(playerOneMagic.PicBoxImage.Right>pbPlayerTwo.Left+10 && playerOneMagic.PicBoxImage.Left <=pbPlayerTwo.Left)
                     {
                         if(playerTwo.AvoidMagicAttack())
                         {
                             if (pbPlayerTwo.Bottom >= playerOneMagic.PicBoxImage.Top)
                             {
+                            
                                 playerTwo.DecreaseHealth(playerOneMagic.Power);
                                 playerOneMagic = null;
                             }

@@ -112,12 +112,16 @@ namespace CombatGame
 
         private void lblStart_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            firstDone = true; // nepotrebno, no neka stoi
-            secDone = true;// nepotrebno, no neka stoi
-            Game = new frmFight(players[currPosFirst],players[currPosSec]);
 
-            Game.Show();
+            if (firstDone && secDone)
+            {
+                this.Hide();
+               
+                Game = new frmFight(players[currPosFirst], players[currPosSec]);
+
+                Game.Show();
+            }
+            
 
         }
 

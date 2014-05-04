@@ -56,7 +56,7 @@
             // lblBack
             // 
             this.lblBack.AutoSize = true;
-            this.lblBack.Location = new System.Drawing.Point(38, 450);
+            this.lblBack.Location = new System.Drawing.Point(38, 614);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(35, 13);
             this.lblBack.TabIndex = 0;
@@ -66,7 +66,7 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(645, 450);
+            this.lblStart.Location = new System.Drawing.Point(1029, 614);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(43, 13);
             this.lblStart.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             this.pb1Parent.Location = new System.Drawing.Point(29, 36);
             this.pb1Parent.Name = "pb1Parent";
-            this.pb1Parent.Size = new System.Drawing.Size(184, 155);
+            this.pb1Parent.Size = new System.Drawing.Size(230, 211);
             this.pb1Parent.TabIndex = 2;
             this.pb1Parent.TabStop = false;
             // 
@@ -87,7 +87,7 @@
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
             this.pb1.Location = new System.Drawing.Point(41, 55);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(154, 119);
+            this.pb1.Size = new System.Drawing.Size(205, 176);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
@@ -95,61 +95,61 @@
             // pb2
             // 
             this.pb2.Image = ((System.Drawing.Image)(resources.GetObject("pb2.Image")));
-            this.pb2.Location = new System.Drawing.Point(258, 55);
+            this.pb2.Location = new System.Drawing.Point(320, 55);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(154, 119);
+            this.pb2.Size = new System.Drawing.Size(205, 176);
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 5;
             this.pb2.TabStop = false;
             // 
             // pb2Parent
             // 
-            this.pb2Parent.Location = new System.Drawing.Point(246, 36);
+            this.pb2Parent.Location = new System.Drawing.Point(309, 36);
             this.pb2Parent.Name = "pb2Parent";
-            this.pb2Parent.Size = new System.Drawing.Size(184, 155);
+            this.pb2Parent.Size = new System.Drawing.Size(230, 211);
             this.pb2Parent.TabIndex = 4;
             this.pb2Parent.TabStop = false;
             // 
             // pb3
             // 
             this.pb3.Image = ((System.Drawing.Image)(resources.GetObject("pb3.Image")));
-            this.pb3.Location = new System.Drawing.Point(470, 55);
+            this.pb3.Location = new System.Drawing.Point(704, 55);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(154, 119);
+            this.pb3.Size = new System.Drawing.Size(205, 176);
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 7;
             this.pb3.TabStop = false;
             // 
             // pb3Parent
             // 
-            this.pb3Parent.Location = new System.Drawing.Point(458, 36);
+            this.pb3Parent.Location = new System.Drawing.Point(692, 36);
             this.pb3Parent.Name = "pb3Parent";
-            this.pb3Parent.Size = new System.Drawing.Size(184, 155);
+            this.pb3Parent.Size = new System.Drawing.Size(230, 211);
             this.pb3Parent.TabIndex = 6;
             this.pb3Parent.TabStop = false;
             // 
             // pb4
             // 
             this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
-            this.pb4.Location = new System.Drawing.Point(684, 55);
+            this.pb4.Location = new System.Drawing.Point(918, 55);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(154, 119);
+            this.pb4.Size = new System.Drawing.Size(205, 176);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 9;
             this.pb4.TabStop = false;
             // 
             // pb4Parent
             // 
-            this.pb4Parent.Location = new System.Drawing.Point(672, 36);
+            this.pb4Parent.Location = new System.Drawing.Point(906, 36);
             this.pb4Parent.Name = "pb4Parent";
-            this.pb4Parent.Size = new System.Drawing.Size(184, 155);
+            this.pb4Parent.Size = new System.Drawing.Size(230, 211);
             this.pb4Parent.TabIndex = 8;
             this.pb4Parent.TabStop = false;
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(29, 257);
+            this.textBox1.Location = new System.Drawing.Point(29, 421);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -159,7 +159,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(684, 257);
+            this.textBox2.Location = new System.Drawing.Point(876, 421);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -169,7 +169,7 @@
             // rtbFirstPlayer
             // 
             this.rtbFirstPlayer.Enabled = false;
-            this.rtbFirstPlayer.Location = new System.Drawing.Point(29, 283);
+            this.rtbFirstPlayer.Location = new System.Drawing.Point(29, 447);
             this.rtbFirstPlayer.Name = "rtbFirstPlayer";
             this.rtbFirstPlayer.ReadOnly = true;
             this.rtbFirstPlayer.Size = new System.Drawing.Size(196, 134);
@@ -179,7 +179,7 @@
             // rtbSecPlayer
             // 
             this.rtbSecPlayer.Enabled = false;
-            this.rtbSecPlayer.Location = new System.Drawing.Point(684, 283);
+            this.rtbSecPlayer.Location = new System.Drawing.Point(876, 447);
             this.rtbSecPlayer.Name = "rtbSecPlayer";
             this.rtbSecPlayer.ReadOnly = true;
             this.rtbSecPlayer.Size = new System.Drawing.Size(196, 134);
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 482);
+            this.ClientSize = new System.Drawing.Size(1164, 646);
             this.Controls.Add(this.rtbSecPlayer);
             this.Controls.Add(this.rtbFirstPlayer);
             this.Controls.Add(this.textBox2);
@@ -209,6 +209,7 @@
             this.Name = "frmPickPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PICK A PLAYER";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPickPlayer_FormClosing);
             this.Load += new System.EventHandler(this.frmPickPlayer_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmPickPlayer_Paint);
