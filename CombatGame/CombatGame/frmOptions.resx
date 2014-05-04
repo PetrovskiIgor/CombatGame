@@ -121,7 +121,7 @@
   <data name="pbBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANkAAAA6CAIAAACyDGsNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAL8SURBVHhe7ZjNbeMwEEa3Alez2GYC15IUkQacS2rI0UfD
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAL8SURBVHhe7ZjNbeMwEEa3Alez2GYC15IUkQacS2rI0UfD
         LeTiBtKCViDFIcUfiY4XyCznAe8k/kiAnr4Z6td0OQBoABdBC7gIWsBF0AIughZwEbSAi6AFXAQt4CJo
         ARdBC7gIWsBF0AIughZwEbSAi6AFXAQtDOTidLsef7/+6eB4+pqmfDn8NMPl4vk5N68FRipjOBen80ew
         7f3tlo/OpLKioybGczFW6rqLl8PX25Po+HHGRS1YdHE/O+EnsO7i68s5H13z+eKm9Vfz2+ldNhfS5WVH
@@ -140,7 +140,7 @@
   <data name="pbMusic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOcAAAA5CAIAAABCoqsoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAATASURBVHhe7ZrBcSMhEEU3Akeztcm4HIsdhBOwL47BRx1d
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAATASURBVHhe7ZrBcSMhEEU3Akeztcm4HIsdhBOwL47BRx1d
         TsEXJeAUtMzANN1NNzDWjCTKv+qdLEDweTRoa/+cPu4AGAtYC8YD1oLxgLVgPGAtGA9YC8YD1oLxgLVg
         PGAtGA9YC8YD1oLxgLVgPGAtGA9YC8YD1oLxgLVgPC5r7enw/u/vs+Tt9aiblRxf3nTHx6/TSTf7tRj5
         /H1+OuhmnNPx80F18SM9PMqW1cb7c4Va+/16L9b/8PLdWr/q0iX6L8H0lVN3V+lYacwqztXzv8YLQVfc
@@ -167,7 +167,7 @@
   <data name="pbSound.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN4AAAA3CAIAAADsTmOqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAASzSURBVHhe7ZrLbRsxEIZTgasJ0ozhWuIi0oB9cQ066mi4
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAASzSURBVHhe7ZrLbRsxEIZTgasJ0ozhWuIi0oB9cQ066mi4
         BV/UgFtQKHFJzpAzfKxEabD6ge8QaPmc+Tikgfw6fj4BYBCoCYwCNYFRoCYwCtQERoGawChQExgFagKj
         QE1gFKgJjAI1gVGgJjAK1ARGgZrAKFATGAVqAqPcQs2f9+d/f34LvLz9HI9ZY9Dm8PaRRdLxus+bUY6H
         r5esy99vLfj7v7xltfE05qqpShmBnUOIUlLqgmbOVRof97vQ7OP9kH+9CRPVjF4Ke4sxgprdpHNeBo2Y

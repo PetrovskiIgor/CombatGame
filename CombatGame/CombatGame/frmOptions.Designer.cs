@@ -50,7 +50,7 @@
             // pbMusic
             // 
             this.pbMusic.Image = ((System.Drawing.Image)(resources.GetObject("pbMusic.Image")));
-            this.pbMusic.Location = new System.Drawing.Point(272, 229);
+            this.pbMusic.Location = new System.Drawing.Point(272, 227);
             this.pbMusic.Name = "pbMusic";
             this.pbMusic.Size = new System.Drawing.Size(216, 53);
             this.pbMusic.TabIndex = 2;
