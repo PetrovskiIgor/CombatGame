@@ -38,8 +38,13 @@ namespace CombatGame
 
             playerOne = first;
             playerOne.pbPlayer = pbPlayerOne;
+            playerOne.DirectionPlayer = Direction.LEFT;
             playerTwo = second;
             playerTwo.pbPlayer = pbPlayerTwo;
+            playerTwo.DirectionPlayer = Direction.RIGHT;
+            
+
+
 
 
             this.lblPlayerOneName.Text = playerOne.Name;
@@ -50,8 +55,35 @@ namespace CombatGame
             timer.Interval = INTERVAL;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            update();
+            this.DoubleBuffered = true;
         }
 
+
+        public void update()
+        {
+            if(playerTwo.Health==0)
+            {
+                gameIsFinished = true;
+                pbarPlayerTwo.Value = 0;
+                pbarPlayerOne.Value = playerOne.Health;
+
+            }
+            else if (playerOne.Health == 0)
+            {
+                gameIsFinished = true;
+                pbarPlayerOne.Value = 0;
+                pbarPlayerTwo.Value = playerTwo.Health;
+            }
+            else { 
+                this.pbarPlayerOne.Value = playerOne.Health;
+                this.pbarPlayerTwo.Value = playerTwo.Health;
+            }   
+            this.lblHealthPlayerTwo.Text = "";
+            this.lblHelthPlayerOne.Text = "";
+            this.lblHelthPlayerOne.Text = playerOne.Health.ToString() + "%";
+            this.lblHealthPlayerTwo.Text = playerTwo.Health.ToString() + "%";
+        }
 
 
         private void frmFight_FormClosing(object sender, FormClosingEventArgs e)
@@ -216,6 +248,7 @@ namespace CombatGame
             playerTwo.CheckAndActs();
 
             this.Moving();
+            this.update();
         }
 
         public void Moving()
@@ -303,5 +336,7 @@ namespace CombatGame
                 }
             }
         }
+
+
     }
 }

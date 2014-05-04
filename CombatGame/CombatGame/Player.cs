@@ -213,12 +213,13 @@ namespace CombatGame
                     }
                 }
             }
-            else if (this.DirectionPlayer == Direction.LEFT)
+            else if (this.DirectionPlayer == Direction.RIGHT)
             {
                 if (this.pbPlayer.Left + this.pbPlayer.Width > opponent.pbPlayer.Left && this.pbPlayer.Left + this.pbPlayer.Width < opponent.pbPlayer.Right)
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
+                       // MessageBox.Show("right");
                         return true;
                     }
                 }
@@ -248,6 +249,10 @@ namespace CombatGame
         public void DecreaseHealth(int decrease)
         {
             Health -= decrease;
+            if(Health<0)
+            {
+                Health = 0;
+            }
         }
 
         //Checks if the player is in defense or kneel state
