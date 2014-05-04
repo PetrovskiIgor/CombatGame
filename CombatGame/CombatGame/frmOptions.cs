@@ -14,8 +14,8 @@ namespace CombatGame
     {
         public frmMenu MainMenu {get; set;} // ova e formata roditel (Menu)
         PPPBitmap optionsBackground;
-        public static bool musicOn;
-        public static bool soundOn;
+        public static bool musicOn; //da se proveri dali e true pred da se pusti muzika vo bilo koja forma
+        public static bool soundOn; //da se proveri dali e true pred da se stavat efekti vo frmFight
 
         public frmOptions(frmMenu menu)
         {
