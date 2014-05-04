@@ -29,6 +29,9 @@ namespace CombatGame
         bool firstDone;
         bool secDone;
 
+        Image imgPlayerOne = Image.FromFile("imgPlayerOne.png");  // koga korisnikot kje gi bira igracite nad slikite
+        Image imgPlayerTwo = Image.FromFile("imgPlayerTwo.png"); // da se azurira
+
 
         public frmPickPlayer(frmMenu menu)
         {
@@ -208,6 +211,7 @@ namespace CombatGame
                 {
                     currPosFirst = moveInNextField(currPosFirst, currPosSec, true, true);
                     rtbFirstPlayer.Text = players[currPosFirst].Description;
+                    putAbovePictureBox(currPosFirst, true);
                 }
                 
             }
@@ -217,6 +221,7 @@ namespace CombatGame
                 {
                     currPosFirst = moveInNextField(currPosFirst, currPosSec, true, false);
                     rtbFirstPlayer.Text = players[currPosFirst].Description;
+                    putAbovePictureBox(currPosFirst, true);
                 }
                
             }
@@ -226,6 +231,7 @@ namespace CombatGame
                 {
                     currPosSec = moveInNextField(currPosSec, currPosFirst, false, true);
                     rtbSecPlayer.Text = players[currPosSec].Description;
+                    putAbovePictureBox(currPosSec, false);
                 }
                
             }
@@ -235,10 +241,51 @@ namespace CombatGame
                 {
                     currPosSec = moveInNextField(currPosSec, currPosFirst, false, false);
                     rtbSecPlayer.Text = players[currPosSec].Description;
+                    putAbovePictureBox(currPosSec, false);
                 }
                 
             }
             
+        }
+        // funkcijata koja pravi da se pojavi player one/ player two nad selektiran igrac
+        private void putAbovePictureBox(int player, bool firstPlayer)
+        {
+           
+            pbAbove1.BackColor = Color.Transparent;
+            pbAbove2.BackColor = Color.Transparent;
+            pbAbove3.BackColor = Color.Transparent;
+            pbAbove4.BackColor = Color.Transparent;
+
+            if (0 != currPosFirst && 0 != currPosSec) pbAbove1.Image = null;
+            if (1 != currPosFirst && 1 != currPosSec) pbAbove2.Image = null;
+            if (2 != currPosFirst && 2 != currPosSec) pbAbove3.Image = null;
+            if (3 != currPosFirst && 3 != currPosSec) pbAbove4.Image = null;
+            
+           
+            if (player == 0)
+            {
+               
+                if (firstPlayer)pbAbove1.Image = imgPlayerOne;
+                else            pbAbove1.Image = imgPlayerTwo;
+            }
+            else if (player == 1)
+            {
+                
+                if (firstPlayer) pbAbove2.Image = imgPlayerOne;
+                else             pbAbove2.Image = imgPlayerTwo;
+            }
+            else if (player == 2)
+            {
+               
+                if (firstPlayer) pbAbove3.Image = imgPlayerOne;
+                else pbAbove3.Image = imgPlayerTwo;
+            }
+            else if (player == 3)
+            {
+               
+                if (firstPlayer) pbAbove4.Image = imgPlayerOne;
+                else pbAbove4.Image = imgPlayerTwo;
+            }
         }
 
         private void frmPickPlayer_Resize(object sender, EventArgs e)
