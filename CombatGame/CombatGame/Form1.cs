@@ -27,7 +27,9 @@ namespace CombatGame
         Image imgExit = Image.FromFile("imgExit.png");
         Image imgExitSelected = Image.FromFile("imgExitSelected.png");
         public WindowsMediaPlayer wplayer;
-        
+        public IWMPPlaylist playlistMenu;
+        public IWMPPlaylist playlistFight;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -38,13 +40,14 @@ namespace CombatGame
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
            // this.pbNewGame.Image = imgNewGameSelected;
             wplayer = new WindowsMediaPlayer();
-            wplayer.playlistCollection.newPlaylist("menu playlis");
-            wplayer.playlistCollection.newPlaylist("fight playlst");
-            wplayer.currentPlaylist = wplayer.playlistCollection.getByName("menu playlist");
-
-            wplayer.URL = "Eye Of The Tiger Instrumental.mp3";
-            wplayer.controls.play();
+            playlistMenu = wplayer.playlistCollection.newPlaylist("Playlist Menu");
+            playlistFight = wplayer.playlistCollection.newPlaylist("Playlist Fight");
+            playlistMenu.appendItem(wplayer.newMedia("Eye Of The Tiger Instrumental.mp3"));
+            playlistFight.appendItem(wplayer.newMedia("Hardest Gangsta beat ever.mp3"));
+            wplayer.currentPlaylist = playlistMenu;
             wplayer.settings.setMode("loop", true);
+            wplayer.controls.play();
+
             pickAForm = 0;
             Invalidate();
             

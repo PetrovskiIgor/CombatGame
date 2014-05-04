@@ -15,7 +15,7 @@ namespace CombatGame
     public partial class frmFight : Form
     {
         
-        SoundPlayer soundPlayer;
+        //SoundPlayer soundPlayer;
         Player playerOne;
         Player playerTwo;
         Magic playerOneMagic;
@@ -35,8 +35,8 @@ namespace CombatGame
             // za da go prepoznae file-ot  EyeOfTheTiger.wav
             //
             // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
-            if(frmOptions.musicOn)
-                soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
+            //if(frmOptions.musicOn)
+            //    soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
 
             playerOne = first;
             playerOne.pbPlayer = pbPlayerOne;
@@ -57,8 +57,8 @@ namespace CombatGame
 
             this.lblPlayerOneName.Text = playerOne.Name;
             this.lblPlayerTwoName.Text = playerTwo.Name;
-            if(soundPlayer != null)
-                soundPlayer.Play();
+            //if(soundPlayer != null)
+            //    soundPlayer.Play();
             timer = new Timer();
             timer.Interval = INTERVAL;
             timer.Tick += new EventHandler(timer_Tick);

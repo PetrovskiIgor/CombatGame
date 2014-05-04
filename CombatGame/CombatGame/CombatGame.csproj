@@ -114,7 +114,7 @@
     <Content Include="Eye Of The Tiger Instrumental.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="EyeOfTheTiger.wav">
+    <Content Include="Hardest Gangsta beat ever.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="imgBack.png">

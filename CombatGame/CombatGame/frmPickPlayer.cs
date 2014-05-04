@@ -134,11 +134,14 @@ namespace CombatGame
                 this.Hide();
                
                 Game = new frmFight(players[currPosFirst], players[currPosSec]);
-
+                MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
+                if (!frmOptions.musicOn)
+                {
+                    MainMenu.wplayer.controls.stop();
+                }
+                
                 Game.Show();
             }
-            
-
         }
 
         private void frmPickPlayer_FormClosing(object sender, FormClosingEventArgs e)
@@ -196,6 +199,11 @@ namespace CombatGame
             {
                 if (firstDone && secDone)
                 {
+                    MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
+                    if (!frmOptions.musicOn)
+                    {
+                        MainMenu.wplayer.controls.stop();
+                    }
                     this.Hide();
 
 
