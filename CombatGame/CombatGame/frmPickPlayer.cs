@@ -93,7 +93,7 @@ namespace CombatGame
 
 
 
-            pb1.BackColor = Color.Red;
+            pb1.BackColor = Color.Transparent;
             pb2.BackColor = Color.Red;
             pb3.BackColor = Color.Red;
             pb4.BackColor = Color.Red;

@@ -83,6 +83,7 @@
             // 
             // pb1
             // 
+            this.pb1.BackColor = System.Drawing.Color.Transparent;
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
             this.pb1.Location = new System.Drawing.Point(41, 55);
             this.pb1.Name = "pb1";
