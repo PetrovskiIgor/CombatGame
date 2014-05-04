@@ -86,7 +86,7 @@ namespace CombatGame
 
         private void pbNewGame_Click(object sender, EventArgs e)
         {
-            if(fPickPlayer == null)
+            //if(fPickPlayer == null)
                 fPickPlayer = new frmPickPlayer(this);
             this.Hide();
             fPickPlayer.Show();
@@ -152,10 +152,7 @@ namespace CombatGame
             }
         }
 
-        private void selectFormOnDown()
-        {
-
-        }
+        
 
         private void frmMenu_KeyDown(object sender, KeyEventArgs e)
         {
@@ -202,10 +199,9 @@ namespace CombatGame
         {
             if (pickAForm == 0)
             {
-                if (fPickPlayer == null)
-                {
+               
                     fPickPlayer = new frmPickPlayer(this);
-                }
+                
                 this.Hide();
                 fPickPlayer.Show();
             }
