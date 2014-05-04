@@ -12,7 +12,7 @@ namespace CombatGame
     public class Magic
     {
         public string Name { get; set; }                // Name of the Magic
-        public string Description { get; set; }         // Magic Description
+      
         public int Power { get; set; }                  // Power of the Magic
         public Image MagicImageLeft { get; set; }       // Image of the Magic (Left)
         public Image MagicImageRight { get; set; }      // Image of the Magic (Right)
@@ -24,17 +24,17 @@ namespace CombatGame
         public Magic () // Default Constructor
         {
             this.Name = null;
-            this.Description = null;
+           
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
             this.PicBoxImage = new PictureBox();
             DirOfMoving = Direction.UNDEFINED;
         }
 
-        public Magic (string Name, string Description, int Power, Image MagicImageLeft, Image MagicImageRight, int Velocity) //constructor
+        public Magic (string Name, int Power, Image MagicImageLeft, Image MagicImageRight, int Velocity) //constructor
         {
             this.Name = Name;
-            this.Description = Description;
+           
             this.Power = Power;
             this.MagicImageLeft = MagicImageLeft;
             this.MagicImageRight = MagicImageRight;
@@ -45,10 +45,10 @@ namespace CombatGame
             PicBoxImage.Hide();
         } 
 
-        public Magic (string Name, string Description, int Power) // Constructor
+        public Magic (string Name,int Power) // Constructor
         {
             this.Name = Name;
-            this.Description = Description;
+           
             this.Power = Power;
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
@@ -56,10 +56,10 @@ namespace CombatGame
             this.DirOfMoving = Direction.UNDEFINED;
         }
 
-        public Magic(string Name, string Description, int Power, int Velocity) // Constructor
+        public Magic(string Name,int Power, int Velocity) // Constructor
         {
             this.Name = Name;
-            this.Description = Description;
+           
             this.Power = Power;
             this.Velocity = Velocity;
             DirOfMoving = Direction.UNDEFINED;

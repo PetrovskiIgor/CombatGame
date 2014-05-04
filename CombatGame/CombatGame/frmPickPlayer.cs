@@ -32,6 +32,7 @@ namespace CombatGame
         Image imgPlayerOne = Image.FromFile("imgPlayerOne.png");  // koga korisnikot kje gi bira igracite nad slikite
         Image imgPlayerTwo = Image.FromFile("imgPlayerTwo.png"); // da se azurira
 
+        
 
         public frmPickPlayer(frmMenu menu)
         {
@@ -82,8 +83,17 @@ namespace CombatGame
 
             for (int i = 0; i < numPlayers * 3; i++)
             {
-                magicTricks[i] = new Magic();
+               
             }
+            magicTricks[0] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[1] = new Magic("Hurricane", 10, Image.FromFile("imgHurrucainVerticalTrans.png"), Image.FromFile("imgHurrucainVerticalTrans.png"), 10);
+            magicTricks[2] = new Magic("Lightning", 10, Image.FromFile("imgLightningMagicTrans.png"), Image.FromFile("imgLightningMagicTrans.png"), 10);
+            magicTricks[3] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[4] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[5] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[6] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[7] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+            magicTricks[8] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
 
             players[0] = new Player("Viki","Zestoka",magicTricks[0],magicTricks[1],magicTricks[2]);
             players[1] = new Player("Petre", "Petre doagja od gradot Radovis.", magicTricks[3], magicTricks[4], magicTricks[5]);
