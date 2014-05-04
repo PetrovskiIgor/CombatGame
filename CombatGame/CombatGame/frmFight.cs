@@ -21,6 +21,7 @@ namespace CombatGame
         Magic playerOneMagic;
         Magic playerTwoMagic;
         bool a, s, d, left, right, down;
+        bool f, g, enter, add;
         bool gameIsFinished;
         Timer timer;
         public static int INTERVAL = 10;
@@ -152,15 +153,23 @@ namespace CombatGame
             }
             else if(e.KeyCode== Keys.F)
             {
-                playerTwo.ChangeState(State.ATTACK);
-                if (playerTwo.Attack(playerOne))
-                    playerOne.DecreaseHealth(Player.HandPower);
+                if (!f)
+                {
+                    f = true;
+                    playerTwo.ChangeState(State.ATTACK);
+                    if (playerTwo.Attack(playerOne))
+                        playerOne.DecreaseHealth(Player.HandPower);
+                }
             }
             else if (e.KeyCode==Keys.G)
             {
-                playerTwo.ChangeState(State.ATTACKLEG);
-                if (playerTwo.AttackLeg(playerOne))
-                    playerOne.DecreaseHealth(Player.LegPower);
+                if (!g)
+                {
+                    g = true;
+                    playerTwo.ChangeState(State.ATTACKLEG);
+                    if (playerTwo.AttackLeg(playerOne))
+                        playerOne.DecreaseHealth(Player.LegPower);
+                }
             }
             else if(e.KeyCode==Keys.V)
             {
@@ -173,15 +182,23 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.Enter)
             {
-                playerOne.ChangeState(State.ATTACK);
-                if (playerOne.Attack(playerTwo))
-                    playerTwo.DecreaseHealth(Player.HandPower);
+                if (!enter)
+                {
+                    enter = true;
+                    playerOne.ChangeState(State.ATTACK);
+                    if (playerOne.Attack(playerTwo))
+                        playerTwo.DecreaseHealth(Player.HandPower);
+                }
             }
             else if(e.KeyCode==Keys.Add)
             {
-                playerOne.ChangeState(State.ATTACKLEG);
-                if (playerOne.AttackLeg(playerTwo))
-                    playerTwo.DecreaseHealth(Player.LegPower);
+                if (!add)
+                {
+                    add = true;
+                    playerOne.ChangeState(State.ATTACKLEG);
+                    if (playerOne.AttackLeg(playerTwo))
+                        playerTwo.DecreaseHealth(Player.LegPower);
+                }
             }
             else if(e.KeyCode==Keys.NumPad1)
             {
@@ -230,10 +247,12 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.F)
             {
+                f = false;
                 playerTwo.ChangeState(State.STAND);
             }
             else if(e.KeyCode==Keys.G)
             {
+                g = false;
                 playerTwo.ChangeState(State.STAND);
             }
             else if (e.KeyCode==Keys.H)
@@ -246,6 +265,7 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.Enter)
             {
+                enter = false;
                 playerOne.ChangeState(State.STAND);
             }
             else if(e.KeyCode==Keys.NumPad0)
@@ -258,6 +278,7 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.Add)
             {
+                add = false;
                 playerOne.ChangeState(State.STAND);
             }
         }
