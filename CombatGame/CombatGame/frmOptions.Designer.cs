@@ -64,6 +64,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.pbPlayerOne = new System.Windows.Forms.PictureBox();
+            this.pbPlayerTwo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
@@ -83,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBack
@@ -451,11 +455,31 @@
             this.label16.TabIndex = 28;
             this.label16.Text = "Jump";
             // 
+            // pbPlayerOne
+            // 
+            this.pbPlayerOne.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerOne.Image")));
+            this.pbPlayerOne.Location = new System.Drawing.Point(49, 40);
+            this.pbPlayerOne.Name = "pbPlayerOne";
+            this.pbPlayerOne.Size = new System.Drawing.Size(216, 53);
+            this.pbPlayerOne.TabIndex = 36;
+            this.pbPlayerOne.TabStop = false;
+            // 
+            // pbPlayerTwo
+            // 
+            this.pbPlayerTwo.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerTwo.Image")));
+            this.pbPlayerTwo.Location = new System.Drawing.Point(920, 40);
+            this.pbPlayerTwo.Name = "pbPlayerTwo";
+            this.pbPlayerTwo.Size = new System.Drawing.Size(216, 53);
+            this.pbPlayerTwo.TabIndex = 37;
+            this.pbPlayerTwo.TabStop = false;
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 694);
+            this.Controls.Add(this.pbPlayerTwo);
+            this.Controls.Add(this.pbPlayerOne);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -518,6 +542,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,5 +586,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pbPlayerOne;
+        private System.Windows.Forms.PictureBox pbPlayerTwo;
     }
 }

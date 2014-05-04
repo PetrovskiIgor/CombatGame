@@ -73,7 +73,8 @@ namespace CombatGame
 
         private void pbOptions_Click(object sender, EventArgs e)
         {
-            fOptions = new frmOptions(this);
+            if(fOptions == null)
+                fOptions = new frmOptions(this);
             this.Hide();
             fOptions.Show();
         }
@@ -85,7 +86,8 @@ namespace CombatGame
 
         private void pbNewGame_Click(object sender, EventArgs e)
         {
-            fPickPlayer = new frmPickPlayer(this);
+            if(fPickPlayer == null)
+                fPickPlayer = new frmPickPlayer(this);
             this.Hide();
             fPickPlayer.Show();
         }
