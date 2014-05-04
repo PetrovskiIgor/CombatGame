@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFight));
             this.pbPlayerOne = new System.Windows.Forms.PictureBox();
             this.pbPlayerTwo = new System.Windows.Forms.PictureBox();
             this.lblPlayerOneName = new System.Windows.Forms.Label();
@@ -52,9 +53,11 @@
             // pbPlayerTwo
             // 
             this.pbPlayerTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pbPlayerTwo.Location = new System.Drawing.Point(95, 356);
+            this.pbPlayerTwo.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerTwo.Image")));
+            this.pbPlayerTwo.Location = new System.Drawing.Point(86, 227);
             this.pbPlayerTwo.Name = "pbPlayerTwo";
-            this.pbPlayerTwo.Size = new System.Drawing.Size(70, 95);
+            this.pbPlayerTwo.Size = new System.Drawing.Size(243, 348);
+            this.pbPlayerTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerTwo.TabIndex = 1;
             this.pbPlayerTwo.TabStop = false;
             // 
@@ -112,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 482);
+            this.ClientSize = new System.Drawing.Size(855, 607);
             this.Controls.Add(this.lblHealthPlayerTwo);
             this.Controls.Add(this.lblHelthPlayerOne);
             this.Controls.Add(this.pbarPlayerTwo);

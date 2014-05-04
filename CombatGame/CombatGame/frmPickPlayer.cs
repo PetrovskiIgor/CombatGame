@@ -177,6 +177,8 @@ namespace CombatGame
                 if (firstDone && secDone)
                 {
                     this.Hide();
+
+
                     Game = new frmFight(players[currPosFirst], players[currPosSec]);
 
                     Game.Show();
