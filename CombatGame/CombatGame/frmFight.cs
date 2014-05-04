@@ -57,6 +57,26 @@ namespace CombatGame
             timer.Start();
             update();
             this.DoubleBuffered = true;
+
+
+            // funkcija koja gi postavuva transparentnite sliki
+
+            fillPictureBoxes();
+        }
+
+
+        private void fillPictureBoxes()
+        {
+            if (playerOne.Name.Equals("Petre"))
+            {
+                playerOne.imgAttack = Image.FromFile("petreUdarTrans.png");
+                playerOne.imgDefense = Image.FromFile("petreGardTrans.png");
+                playerOne.imgStand = Image.FromFile("petreStandTrans.png");
+            }
+            else
+            {
+
+            }
         }
 
 

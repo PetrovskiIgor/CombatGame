@@ -43,13 +43,13 @@ namespace CombatGame
         public static int HandPower = 8 ;
         public static int LegPower = 13;
 
-        public Image stand;
-        public Image attack;
-        public Image attackLeg;
-        public Image attackMagic;
-        public Image defense;
-        public Image jump;
-        public Image kneel;
+        public Image imgStand;
+        public Image imgAttack;
+        public Image imgAttackLeg;
+        public Image imgAttackMagic;
+        public Image imgDefense;
+        public Image imgJump;
+        public Image imgKneel;
 
 
         //Constructor
