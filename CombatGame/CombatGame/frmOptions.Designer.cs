@@ -66,6 +66,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.pbPlayerOne = new System.Windows.Forms.PictureBox();
             this.pbPlayerTwo = new System.Windows.Forms.PictureBox();
+            this.pbParentMusic = new System.Windows.Forms.PictureBox();
+            this.pbParentSound = new System.Windows.Forms.PictureBox();
+            this.pbParentBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
@@ -87,6 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentSound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentBack)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBack
@@ -107,7 +113,7 @@
             this.pbMusic.Size = new System.Drawing.Size(216, 53);
             this.pbMusic.TabIndex = 2;
             this.pbMusic.TabStop = false;
-            this.pbMusic.Click += new System.EventHandler(this.changeMusicOnOff);
+            this.pbMusic.Click += new System.EventHandler(this.changeMusic);
             // 
             // pbSound
             // 
@@ -473,6 +479,33 @@
             this.pbPlayerTwo.TabIndex = 37;
             this.pbPlayerTwo.TabStop = false;
             // 
+            // pbParentMusic
+            // 
+            this.pbParentMusic.BackColor = System.Drawing.Color.Maroon;
+            this.pbParentMusic.Location = new System.Drawing.Point(538, 434);
+            this.pbParentMusic.Name = "pbParentMusic";
+            this.pbParentMusic.Size = new System.Drawing.Size(240, 72);
+            this.pbParentMusic.TabIndex = 38;
+            this.pbParentMusic.TabStop = false;
+            // 
+            // pbParentSound
+            // 
+            this.pbParentSound.BackColor = System.Drawing.Color.Transparent;
+            this.pbParentSound.Location = new System.Drawing.Point(538, 519);
+            this.pbParentSound.Name = "pbParentSound";
+            this.pbParentSound.Size = new System.Drawing.Size(240, 72);
+            this.pbParentSound.TabIndex = 39;
+            this.pbParentSound.TabStop = false;
+            // 
+            // pbParentBack
+            // 
+            this.pbParentBack.BackColor = System.Drawing.Color.Transparent;
+            this.pbParentBack.Location = new System.Drawing.Point(538, 604);
+            this.pbParentBack.Name = "pbParentBack";
+            this.pbParentBack.Size = new System.Drawing.Size(240, 72);
+            this.pbParentBack.TabIndex = 40;
+            this.pbParentBack.TabStop = false;
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,6 +548,9 @@
             this.Controls.Add(this.pbSound);
             this.Controls.Add(this.pbMusic);
             this.Controls.Add(this.pbBack);
+            this.Controls.Add(this.pbParentMusic);
+            this.Controls.Add(this.pbParentSound);
+            this.Controls.Add(this.pbParentBack);
             this.Name = "frmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OPTIONS";
@@ -522,6 +558,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOptions_FormClosing);
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmOptions_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmOptions_KeyDown);
             this.Resize += new System.EventHandler(this.frmOptionsResize);
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).EndInit();
@@ -544,6 +581,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKeyV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentSound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParentBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,5 +628,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pbPlayerOne;
         private System.Windows.Forms.PictureBox pbPlayerTwo;
+        private System.Windows.Forms.PictureBox pbParentMusic;
+        private System.Windows.Forms.PictureBox pbParentSound;
+        private System.Windows.Forms.PictureBox pbParentBack;
     }
 }
