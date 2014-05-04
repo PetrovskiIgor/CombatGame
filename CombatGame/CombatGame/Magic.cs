@@ -80,7 +80,7 @@ namespace CombatGame
             }
         }
 
-        public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaing the Magic which the Player is using for attack
+        public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaying the Magic which the Player is using for attack
         {
             this.DirOfMoving = dir;
             if (dir == Direction.LEFT)

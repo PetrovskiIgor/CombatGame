@@ -125,27 +125,33 @@ namespace CombatGame
             }
             if (statePerson == State.STAND)
             {
-                pbPlayer.BackColor = Color.Black;
+                pbPlayer.BackColor = Color.Transparent;
+               
+                pbPlayer.Image = imgStand;
             }
             else if (statePerson == State.ATTACK)
             {
-                pbPlayer.BackColor = Color.Red;
+                pbPlayer.BackColor = Color.Transparent;
+                pbPlayer.Image = imgAttack;
             }
             else if (statePerson == State.ATTACKLEG)
             {
-                pbPlayer.BackColor = Color.Purple;
+                pbPlayer.BackColor = Color.Transparent;
+                pbPlayer.Image = imgAttackLeg;
+                
             }
             else if (statePerson == State.ATTACKMAGIC)
             {
-                pbPlayer.BackColor = Color.Yellow;
+                pbPlayer.BackColor = Color.Transparent;
             }
             else if (statePerson == State.DEFENSE)
             {
-                pbPlayer.BackColor = Color.White;
+                pbPlayer.BackColor = Color.Transparent;
+                pbPlayer.Image = imgDefense;
             }
             else if (statePerson == State.KNEEL)
             {
-                pbPlayer.BackColor = Color.Blue;
+                pbPlayer.BackColor = Color.Transparent;
             }
             else if (statePerson == State.MOVINGLEFT)
             {

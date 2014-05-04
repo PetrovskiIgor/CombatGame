@@ -40,6 +40,7 @@ namespace CombatGame
             playerOne = first;
             playerOne.pbPlayer = pbPlayerOne;
             playerOne.DirectionPlayer = Direction.LEFT;
+
             playerTwo = second;
             playerTwo.pbPlayer = pbPlayerTwo;
             playerTwo.DirectionPlayer = Direction.RIGHT;
@@ -68,16 +69,17 @@ namespace CombatGame
 
         private void fillPictureBoxes()
         {
-            if (playerOne.Name.Equals("Petre"))
-            {
+            
                 playerOne.imgAttack = Image.FromFile("petreUdarTrans.png");
                 playerOne.imgDefense = Image.FromFile("petreGardTrans.png");
                 playerOne.imgStand = Image.FromFile("petreStandTrans.png");
-            }
-            else
-            {
+                playerOne.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
 
-            }
+                playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
+                playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
+                playerTwo.imgStand = Image.FromFile("petreStandTrans.png");
+                playerTwo.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+            
         }
 
 
