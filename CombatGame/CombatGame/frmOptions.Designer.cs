@@ -69,6 +69,7 @@
             this.pbParentMusic = new System.Windows.Forms.PictureBox();
             this.pbParentSound = new System.Windows.Forms.PictureBox();
             this.pbParentBack = new System.Windows.Forms.PictureBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
@@ -93,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbParentMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbParentSound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbParentBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBack
@@ -506,11 +508,22 @@
             this.pbParentBack.TabIndex = 40;
             this.pbParentBack.TabStop = false;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(308, 484);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(34, 32);
+            this.axWindowsMediaPlayer1.TabIndex = 41;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 694);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pbPlayerTwo);
             this.Controls.Add(this.pbPlayerOne);
             this.Controls.Add(this.label9);
@@ -584,6 +597,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbParentMusic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbParentSound)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbParentBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,5 +645,6 @@
         private System.Windows.Forms.PictureBox pbParentMusic;
         private System.Windows.Forms.PictureBox pbParentSound;
         private System.Windows.Forms.PictureBox pbParentBack;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

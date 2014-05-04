@@ -25,7 +25,7 @@ namespace CombatGame
 
         Image imgExit = Image.FromFile("imgExit.png");
         Image imgExitSelected = Image.FromFile("imgExitSelected.png");
-
+        public WMPLib.WindowsMediaPlayer wplayer;
         
         public frmMenu()
         {
@@ -36,6 +36,10 @@ namespace CombatGame
             
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
            // this.pbNewGame.Image = imgNewGameSelected;
+            wplayer = new WMPLib.WindowsMediaPlayer();
+            wplayer.URL = "Eye Of The Tiger Instrumental.mp3";
+            wplayer.controls.play();
+            wplayer.settings.setMode("loop", true);
             pickAForm = 0;
             Invalidate();
             

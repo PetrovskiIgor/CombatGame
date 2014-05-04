@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CombatGame
 {
     public partial class frmOptions : Form
@@ -17,6 +18,7 @@ namespace CombatGame
         public static bool musicOn; //da se proveri dali e true pred da se pusti muzika vo bilo koja forma
         public static bool soundOn; //da se proveri dali e true pred da se stavat efekti vo frmFight
         public int pickOption; //0 za Music, 1 za Sound, 2 za Back 
+        
 
         public frmOptions(frmMenu menu)
         {
@@ -65,11 +67,13 @@ namespace CombatGame
             if (musicOn)
             {
                 pbMusic.Image = Image.FromFile("imgMusicOff.png");
+                MainMenu.wplayer.controls.stop();
                 musicOn = false;
             }
             else
             {
                 pbMusic.Image = Image.FromFile("imgMusicOn.png");
+                MainMenu.wplayer.controls.play();
                 musicOn = true;
             }
         }
