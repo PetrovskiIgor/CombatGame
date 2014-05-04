@@ -152,6 +152,8 @@ namespace CombatGame
             else if (statePerson == State.KNEEL)
             {
                 pbPlayer.BackColor = Color.Transparent;
+                pbPlayer.Image = imgKneel;
+
             }
             else if (statePerson == State.MOVINGLEFT)
             {
@@ -200,7 +202,7 @@ namespace CombatGame
                 Magic m = magicList.ElementAt(0);
                 m.ShowMagic(this.pbPlayer, this.DirectionPlayer);
                 statePerson = State.STAND;
-                magicList.RemoveAt(0);
+              //  magicList.RemoveAt(0);
                 return m;
             }
             return null;

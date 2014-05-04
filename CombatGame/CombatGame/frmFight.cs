@@ -41,10 +41,15 @@ namespace CombatGame
             playerOne = first;
             playerOne.pbPlayer = pbPlayerOne;
             playerOne.DirectionPlayer = Direction.LEFT;
+            
+            
 
             playerTwo = second;
             playerTwo.pbPlayer = pbPlayerTwo;
             playerTwo.DirectionPlayer = Direction.RIGHT;
+
+           
+            
             
 
 
@@ -75,6 +80,7 @@ namespace CombatGame
                 playerOne.imgDefense = Image.FromFile("petreGardTrans.png");
                 playerOne.imgStand = Image.FromFile("petreStandTrans.png");
                 playerOne.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+                playerOne.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
                 
                 
                 
@@ -84,6 +90,7 @@ namespace CombatGame
                 playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
                 playerTwo.imgStand = Image.FromFile("petreStandTrans.png");
                 playerTwo.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+                playerTwo.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
             
         }
 
@@ -185,7 +192,9 @@ namespace CombatGame
             else if(e.KeyCode==Keys.V)
             {
                 playerTwo.ChangeState(State.ATTACKMAGIC);
-                playerTwoMagic=playerTwo.AttackMagic();                
+                playerTwoMagic=playerTwo.AttackMagic();
+                playerTwoMagic.PicBoxImage = pbMagic2;
+              
             }
             else if(e.KeyCode==Keys.H)
             {
@@ -216,6 +225,9 @@ namespace CombatGame
 
                 playerOne.ChangeState(State.ATTACKMAGIC);
                 playerOneMagic = playerOne.AttackMagic();
+                playerOneMagic.PicBoxImage = pbMagic1;
+                //pbMagic1.BackColor = Color.Transparent;
+                //pbMagic1.Image = playerOne.magicList.ElementAt(0).MagicImageLeft;
             }
             else if (e.KeyCode==Keys.NumPad0)
             {
