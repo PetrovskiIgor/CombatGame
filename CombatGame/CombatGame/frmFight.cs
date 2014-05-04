@@ -56,7 +56,6 @@ namespace CombatGame
 
         private void frmFight_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
             Application.Exit();
         }
 
