@@ -295,40 +295,40 @@
     <Content Include="petreUdarTransD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorGard.png">
+    <Content Include="vikiDead.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorGardD.png">
+    <Content Include="vikiDeadD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorKleci.png">
+    <Content Include="vikiDefense.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorKleciD.png">
+    <Content Include="vikiDefenseD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorLezi.png">
+    <Content Include="vikiKneel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorLeziD.png">
+    <Content Include="vikiKneelD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorNoga.png">
+    <Content Include="vikiLeg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorNogaD.png">
+    <Content Include="vikiLegD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorStand.png">
+    <Content Include="vikiPunch.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorStandD.png">
+    <Content Include="vikiPunchD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorUdar.png">
+    <Content Include="vikiStand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SlikiIgor\igorUdarD.png">
+    <Content Include="vikiStandD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
