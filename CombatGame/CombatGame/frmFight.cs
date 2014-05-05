@@ -339,32 +339,11 @@ namespace CombatGame
                 playerOneMagic.Move();
                 if(playerOneMagic.DirOfMoving==Direction.LEFT)
                 {
-                    if((playerOneMagic.PicBoxImage.Left < pbPlayerTwo.Right - 10) && playerOneMagic.PicBoxImage.Right >=pbPlayerTwo.Right)
-                    {
-                        if(playerTwo.AvoidMagicAttack())
-                        {
-                            if(pbPlayerTwo.Bottom>=playerOneMagic.PicBoxImage.Top)
-                            {
-                                playerTwo.DecreaseHealth(playerOneMagic.Power);
-                                playerOneMagic = null;
-                            }
-                        }
-                    }
+                    this.LeftMagicAttack(playerTwo, playerOneMagic);
                 }
                 else
                 {
-                    if(playerOneMagic.PicBoxImage.Right>pbPlayerTwo.Left+10 && playerOneMagic.PicBoxImage.Left <=pbPlayerTwo.Left)
-                    {
-                        if(playerTwo.AvoidMagicAttack())
-                        {
-                            if (pbPlayerTwo.Bottom >= playerOneMagic.PicBoxImage.Top)
-                            {
-                            
-                                playerTwo.DecreaseHealth(playerOneMagic.Power);
-                                playerOneMagic = null;
-                            }
-                        }
-                    }
+                    this.RightMagicAttack(playerTwo, playerTwoMagic);
                 }
             }
 
@@ -373,30 +352,43 @@ namespace CombatGame
                 playerTwoMagic.Move();
                 if(playerTwoMagic.DirOfMoving==Direction.LEFT)
                 {
-                    if (playerTwoMagic.PicBoxImage.Left > pbPlayerOne.Right && playerTwoMagic.PicBoxImage.Right <= pbPlayerOne.Right)
-                    {
-                        if (playerOne.AvoidMagicAttack())
-                        {
-                            if (pbPlayerOne.Bottom >= playerTwoMagic.PicBoxImage.Top)
-                            {
-                                playerOne.DecreaseHealth(playerTwoMagic.Power);
-                                playerTwoMagic = null;
-                            }
-                        }
-                    }
+                    this.LeftMagicAttack(playerOne, playerTwoMagic);
                 }
                 else
                 {
-                    if (playerTwoMagic.PicBoxImage.Right > pbPlayerOne.Left && playerTwoMagic.PicBoxImage.Left >= pbPlayerOne.Left)
+                    this.RightMagicAttack(playerOne, playerTwoMagic);
+                }
+            }
+        }
+
+
+        public void LeftMagicAttack (Player player, Magic magic)
+        {
+            if ((magic.PicBoxImage.Left < player.pbPlayer.Right - 50) && magic.PicBoxImage.Right >= player.pbPlayer.Right)
+            {
+                if (!player.AvoidMagicAttack())
+                {
+                    if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
                     {
-                        if (playerOne.AvoidMagicAttack())
-                        {
-                            if (pbPlayerOne.Bottom >= playerTwoMagic.PicBoxImage.Top)
-                            {
-                                playerOne.DecreaseHealth(playerTwoMagic.Power);
-                                playerTwoMagic = null;
-                            }
-                        }
+                        player.DecreaseHealth(magic.Power);
+                        magic.HideMagic();
+                        magic = null;
+                    }
+                }
+            }
+        }
+
+        public void RightMagicAttack (Player player, Magic magic)
+        {
+            if (magic.PicBoxImage.Right > player.pbPlayer.Left + 50 && magic.PicBoxImage.Left <= player.pbPlayer.Left)
+            {
+                if (!player.AvoidMagicAttack())
+                {
+                    if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
+                    {
+                        player.DecreaseHealth(magic.Power);
+                        magic.HideMagic();
+                        playerOneMagic = null;
                     }
                 }
             }
