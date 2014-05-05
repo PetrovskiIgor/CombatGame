@@ -11,8 +11,8 @@ namespace CombatGame
     public enum State
     {
         STAND,          //player is steady
-        MOVINGLEFT,
-        MOVINGRIGHT,
+        
+        
         ATTACK,
         ATTACKLEG,
         ATTACKMAGIC,
@@ -164,14 +164,7 @@ namespace CombatGame
                 pbPlayer.Image = imgKneel;
 
             }
-            else if (statePerson == State.MOVINGLEFT)
-            {
-
-            }
-            else if (statePerson == State.MOVINGRIGHT)
-            {
-
-            }
+           
         }
 
         //The player moves in the given direction
@@ -179,12 +172,12 @@ namespace CombatGame
         {
             if(dir == Direction.LEFT)
             {
-                this.statePerson = State.MOVINGLEFT;
+                
                 this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
             else if (dir == Direction.RIGHT)
             {
-                this.statePerson = State.MOVINGRIGHT;
+               
                 this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
             }
         }
@@ -295,6 +288,7 @@ namespace CombatGame
                 else if (statePerson == State.STAND) pbPlayer.Image = this.imgStandD;
                 else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefenseD;
                 else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDeadD;
+                else MessageBox.Show("OVA NE TREBA DA SE JAVI");
             }
             else
             {
@@ -305,6 +299,7 @@ namespace CombatGame
                 else if (statePerson == State.STAND) pbPlayer.Image = this.imgStand;
                 else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefense;
                 else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDead;
+                else MessageBox.Show("OVA NE TREBA DA SE JAVI");
             }
         }
     }

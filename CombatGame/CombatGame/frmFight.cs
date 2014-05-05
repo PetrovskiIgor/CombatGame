@@ -29,6 +29,8 @@ namespace CombatGame
         Timer timer;
         public static int INTERVAL = 10;
 
+        int collisionTolerance = 40; // kolku mozhe da vleguva eden vo drug
+
 
         public frmFight(Player first, Player second)
         {
@@ -87,7 +89,9 @@ namespace CombatGame
 
 
             fillPictureBoxesPart2(playerOne, true);
+            
             fillPictureBoxesPart2(playerTwo, false);
+           
             
     
             
@@ -111,6 +115,13 @@ namespace CombatGame
                 player.imgKneel = Image.FromFile("igorKleci" + ((firstPlayer) ? "D" : "") + ".png");
                 player.imgDead = Image.FromFile("igorLezi" + ((firstPlayer) ? "D" : "") + ".png");
 
+                player.imgAttackD = Image.FromFile("igorUdar" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgDefenseD = Image.FromFile("igorGard" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgStandD = Image.FromFile("igorStand" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLegD = Image.FromFile("igorNoga" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgKneelD = Image.FromFile("igorKleci" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgDeadD = Image.FromFile("igorLezi" + ((!firstPlayer) ? "D" : "") + ".png");
+
             }
             else if (player.Name.Equals("Viki"))
             {
@@ -120,6 +131,13 @@ namespace CombatGame
                 player.imgAttackLeg = Image.FromFile("vikiLeg" + ((firstPlayer) ? "D" : "") + ".png");
                 player.imgKneel = Image.FromFile("vikiKneel" + ((firstPlayer) ? "D" : "") + ".png");
                 player.imgDead = Image.FromFile("vikiDead" + ((firstPlayer) ? "D" : "") + ".png");
+
+                player.imgAttackD = Image.FromFile("vikiPunch" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgDefenseD = Image.FromFile("vikiDefense" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgStandD = Image.FromFile("vikiStand" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLegD = Image.FromFile("vikiLeg" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgKneelD = Image.FromFile("vikiKneel" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgDeadD = Image.FromFile("vikiDead" + ((!firstPlayer) ? "D" : "") + ".png");
             }
             else if (player.Name.Equals("Petre"))
             {
@@ -128,6 +146,12 @@ namespace CombatGame
                 player.imgStand = Image.FromFile("petreStandTrans" + ((firstPlayer) ? "D" : "") + ".png");
                 player.imgAttackLeg = Image.FromFile("petreNogaTrans" + ((firstPlayer) ? "D" : "") + ".png");
                 player.imgKneel = Image.FromFile("petreKleciSecenaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+
+                player.imgAttackD = Image.FromFile("petreUdarTrans" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgDefenseD = Image.FromFile("petreGardTrans" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgStandD = Image.FromFile("petreStandTrans" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLegD = Image.FromFile("petreNogaTrans" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgKneelD = Image.FromFile("petreKleciSecenaTrans" + ((!firstPlayer) ? "D" : "") + ".png");
             }
         }
 
@@ -179,12 +203,12 @@ namespace CombatGame
             }
             else if (e.KeyCode==Keys.A)
             {
-                playerTwo.ChangeState(State.MOVINGLEFT);
+                
                 a = true;
             }
             else if(e.KeyCode==Keys.D)
             {
-                playerTwo.ChangeState(State.MOVINGRIGHT);
+                
                 d = true;
             }
             else if (e.KeyCode==Keys.S)
@@ -193,12 +217,12 @@ namespace CombatGame
             }
             else if(e.KeyCode==Keys.Left)
             {
-                playerOne.ChangeState(State.MOVINGLEFT);
+                
                 left = true;
             }
             else if (e.KeyCode==Keys.Right)
             {
-                playerOne.ChangeState(State.MOVINGRIGHT);
+                
                 right = true;
             }
             else if(e.KeyCode==Keys.Down)
@@ -347,20 +371,26 @@ namespace CombatGame
 
         public void Moving()
         {
+            Rectangle intersect = intersection();
             if (a)
             {
-                playerTwo.Move(Direction.LEFT);
+                if(intersect.Width  < collisionTolerance || playerOneIsRight) // ako e pomala kolizijata
+                    playerTwo.Move(Direction.LEFT);                           // ili ako se dvizhi vo nasoka koja ja namaluva kolizijata
+               
             }
             if (d)
             {
+                if (intersect.Width < collisionTolerance || !playerOneIsRight)
                 playerTwo.Move(Direction.RIGHT);
             }
             if (left)
             {
+                if (intersect.Width < collisionTolerance || !playerOneIsRight)
                 playerOne.Move(Direction.LEFT);
             }
             if(right)
             {
+                if (intersect.Width < collisionTolerance || playerOneIsRight)
                 playerOne.Move(Direction.RIGHT);
             }
 
@@ -482,7 +512,23 @@ namespace CombatGame
             this.Moving();
             this.update();
 
-            playerOneIsRight = this.playerOneDirection(); // ja azurira pozicijata ("SVRTENOSTA") na igracot
+            if (playerOneIsRight != this.playerOneDirection())
+            {
+                
+                playerOneIsRight = this.playerOneDirection(); // ja azurira pozicijata ("SVRTENOSTA") na igracot
+               // MessageBox.Show(playerOneIsRight + " ");
+                if (playerOneIsRight)
+                {
+                    playerOne.changeDirection(Direction.LEFT);
+                    playerTwo.changeDirection(Direction.RIGHT);
+                }
+                else
+                {
+                    playerOne.changeDirection(Direction.RIGHT);
+                    playerTwo.changeDirection(Direction.LEFT);
+                }
+            }
+            
             this.checkClashAndAct();
 
             
