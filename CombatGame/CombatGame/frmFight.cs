@@ -70,6 +70,11 @@ namespace CombatGame
             // funkcija koja gi postavuva transparentnite sliki
 
             fillPictureBoxes();
+
+            pbIntersection.Parent = pbPlayerTwo;
+            pbIntersection.BackColor = Color.Transparent;
+            
+            
         }
 
 
@@ -310,14 +315,7 @@ namespace CombatGame
             }
         }
 
-        void timer_Tick(object sender, EventArgs e)
-        {
-            playerOne.CheckAndActs();
-            playerTwo.CheckAndActs();
-
-            this.Moving();
-            this.update();
-        }
+        
 
         public void Moving()
         {
@@ -395,6 +393,75 @@ namespace CombatGame
                         playerOneMagic = null;
                     }
                 }
+            }
+        }
+
+        public static Image resizeImage(Image imgToResize, Size size)
+        {
+            return (Image)(new Bitmap(imgToResize, size));
+        }
+
+        public  Image cropImage(Image img, Rectangle cropArea)
+        {
+
+            Image newImg = resizeImage(img, pbPlayerOne.Size);
+            
+            
+            Bitmap bmpImage = new Bitmap(newImg);
+
+            
+
+            
+            Bitmap bmpCrop = bmpImage.Clone(cropArea, System.Drawing.Imaging.PixelFormat.DontCare);
+            
+           
+            return (Image)bmpCrop;
+        }
+        
+        private Rectangle intersection()
+        {
+
+            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right)
+            {
+                return new Rectangle(-1,-1,-1,-1);
+            }
+            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Right > pbPlayerTwo.Left) 
+            {
+                Rectangle interArea = new Rectangle(0, 0, pbPlayerTwo.Right - pbPlayerOne.Left, pbPlayerOne.Height);
+                //Rectangle iA = new Rectangle(0, 0, pbPlayerOne.Width, pbPlayerOne.Height);
+               // Rectangle interArea = new Rectangle(pbPlayerOne.Left, pbPlayerOne.Top, 1, 1);
+                return interArea;
+            }else 
+            {
+                return new Rectangle(-1, -1, -1, -1);
+            }
+        }
+        
+        void timer_Tick(object sender, EventArgs e)
+        {
+            playerOne.CheckAndActs();
+            playerTwo.CheckAndActs();
+
+
+            
+
+            this.Moving();
+            this.update();
+
+            Rectangle checkInter = intersection();
+
+            if (checkInter.Height != -1)
+            {
+                
+                pbIntersection.Width = checkInter.Width;
+                pbIntersection.Height = checkInter.Height;
+               
+                Image partOfPlayerOne = cropImage(playerOne.pbPlayer.Image, checkInter);
+                pbIntersection.Image = partOfPlayerOne;
+               
+                pbIntersection.SizeMode = PictureBoxSizeMode.StretchImage;
+                //pbIntersection.Location = new Point(pbPlayerOne.Left, pbPlayerOne.Top);
+                pbIntersection.Location = new Point(pbPlayerTwo.Width-pbIntersection.Width, 0);
             }
         }
 

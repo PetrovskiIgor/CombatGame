@@ -263,7 +263,8 @@ namespace CombatGame
             {
 
                 // mozhebi ne treba ovde da se menuva slikata
-                this.pbPlayer.Image = this.imgDead; // NE RABOTI
+                this.pbPlayer.Image = this.imgDead; //  RABOTI
+               
                 Health = 0;
             }
         }

@@ -39,30 +39,30 @@
             this.lblHealthPlayerTwo = new System.Windows.Forms.Label();
             this.pbMagic2 = new System.Windows.Forms.PictureBox();
             this.pbMagic1 = new System.Windows.Forms.PictureBox();
+            this.pbIntersection = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntersection)).BeginInit();
             this.SuspendLayout();
             // 
             // pbPlayerOne
             // 
-            this.pbPlayerOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pbPlayerOne.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerOne.Image")));
-            this.pbPlayerOne.Location = new System.Drawing.Point(661, 393);
+            this.pbPlayerOne.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayerOne.Location = new System.Drawing.Point(661, 254);
             this.pbPlayerOne.Name = "pbPlayerOne";
-            this.pbPlayerOne.Size = new System.Drawing.Size(83, 184);
+            this.pbPlayerOne.Size = new System.Drawing.Size(83, 323);
             this.pbPlayerOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerOne.TabIndex = 0;
             this.pbPlayerOne.TabStop = false;
             // 
             // pbPlayerTwo
             // 
-            this.pbPlayerTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pbPlayerTwo.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerTwo.Image")));
-            this.pbPlayerTwo.Location = new System.Drawing.Point(127, 393);
+            this.pbPlayerTwo.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayerTwo.Location = new System.Drawing.Point(127, 254);
             this.pbPlayerTwo.Name = "pbPlayerTwo";
-            this.pbPlayerTwo.Size = new System.Drawing.Size(83, 184);
+            this.pbPlayerTwo.Size = new System.Drawing.Size(83, 323);
             this.pbPlayerTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerTwo.TabIndex = 1;
             this.pbPlayerTwo.TabStop = false;
@@ -121,7 +121,7 @@
             // 
             this.pbMagic2.BackColor = System.Drawing.Color.Transparent;
             this.pbMagic2.Image = ((System.Drawing.Image)(resources.GetObject("pbMagic2.Image")));
-            this.pbMagic2.Location = new System.Drawing.Point(428, 334);
+            this.pbMagic2.Location = new System.Drawing.Point(410, 276);
             this.pbMagic2.Name = "pbMagic2";
             this.pbMagic2.Size = new System.Drawing.Size(100, 75);
             this.pbMagic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,12 +132,22 @@
             // 
             this.pbMagic1.BackColor = System.Drawing.Color.Transparent;
             this.pbMagic1.Image = ((System.Drawing.Image)(resources.GetObject("pbMagic1.Image")));
-            this.pbMagic1.Location = new System.Drawing.Point(216, 334);
+            this.pbMagic1.Location = new System.Drawing.Point(230, 276);
             this.pbMagic1.Name = "pbMagic1";
             this.pbMagic1.Size = new System.Drawing.Size(100, 75);
             this.pbMagic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMagic1.TabIndex = 9;
             this.pbMagic1.TabStop = false;
+            // 
+            // pbIntersection
+            // 
+            this.pbIntersection.BackColor = System.Drawing.Color.Transparent;
+            this.pbIntersection.Location = new System.Drawing.Point(403, 255);
+            this.pbIntersection.Name = "pbIntersection";
+            this.pbIntersection.Size = new System.Drawing.Size(10, 323);
+            this.pbIntersection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbIntersection.TabIndex = 10;
+            this.pbIntersection.TabStop = false;
             // 
             // frmFight
             // 
@@ -145,6 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1370, 709);
+            this.Controls.Add(this.pbIntersection);
             this.Controls.Add(this.pbMagic1);
             this.Controls.Add(this.pbMagic2);
             this.Controls.Add(this.lblHealthPlayerTwo);
@@ -166,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIntersection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +195,7 @@
         private System.Windows.Forms.Label lblHealthPlayerTwo;
         private System.Windows.Forms.PictureBox pbMagic2;
         private System.Windows.Forms.PictureBox pbMagic1;
+        private System.Windows.Forms.PictureBox pbIntersection;
 
 
     }
