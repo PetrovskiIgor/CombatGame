@@ -52,6 +52,13 @@ namespace CombatGame
         public Image imgKneel;
         public Image imgDead;
 
+        public Image imgKneelD;
+        public Image imgAttackLegD;
+        public Image imgDefenseD;
+        public Image imgDeadD;
+        public Image imgAttackD;
+        public Image imgStendD;
+
 
         //Constructor
         public Player()
@@ -169,7 +176,6 @@ namespace CombatGame
         //The player moves in the given direction
         public void Move(Direction dir)
         {
-            this.DirectionPlayer = dir;
             if (this.DirectionPlayer == Direction.LEFT)
             {
                 this.statePerson = State.MOVINGLEFT;
@@ -275,6 +281,16 @@ namespace CombatGame
             if (statePerson == State.DEFENSE || statePerson == State.KNEEL)
                 return true;
             return false;
+        }
+
+        public void changeDirection(Direction newDireciton)
+        {
+            if (newDireciton==Direction.LEFT)
+            {
+                this.DirectionPlayer = Direction.LEFT;
+                if (this.statePerson == State.KNEEL)
+                    pbPlayer.Image = this.imgKneel;
+            }
         }
     }
 }
