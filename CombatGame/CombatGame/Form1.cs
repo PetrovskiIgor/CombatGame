@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace CombatGame
 {
@@ -25,8 +26,10 @@ namespace CombatGame
 
         Image imgExit = Image.FromFile("imgExit.png");
         Image imgExitSelected = Image.FromFile("imgExitSelected.png");
-        public WMPLib.WindowsMediaPlayer wplayer;
-        
+        public WindowsMediaPlayer wplayer;
+        public IWMPPlaylist playlistMenu;
+        public IWMPPlaylist playlistFight;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -36,10 +39,15 @@ namespace CombatGame
             
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
            // this.pbNewGame.Image = imgNewGameSelected;
-            wplayer = new WMPLib.WindowsMediaPlayer();
-            wplayer.URL = "Eye Of The Tiger Instrumental.mp3";
-            wplayer.controls.play();
+            wplayer = new WindowsMediaPlayer();
+            playlistMenu = wplayer.playlistCollection.newPlaylist("Playlist Menu");
+            playlistFight = wplayer.playlistCollection.newPlaylist("Playlist Fight");
+            playlistMenu.appendItem(wplayer.newMedia("Eye Of The Tiger Instrumental.mp3"));
+            playlistFight.appendItem(wplayer.newMedia("Hardest Gangsta beat ever.mp3"));
+            wplayer.currentPlaylist = playlistMenu;
             wplayer.settings.setMode("loop", true);
+            wplayer.controls.play();
+
             pickAForm = 0;
             Invalidate();
             

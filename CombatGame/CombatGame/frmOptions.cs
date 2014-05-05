@@ -15,8 +15,8 @@ namespace CombatGame
     {
         public frmMenu MainMenu {get; set;} // ova e formata roditel (Menu)
         PPPBitmap optionsBackground;
-        public static bool musicOn; //da se proveri dali e true pred da se pusti muzika vo bilo koja forma
-        public static bool soundOn; //da se proveri dali e true pred da se stavat efekti vo frmFight
+        public static bool musicOn = true; //da se proveri dali e true pred da se pusti muzika vo bilo koja forma
+        public static bool soundOn = true; //da se proveri dali e true pred da se stavat efekti vo frmFight
         public int pickOption; //0 za Music, 1 za Sound, 2 za Back 
         
 
@@ -26,14 +26,15 @@ namespace CombatGame
             MainMenu  = menu;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             optionsBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
-            musicOn = true;
-            soundOn = true;
             pickOption = 0;
             Invalidate();
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
         {
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
             pickOption = 0;
         }
 
