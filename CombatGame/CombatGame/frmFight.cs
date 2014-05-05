@@ -91,6 +91,15 @@ namespace CombatGame
                 playerOne.imgDead = Image.FromFile("igorLeziD.png");
 
             }
+            else if (playerOne.Name.Equals("Viki"))
+            {
+                playerOne.imgAttack = Image.FromFile("vikiPunchD.png");
+                playerOne.imgDefense = Image.FromFile("vikiDefenseD.png");
+                playerOne.imgStand = Image.FromFile("vikiStandD.png");
+                playerOne.imgAttackLeg = Image.FromFile("vikiLegD.png");
+                playerOne.imgKneel = Image.FromFile("vikiKneelD.png");
+                playerOne.imgDead = Image.FromFile("vikiDeadD.png");
+            }
 
 
     
@@ -431,7 +440,11 @@ namespace CombatGame
                 //Rectangle iA = new Rectangle(0, 0, pbPlayerOne.Width, pbPlayerOne.Height);
                // Rectangle interArea = new Rectangle(pbPlayerOne.Left, pbPlayerOne.Top, 1, 1);
                 return interArea;
-            }else 
+            }else if(pbPlayerOne.Right > pbPlayerTwo.Left && pbPlayerOne.Left < pbPlayerTwo.Right)
+            {
+                return new Rectangle(0, 0, pbPlayerOne.Right - pbPlayerTwo.Left, pbPlayerOne.Height);
+            }
+            else
             {
                 return new Rectangle(-1, -1, -1, -1);
             }
@@ -447,22 +460,33 @@ namespace CombatGame
 
             this.Moving();
             this.update();
+            this.checkClashAndAct();
 
+            
+        }
+        // proveruva dali dvata igrachi se sudrile i se spravuva so so sudarot
+        public void checkClashAndAct()
+        {
             Rectangle checkInter = intersection();
 
             if (checkInter.Height != -1)
             {
-                
+
                 pbIntersection.Width = checkInter.Width;
                 pbIntersection.Height = checkInter.Height;
-               
+
                 Image partOfPlayerOne = cropImage(playerOne.pbPlayer.Image, checkInter);
                 pbIntersection.Image = partOfPlayerOne;
-               
+
                 pbIntersection.SizeMode = PictureBoxSizeMode.StretchImage;
                 //pbIntersection.Location = new Point(pbPlayerOne.Left, pbPlayerOne.Top);
-                pbIntersection.Location = new Point(pbPlayerTwo.Width-pbIntersection.Width, 0);
+                pbIntersection.Location = new Point(pbPlayerTwo.Width - pbIntersection.Width, 0);
             }
+            else
+            {
+                pbIntersection.Image = null;
+            }
+
         }
 
 
