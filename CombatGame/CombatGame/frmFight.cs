@@ -20,6 +20,9 @@ namespace CombatGame
         Player playerTwo;
         Magic playerOneMagic;
         Magic playerTwoMagic;
+
+        bool playerOneIsRight;
+
         bool a, s, d, left, right, down;
         bool f, g, enter, add;
         bool gameIsFinished;
@@ -30,7 +33,7 @@ namespace CombatGame
         public frmFight(Player first, Player second)
         {
             InitializeComponent();
-
+            playerOneIsRight = true;
 
             // za da go prepoznae file-ot  EyeOfTheTiger.wav
             //
@@ -81,26 +84,51 @@ namespace CombatGame
         private void fillPictureBoxes()
         {
 
-            if (playerOne.Name.Equals("Igor"))
-            {
-                playerOne.imgAttack = Image.FromFile("igorUdarD.png");
-                playerOne.imgDefense = Image.FromFile("igorGardD.png");
-                playerOne.imgStand = Image.FromFile("igorStandD.png");
-                playerOne.imgAttackLeg = Image.FromFile("igorNogaD.png");
-                playerOne.imgKneel = Image.FromFile("igorKleciD.png");
-                playerOne.imgDead = Image.FromFile("igorLeziD.png");
-
-            }
 
 
+            fillPictureBoxesPart2(playerOne, true);
+            fillPictureBoxesPart2(playerTwo, false);
+            
     
             
-                playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
-                playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
-                playerTwo.imgStand = Image.FromFile("petreStandTrans.png");
-                playerTwo.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
-                playerTwo.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
+                
             
+        }
+
+        public Boolean playerOneDirection()
+        {
+            return pbPlayerOne.Left > pbPlayerTwo.Left;
+        }
+
+        private void fillPictureBoxesPart2(Player player, bool firstPlayer)
+        {
+            if (player.Name.Equals("Igor"))
+            {
+                player.imgAttack = Image.FromFile("igorUdar" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("igorGard" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("igorStand" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("igorNoga" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("igorKleci" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDead = Image.FromFile("igorLezi" + ((firstPlayer) ? "D" : "") + ".png");
+
+            }
+            else if (player.Name.Equals("Viki"))
+            {
+                player.imgAttack = Image.FromFile("vikiPunch" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("vikiDefense" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("vikiStand" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("vikiLeg" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("vikiKneel" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDead = Image.FromFile("vikiDead" + ((firstPlayer) ? "D" : "") + ".png");
+            }
+            else if (player.Name.Equals("Petre"))
+            {
+                player.imgAttack = Image.FromFile("petreUdarTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("petreGardTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("petreStandTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("petreNogaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("petreKleciSecenaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+            }
         }
 
 
@@ -421,17 +449,23 @@ namespace CombatGame
         private Rectangle intersection()
         {
 
-            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right)
+            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right || pbPlayerOne.Top != pbPlayerTwo.Top)
             {
                 return new Rectangle(-1,-1,-1,-1);
             }
-            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Right > pbPlayerTwo.Left) 
+            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Left > pbPlayerTwo.Left) 
             {
+                
                 Rectangle interArea = new Rectangle(0, 0, pbPlayerTwo.Right - pbPlayerOne.Left, pbPlayerOne.Height);
                 //Rectangle iA = new Rectangle(0, 0, pbPlayerOne.Width, pbPlayerOne.Height);
                // Rectangle interArea = new Rectangle(pbPlayerOne.Left, pbPlayerOne.Top, 1, 1);
                 return interArea;
-            }else 
+            }else if(pbPlayerOne.Right > pbPlayerTwo.Left && pbPlayerOne.Left < pbPlayerTwo.Right)
+            {
+                
+                return new Rectangle(pbPlayerOne.Width-(pbPlayerOne.Right-pbPlayerTwo.Left), 0, pbPlayerOne.Right - pbPlayerTwo.Left, pbPlayerOne.Height);
+            }
+            else
             {
                 return new Rectangle(-1, -1, -1, -1);
             }
@@ -448,21 +482,43 @@ namespace CombatGame
             this.Moving();
             this.update();
 
+            playerOneIsRight = this.playerOneDirection(); // ja azurira pozicijata ("SVRTENOSTA") na igracot
+            this.checkClashAndAct();
+
+            
+        }
+        // proveruva dali dvata igrachi se sudrile i se spravuva so so sudarot
+        public void checkClashAndAct()
+        {
             Rectangle checkInter = intersection();
 
             if (checkInter.Height != -1)
             {
-                
+
                 pbIntersection.Width = checkInter.Width;
                 pbIntersection.Height = checkInter.Height;
-               
+
                 Image partOfPlayerOne = cropImage(playerOne.pbPlayer.Image, checkInter);
                 pbIntersection.Image = partOfPlayerOne;
-               
+
                 pbIntersection.SizeMode = PictureBoxSizeMode.StretchImage;
                 //pbIntersection.Location = new Point(pbPlayerOne.Left, pbPlayerOne.Top);
-                pbIntersection.Location = new Point(pbPlayerTwo.Width-pbIntersection.Width, 0);
+
+                if (playerOneIsRight) // ako prviot igrac(pocetno levo) od desno vleguva vo vtoriot igrac
+                {
+                    pbIntersection.Location = new Point(pbPlayerTwo.Width - pbIntersection.Width, 0);
+                }
+                else
+                {
+                    pbIntersection.Location = new Point(0, 0);
+                }
+               
             }
+            else
+            {
+                pbIntersection.Image = null;
+            }
+
         }
 
 
