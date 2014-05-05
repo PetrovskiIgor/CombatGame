@@ -86,12 +86,9 @@ namespace CombatGame
                 playerOne.imgDead = Image.FromFile("igorLeziD.png");
 
             }
-            
-                
-                
-                
-                
-                
+
+
+    
             
                 playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
                 playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
@@ -350,7 +347,7 @@ namespace CombatGame
                 }
                 else
                 {
-                    this.RightMagicAttack(playerTwo, playerTwoMagic);
+                    this.RightMagicAttack(playerTwo, playerOneMagic);
                 }
             }
 
