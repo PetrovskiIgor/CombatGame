@@ -119,19 +119,23 @@
             // 
             // pbMagic2
             // 
-            this.pbMagic2.BackColor = System.Drawing.Color.NavajoWhite;
-            this.pbMagic2.Location = new System.Drawing.Point(428, 322);
+            this.pbMagic2.BackColor = System.Drawing.Color.Transparent;
+            this.pbMagic2.Image = ((System.Drawing.Image)(resources.GetObject("pbMagic2.Image")));
+            this.pbMagic2.Location = new System.Drawing.Point(428, 334);
             this.pbMagic2.Name = "pbMagic2";
             this.pbMagic2.Size = new System.Drawing.Size(100, 75);
+            this.pbMagic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMagic2.TabIndex = 8;
             this.pbMagic2.TabStop = false;
             // 
             // pbMagic1
             // 
-            this.pbMagic1.BackColor = System.Drawing.Color.DarkRed;
+            this.pbMagic1.BackColor = System.Drawing.Color.Transparent;
+            this.pbMagic1.Image = ((System.Drawing.Image)(resources.GetObject("pbMagic1.Image")));
             this.pbMagic1.Location = new System.Drawing.Point(216, 334);
             this.pbMagic1.Name = "pbMagic1";
             this.pbMagic1.Size = new System.Drawing.Size(100, 75);
+            this.pbMagic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMagic1.TabIndex = 9;
             this.pbMagic1.TabStop = false;
             // 

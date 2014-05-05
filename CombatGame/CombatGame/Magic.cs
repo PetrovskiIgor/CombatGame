@@ -97,7 +97,7 @@ namespace CombatGame
             this.PicBoxImage.Show();
         }
 
-        public void HideMagic ()
+        public void HideMagic () // Hides the Picture Box of the magic from the display
         {
             this.PicBoxImage.Hide();
         }
