@@ -20,6 +20,9 @@ namespace CombatGame
         Player playerTwo;
         Magic playerOneMagic;
         Magic playerTwoMagic;
+
+        bool playerOneIsRight;
+
         bool a, s, d, left, right, down;
         bool f, g, enter, add;
         bool gameIsFinished;
@@ -30,7 +33,7 @@ namespace CombatGame
         public frmFight(Player first, Player second)
         {
             InitializeComponent();
-
+            playerOneIsRight = true;
 
             // za da go prepoznae file-ot  EyeOfTheTiger.wav
             //
@@ -90,6 +93,11 @@ namespace CombatGame
             
                 
             
+        }
+
+        public Boolean playerOneDirection()
+        {
+            return pbPlayerOne.Left > pbPlayerTwo.Left;
         }
 
         private void fillPictureBoxesPart2(Player player, bool firstPlayer)
@@ -441,19 +449,21 @@ namespace CombatGame
         private Rectangle intersection()
         {
 
-            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right)
+            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right || pbPlayerOne.Top != pbPlayerTwo.Top)
             {
                 return new Rectangle(-1,-1,-1,-1);
             }
-            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Right > pbPlayerTwo.Left) 
+            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Left > pbPlayerTwo.Left) 
             {
+                
                 Rectangle interArea = new Rectangle(0, 0, pbPlayerTwo.Right - pbPlayerOne.Left, pbPlayerOne.Height);
                 //Rectangle iA = new Rectangle(0, 0, pbPlayerOne.Width, pbPlayerOne.Height);
                // Rectangle interArea = new Rectangle(pbPlayerOne.Left, pbPlayerOne.Top, 1, 1);
                 return interArea;
             }else if(pbPlayerOne.Right > pbPlayerTwo.Left && pbPlayerOne.Left < pbPlayerTwo.Right)
             {
-                return new Rectangle(0, 0, pbPlayerOne.Right - pbPlayerTwo.Left, pbPlayerOne.Height);
+                
+                return new Rectangle(pbPlayerOne.Width-(pbPlayerOne.Right-pbPlayerTwo.Left), 0, pbPlayerOne.Right - pbPlayerTwo.Left, pbPlayerOne.Height);
             }
             else
             {
@@ -471,6 +481,8 @@ namespace CombatGame
 
             this.Moving();
             this.update();
+
+            playerOneIsRight = this.playerOneDirection(); // ja azurira pozicijata ("SVRTENOSTA") na igracot
             this.checkClashAndAct();
 
             
@@ -491,7 +503,16 @@ namespace CombatGame
 
                 pbIntersection.SizeMode = PictureBoxSizeMode.StretchImage;
                 //pbIntersection.Location = new Point(pbPlayerOne.Left, pbPlayerOne.Top);
-                pbIntersection.Location = new Point(pbPlayerTwo.Width - pbIntersection.Width, 0);
+
+                if (playerOneIsRight) // ako prviot igrac(pocetno levo) od desno vleguva vo vtoriot igrac
+                {
+                    pbIntersection.Location = new Point(pbPlayerTwo.Width - pbIntersection.Width, 0);
+                }
+                else
+                {
+                    pbIntersection.Location = new Point(0, 0);
+                }
+               
             }
             else
             {
