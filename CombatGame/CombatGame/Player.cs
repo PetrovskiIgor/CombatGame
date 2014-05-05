@@ -17,7 +17,8 @@ namespace CombatGame
         ATTACKLEG,
         ATTACKMAGIC,
         DEFENSE,
-        KNEEL
+        KNEEL,
+        DEAD
     }
 
     public enum Direction
@@ -57,7 +58,7 @@ namespace CombatGame
         public Image imgDefenseD;
         public Image imgDeadD;
         public Image imgAttackD;
-        public Image imgStendD;
+        public Image imgStandD;
 
 
         //Constructor
@@ -288,8 +289,22 @@ namespace CombatGame
             if (newDireciton==Direction.LEFT)
             {
                 this.DirectionPlayer = Direction.LEFT;
-                if (this.statePerson == State.KNEEL)
-                    pbPlayer.Image = this.imgKneel;
+                if (this.statePerson == State.KNEEL) pbPlayer.Image = this.imgKneelD;
+                else if (statePerson == State.ATTACK) pbPlayer.Image = this.imgAttackD;
+                else if (statePerson == State.ATTACKLEG) pbPlayer.Image = this.imgAttackLegD;
+                else if (statePerson == State.STAND) pbPlayer.Image = this.imgStandD;
+                else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefenseD;
+                else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDeadD;
+            }
+            else
+            {
+                this.DirectionPlayer = newDireciton;
+                if (this.statePerson == State.KNEEL) pbPlayer.Image = this.imgKneel;
+                else if (statePerson == State.ATTACK) pbPlayer.Image = this.imgAttack;
+                else if (statePerson == State.ATTACKLEG) pbPlayer.Image = this.imgAttackLeg;
+                else if (statePerson == State.STAND) pbPlayer.Image = this.imgStand;
+                else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefense;
+                else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDead;
             }
         }
     }
