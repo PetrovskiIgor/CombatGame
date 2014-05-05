@@ -37,7 +37,7 @@ namespace CombatGame
         public int Velocity { get; set; }
         public int JumpForce = 30;
         public bool IsJumped { get; set; }
-        public static int StandPosition = 450;
+        public static int StandPosition = 700; //treba da se smeni
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
         public static int HandPower = 8 ;
@@ -120,7 +120,7 @@ namespace CombatGame
             }
             else
             {
-                JumpForce = 30;
+                JumpForce = 80;
                 
             }
             if (statePerson == State.STAND)
@@ -185,8 +185,9 @@ namespace CombatGame
         public void Jump()
         {
             this.pbPlayer.Top -= JumpForce;
-            JumpForce--;
-            this.pbPlayer.Top += 5;
+            JumpForce-=10;
+            if (JumpForce == 0 && pbPlayer.Top < StandPosition+pbPlayer.Height)
+                this.pbPlayer.Top += 5;
             if (pbPlayer.Bottom >= StandPosition)
             {
                 pbPlayer.Top = StandPosition - pbPlayer.Height;

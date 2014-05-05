@@ -49,9 +49,9 @@
             // 
             this.pbPlayerOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pbPlayerOne.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerOne.Image")));
-            this.pbPlayerOne.Location = new System.Drawing.Point(534, 229);
+            this.pbPlayerOne.Location = new System.Drawing.Point(661, 393);
             this.pbPlayerOne.Name = "pbPlayerOne";
-            this.pbPlayerOne.Size = new System.Drawing.Size(243, 348);
+            this.pbPlayerOne.Size = new System.Drawing.Size(116, 184);
             this.pbPlayerOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerOne.TabIndex = 0;
             this.pbPlayerOne.TabStop = false;
@@ -60,9 +60,9 @@
             // 
             this.pbPlayerTwo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pbPlayerTwo.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerTwo.Image")));
-            this.pbPlayerTwo.Location = new System.Drawing.Point(86, 227);
+            this.pbPlayerTwo.Location = new System.Drawing.Point(127, 393);
             this.pbPlayerTwo.Name = "pbPlayerTwo";
-            this.pbPlayerTwo.Size = new System.Drawing.Size(124, 350);
+            this.pbPlayerTwo.Size = new System.Drawing.Size(83, 184);
             this.pbPlayerTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerTwo.TabIndex = 1;
             this.pbPlayerTwo.TabStop = false;
