@@ -81,35 +81,46 @@ namespace CombatGame
         private void fillPictureBoxes()
         {
 
-            if (playerOne.Name.Equals("Igor"))
-            {
-                playerOne.imgAttack = Image.FromFile("igorUdarD.png");
-                playerOne.imgDefense = Image.FromFile("igorGardD.png");
-                playerOne.imgStand = Image.FromFile("igorStandD.png");
-                playerOne.imgAttackLeg = Image.FromFile("igorNogaD.png");
-                playerOne.imgKneel = Image.FromFile("igorKleciD.png");
-                playerOne.imgDead = Image.FromFile("igorLeziD.png");
-
-            }
-            else if (playerOne.Name.Equals("Viki"))
-            {
-                playerOne.imgAttack = Image.FromFile("vikiPunchD.png");
-                playerOne.imgDefense = Image.FromFile("vikiDefenseD.png");
-                playerOne.imgStand = Image.FromFile("vikiStandD.png");
-                playerOne.imgAttackLeg = Image.FromFile("vikiLegD.png");
-                playerOne.imgKneel = Image.FromFile("vikiKneelD.png");
-                playerOne.imgDead = Image.FromFile("vikiDeadD.png");
-            }
 
 
+            fillPictureBoxesPart2(playerOne, true);
+            fillPictureBoxesPart2(playerTwo, false);
+            
     
             
-                playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
-                playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
-                playerTwo.imgStand = Image.FromFile("petreStandTrans.png");
-                playerTwo.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
-                playerTwo.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
+                
             
+        }
+
+        private void fillPictureBoxesPart2(Player player, bool firstPlayer)
+        {
+            if (player.Name.Equals("Igor"))
+            {
+                player.imgAttack = Image.FromFile("igorUdar" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("igorGard" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("igorStand" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("igorNoga" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("igorKleci" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDead = Image.FromFile("igorLezi" + ((firstPlayer) ? "D" : "") + ".png");
+
+            }
+            else if (player.Name.Equals("Viki"))
+            {
+                player.imgAttack = Image.FromFile("vikiPunch" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("vikiDefense" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("vikiStand" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("vikiLeg" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("vikiKneel" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDead = Image.FromFile("vikiDead" + ((firstPlayer) ? "D" : "") + ".png");
+            }
+            else if (player.Name.Equals("Petre"))
+            {
+                player.imgAttack = Image.FromFile("petreUdarTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgDefense = Image.FromFile("petreGardTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgStand = Image.FromFile("petreStandTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackLeg = Image.FromFile("petreNogaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgKneel = Image.FromFile("petreKleciSecenaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+            }
         }
 
 
