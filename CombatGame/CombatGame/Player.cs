@@ -177,12 +177,12 @@ namespace CombatGame
         //The player moves in the given direction
         public void Move(Direction dir)
         {
-            if (this.DirectionPlayer == Direction.LEFT)
+            if(dir == Direction.LEFT)
             {
                 this.statePerson = State.MOVINGLEFT;
                 this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
-            else if (this.DirectionPlayer == Direction.RIGHT)
+            else if (dir == Direction.RIGHT)
             {
                 this.statePerson = State.MOVINGRIGHT;
                 this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
