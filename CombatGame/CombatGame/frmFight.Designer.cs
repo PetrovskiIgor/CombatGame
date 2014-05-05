@@ -51,7 +51,7 @@
             this.pbPlayerOne.Image = ((System.Drawing.Image)(resources.GetObject("pbPlayerOne.Image")));
             this.pbPlayerOne.Location = new System.Drawing.Point(661, 393);
             this.pbPlayerOne.Name = "pbPlayerOne";
-            this.pbPlayerOne.Size = new System.Drawing.Size(116, 184);
+            this.pbPlayerOne.Size = new System.Drawing.Size(83, 184);
             this.pbPlayerOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerOne.TabIndex = 0;
             this.pbPlayerOne.TabStop = false;

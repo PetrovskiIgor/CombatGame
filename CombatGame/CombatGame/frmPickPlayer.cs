@@ -56,7 +56,7 @@ namespace CombatGame
 
             takenPb = new bool[numPlayers];
             players = new Player[numPlayers];
-            magicTricks = new Magic[numPlayers * 3];
+            magicTricks = new Magic[3];
             pb = new PictureBox[numPlayers][];
             pb[0] = new PictureBox[2];
             pb[1] = new PictureBox[2];
@@ -81,24 +81,16 @@ namespace CombatGame
                 takenPb[i] = false;
             }
 
-            for (int i = 0; i < numPlayers * 3; i++)
-            {
-               
-            }
             magicTricks[0] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
             magicTricks[1] = new Magic("Hurricane", 10, Image.FromFile("imgHurrucainVerticalTrans.png"), Image.FromFile("imgHurrucainVerticalTrans.png"), 10);
             magicTricks[2] = new Magic("Lightning", 10, Image.FromFile("imgLightningMagicTrans.png"), Image.FromFile("imgLightningMagicTrans.png"), 10);
-            magicTricks[3] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[4] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[5] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[6] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[7] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[8] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
+           
+            
 
             players[0] = new Player("Viki","Zestoka",magicTricks[0],magicTricks[1],magicTricks[2]);
-            players[1] = new Player("Petre", "Petre doagja od gradot Radovis.", magicTricks[3], magicTricks[4], magicTricks[5]);
-            players[2] = new Player("Igor", "Jas sum Igor Petrovski, dzverot Tetovski.", magicTricks[6], magicTricks[7], magicTricks[8]);
-            players[3] = new Player("David", "Jas sum Horny i mnogu sum crazy!", magicTricks[9], magicTricks[10], magicTricks[11]);
+            players[1] = new Player("Petre", "Petre doagja od gradot Radovis.", magicTricks[0], magicTricks[1], magicTricks[2]);
+            players[2] = new Player("Igor", "Jas sum Igor Petrovski, dzverot Tetovski.", magicTricks[0], magicTricks[1], magicTricks[2]);
+            players[3] = new Player("David", "Jas sum Horny i mnogu sum crazy!", magicTricks[0], magicTricks[1], magicTricks[2]);
 
 
             

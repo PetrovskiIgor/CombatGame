@@ -50,6 +50,7 @@ namespace CombatGame
         public Image imgDefense;
         public Image imgJump;
         public Image imgKneel;
+        public Image imgDead;
 
 
         //Constructor
@@ -260,6 +261,9 @@ namespace CombatGame
             Health -= decrease;
             if(Health<0)
             {
+
+                // mozhebi ne treba ovde da se menuva slikata
+                this.pbPlayer.Image = this.imgDead; // NE RABOTI
                 Health = 0;
             }
         }

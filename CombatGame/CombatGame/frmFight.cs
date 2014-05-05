@@ -75,17 +75,24 @@ namespace CombatGame
 
         private void fillPictureBoxes()
         {
-            
-                playerOne.imgAttack = Image.FromFile("petreUdarTrans.png");
-                playerOne.imgDefense = Image.FromFile("petreGardTrans.png");
-                playerOne.imgStand = Image.FromFile("petreStandTrans.png");
-                playerOne.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
-                playerOne.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
-                
-                
-                
-                
 
+            if (playerOne.Name.Equals("Igor"))
+            {
+                playerOne.imgAttack = Image.FromFile("igorUdarD.png");
+                playerOne.imgDefense = Image.FromFile("igorGardD.png");
+                playerOne.imgStand = Image.FromFile("igorStandD.png");
+                playerOne.imgAttackLeg = Image.FromFile("igorNogaD.png");
+                playerOne.imgKneel = Image.FromFile("igorKleciD.png");
+                playerOne.imgDead = Image.FromFile("igorLeziD.png");
+
+            }
+            
+                
+                
+                
+                
+                
+            
                 playerTwo.imgAttack = Image.FromFile("petreUdarTrans.png");
                 playerTwo.imgDefense = Image.FromFile("petreGardTrans.png");
                 playerTwo.imgStand = Image.FromFile("petreStandTrans.png");
