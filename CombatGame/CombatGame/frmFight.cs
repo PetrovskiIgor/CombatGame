@@ -14,7 +14,7 @@ namespace CombatGame
 {
     public partial class frmFight : Form
     {
-        
+        PPPBitmap bmBackground;
         //SoundPlayer soundPlayer;
         Player playerOne;
         Player playerTwo;
@@ -42,6 +42,8 @@ namespace CombatGame
             // EyeOfTheTiger.wav vo properties Copy to Output directory: copy if newer!!!
             //if(frmOptions.musicOn)
             //    soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
+
+            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
 
             playerOne = first;
             playerOne.pbPlayer = pbPlayerOne;
@@ -78,8 +80,8 @@ namespace CombatGame
 
             pbIntersection.Parent = pbPlayerTwo;
             pbIntersection.BackColor = Color.Transparent;
-            
-            
+
+            Invalidate();
         }
 
 
@@ -125,33 +127,49 @@ namespace CombatGame
             }
             else if (player.Name.Equals("Viki"))
             {
-                player.imgAttack = Image.FromFile("vikiPunch" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgDefense = Image.FromFile("vikiDefense" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgStand = Image.FromFile("vikiStand" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLeg = Image.FromFile("vikiLeg" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgKneel = Image.FromFile("vikiKneel" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgDead = Image.FromFile("vikiDead" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttack = Image.FromFile("vikiPunch.png");
+                player.imgDefense = Image.FromFile("vikiDefense.png");
+                player.imgStand = Image.FromFile("vikiStand.png");
+                player.imgAttackLeg = Image.FromFile("vikiLeg.png");
+                player.imgKneel = Image.FromFile("vikiKneel.png");
+                player.imgDead = Image.FromFile("vikiDead.png");
 
-                player.imgAttackD = Image.FromFile("vikiPunch" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgDefenseD = Image.FromFile("vikiDefense" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgStandD = Image.FromFile("vikiStand" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLegD = Image.FromFile("vikiLeg" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgKneelD = Image.FromFile("vikiKneel" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgDeadD = Image.FromFile("vikiDead" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackD = Image.FromFile("vikiPunchD.png");
+                player.imgDefenseD = Image.FromFile("vikiDefenseD.png");
+                player.imgStandD = Image.FromFile("vikiStandD.png");
+                player.imgAttackLegD = Image.FromFile("vikiLegD.png");
+                player.imgKneelD = Image.FromFile("vikiKneelD.png");
+                player.imgDeadD = Image.FromFile("vikiDeadD.png");
             }
             else if (player.Name.Equals("Petre"))
             {
-                player.imgAttack = Image.FromFile("petreUdarTrans" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgDefense = Image.FromFile("petreGardTrans" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgStand = Image.FromFile("petreStandTrans" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLeg = Image.FromFile("petreNogaTrans" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgKneel = Image.FromFile("petreKleciSecenaTrans" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttack = Image.FromFile("petreUdarTrans.png");
+                player.imgDefense = Image.FromFile("petreGardTrans.png");
+                player.imgStand = Image.FromFile("petreStandTrans.png");
+                player.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+                player.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
 
-                player.imgAttackD = Image.FromFile("petreUdarTrans" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgDefenseD = Image.FromFile("petreGardTrans" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgStandD = Image.FromFile("petreStandTrans" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLegD = Image.FromFile("petreNogaTrans" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgKneelD = Image.FromFile("petreKleciSecenaTrans" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackD = Image.FromFile("petreUdarTrans.png");
+                player.imgDefenseD = Image.FromFile("petreGardTrans.png");
+                player.imgStandD = Image.FromFile("petreStandTrans.png");
+                player.imgAttackLegD = Image.FromFile("petreNogaTrans.png");
+                player.imgKneelD = Image.FromFile("petreKleciSecenaTrans.png");
+            }
+            else // HORNY
+            {
+                player.imgAttack = Image.FromFile("DavidPunch.png");
+                player.imgDefense = Image.FromFile("DavidDefense.png");
+                player.imgStand = Image.FromFile("DavidStand.png");
+                player.imgAttackLeg = Image.FromFile("DavidNogaTrans.png");
+                player.imgKneel = Image.FromFile("DavidKleciTrans.png");
+                player.imgDead = Image.FromFile("DavidDeadTrans.png");
+
+                player.imgAttackD = Image.FromFile("DavidPunchD.png");
+                player.imgDefenseD = Image.FromFile("DavidDefenseD.png");
+                player.imgStandD = Image.FromFile("DavidStandD.png");
+                player.imgAttackLegD = Image.FromFile("DavidNogaTransD.png");
+                player.imgKneelD = Image.FromFile("DavidKleciTransD.png");
+                player.imgDeadD = Image.FromFile("DavidDeadTransD.png");
             }
         }
 
@@ -503,6 +521,8 @@ namespace CombatGame
         
         void timer_Tick(object sender, EventArgs e)
         {
+
+            
             playerOne.CheckAndActs();
             playerTwo.CheckAndActs();
 
@@ -514,9 +534,9 @@ namespace CombatGame
 
             if (playerOneIsRight != this.playerOneDirection())
             {
-                
+
                 playerOneIsRight = this.playerOneDirection(); // ja azurira pozicijata ("SVRTENOSTA") na igracot
-               // MessageBox.Show(playerOneIsRight + " ");
+                // MessageBox.Show(playerOneIsRight + " ");
                 if (playerOneIsRight)
                 {
                     playerOne.changeDirection(Direction.LEFT);
@@ -528,6 +548,7 @@ namespace CombatGame
                     playerTwo.changeDirection(Direction.LEFT);
                 }
             }
+            
             
             this.checkClashAndAct();
 
@@ -565,6 +586,11 @@ namespace CombatGame
                 pbIntersection.Image = null;
             }
 
+        }
+
+        private void frmFight_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
         }
 
 

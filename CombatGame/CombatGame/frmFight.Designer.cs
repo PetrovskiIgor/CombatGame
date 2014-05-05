@@ -154,6 +154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1370, 709);
             this.Controls.Add(this.pbIntersection);
             this.Controls.Add(this.pbMagic1);
@@ -171,6 +172,7 @@
             this.Text = "Combat Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmFight_FormClosing);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmFight_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmFight_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmFight_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).EndInit();
