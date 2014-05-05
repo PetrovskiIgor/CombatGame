@@ -135,18 +135,26 @@ namespace CombatGame
             if (statePerson == State.STAND)
             {
                 pbPlayer.BackColor = Color.Transparent;
-               
-                pbPlayer.Image = imgStand;
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgStandD;
+                else
+                    pbPlayer.Image = imgStand;
             }
             else if (statePerson == State.ATTACK)
             {
                 pbPlayer.BackColor = Color.Transparent;
-                pbPlayer.Image = imgAttack;
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgAttackD;
+                else
+                    pbPlayer.Image = imgAttack;
             }
             else if (statePerson == State.ATTACKLEG)
             {
                 pbPlayer.BackColor = Color.Transparent;
-                pbPlayer.Image = imgAttackLeg;
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgAttackLegD;
+                else
+                    pbPlayer.Image = imgAttackLeg;
                 
             }
             else if (statePerson == State.ATTACKMAGIC)
@@ -156,13 +164,26 @@ namespace CombatGame
             else if (statePerson == State.DEFENSE)
             {
                 pbPlayer.BackColor = Color.Transparent;
-                pbPlayer.Image = imgDefense;
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgDefense;
+                else
+                    pbPlayer.Image = imgDefense;
             }
             else if (statePerson == State.KNEEL)
             {
                 pbPlayer.BackColor = Color.Transparent;
-                pbPlayer.Image = imgKneel;
-
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgKneelD;
+                else
+                    pbPlayer.Image = imgKneel;
+            }
+            else if (statePerson == State.DEAD)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    pbPlayer.Image = imgDeadD;
+                else
+                    pbPlayer.Image = imgDead;
             }
            
         }
@@ -277,7 +298,7 @@ namespace CombatGame
             return false;
         }
 
-        public void changeDirection(Direction newDireciton)
+        /*public void changeDirection(Direction newDireciton)
         {
             if (newDireciton==Direction.LEFT)
             {
@@ -301,6 +322,11 @@ namespace CombatGame
                 else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDead;
                 else MessageBox.Show("OVA NE TREBA DA SE JAVI");
             }
+        }*/
+
+        public void changeDirection(Direction newDirection)
+        {
+            DirectionPlayer = newDirection;
         }
     }
 }
