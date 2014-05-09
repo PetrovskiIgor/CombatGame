@@ -76,7 +76,7 @@ namespace CombatGame
 
             // funkcija koja gi postavuva transparentnite sliki
 
-            fillPictureBoxes();
+            //fillPictureBoxes();
 
 
             pbIntersection.Parent = pbPlayerTwo;
@@ -599,6 +599,7 @@ namespace CombatGame
         {
             e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
             this.playerOne.DrawPlayer(e.Graphics);
+            this.playerTwo.DrawPlayer(e.Graphics);
         }
 
 
