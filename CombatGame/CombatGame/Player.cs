@@ -391,6 +391,7 @@ namespace CombatGame
         public bool AttackLeg(Player opponent)
         {
             this.statePerson = State.ATTACKLEG;
+            this.Move(this.DirectionPlayer);
             return IsSuccessfulAttack(opponent);
         }
 
