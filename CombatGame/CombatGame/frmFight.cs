@@ -14,6 +14,8 @@ namespace CombatGame
 {
     public partial class frmFight : Form
     {
+
+       
         PPPBitmap bmBackground;
         //SoundPlayer soundPlayer;
         Player playerOne;
@@ -24,6 +26,9 @@ namespace CombatGame
         PPPProgressBar prbarPlayerOne;
         PPPProgressBar prbarPlayerTwo;
 
+
+
+        frmMenu MainForm;
         FrmPlayAgain playAgainForm;
         frmPickPlayer pickPlayerForm;
 
@@ -43,9 +48,11 @@ namespace CombatGame
         SoundPlayer soundPunch;
 
 
-        public frmFight(Player first, Player second)
+        public frmFight(Player first, Player second, frmMenu mainForm)
         {
             InitializeComponent();
+
+            MainForm = mainForm;
 
             prbarPlayerOne = new PPPProgressBar(755, 46, 461, 56);
             prbarPlayerTwo = new PPPProgressBar(49, 46, 461, 56);
@@ -478,7 +485,7 @@ namespace CombatGame
 
                 if (playAgainForm.ShowDialog() == DialogResult.OK)
                 {
-                    pickPlayerForm = new frmPickPlayer(null);
+                    pickPlayerForm = new frmPickPlayer(MainForm);
 
                     pickPlayerForm.Show();
                 }

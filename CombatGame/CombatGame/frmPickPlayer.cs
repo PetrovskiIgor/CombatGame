@@ -260,7 +260,7 @@ namespace CombatGame
                     this.Hide();
 
 
-                    Game = new frmFight(players[currPosFirst], players[currPosSec]);
+                    Game = new frmFight(players[currPosFirst], players[currPosSec],this.MainMenu);
 
                     Game.Show();
                 }
@@ -298,7 +298,7 @@ namespace CombatGame
                     currPosFirst = moveInNextField(currPosFirst, currPosSec, true, false);
                     
                     putAbovePictureBox(currPosFirst, true);
-                    lblPlayerOneDesc.Text = players[currPosSec].Description;
+                    lblPlayerOneDesc.Text = players[currPosFirst].Description;
            
                 }
                
@@ -385,7 +385,7 @@ namespace CombatGame
             {
                 this.Hide();
 
-                Game = new frmFight(players[currPosFirst], players[currPosSec]);
+                Game = new frmFight(players[currPosFirst], players[currPosSec],MainMenu);
                 MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
                 if (!frmOptions.musicOn)
                 {
