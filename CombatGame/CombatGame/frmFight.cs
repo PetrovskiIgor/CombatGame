@@ -110,19 +110,19 @@ namespace CombatGame
         {
             if (player.Name.Equals("Igor"))
             {
-                player.imgAttack = Image.FromFile("igorUdar.png");
-                player.imgDefense = Image.FromFile("igorGard.png");
-                player.imgStand = Image.FromFile("igorStand.png");
-                player.imgAttackLeg = Image.FromFile("igorNoga.png");
-                player.imgKneel = Image.FromFile("igorKleci.png");
-                player.imgDead = Image.FromFile("igorLezi.png");
+                player.imgAttack = Image.FromFile("igorUdarResized.png");
+                player.imgDefense = Image.FromFile("igorGardResized.png");
+                player.imgStand = Image.FromFile("igorStandResized.png");
+                player.imgAttackLeg = Image.FromFile("igorNogaResized.png");
+                player.imgKneel = Image.FromFile("igorKleciResized.png");
+                player.imgDead = Image.FromFile("igorLeziResized.png");
 
-                player.imgAttackD = Image.FromFile("igorUdarD.png");
-                player.imgDefenseD = Image.FromFile("igorGardD.png");
-                player.imgStandD = Image.FromFile("igorStandD.png");
-                player.imgAttackLegD = Image.FromFile("igorNogaD.png");
-                player.imgKneelD = Image.FromFile("igorKleciD.png");
-                player.imgDeadD = Image.FromFile("igorLeziD.png");
+                player.imgAttackD = Image.FromFile("igorUdarDResized.png");
+                player.imgDefenseD = Image.FromFile("igorGardDResized.png");
+                player.imgStandD = Image.FromFile("igorStandDResized.png");
+                player.imgAttackLegD = Image.FromFile("igorNogaDResized.png");
+                player.imgKneelD = Image.FromFile("igorKleciDResized.png");
+                player.imgDeadD = Image.FromFile("igorLeziDResized.png");
 
             }
             else if (player.Name.Equals("Viki"))
