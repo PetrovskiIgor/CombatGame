@@ -326,6 +326,12 @@ namespace CombatGame
 
                 this.statePerson = State.DEAD;
                 this.Y += 100;
+                if (DirectionPlayer == Direction.LEFT)
+                {
+                    this.X += 100;
+                }
+                else
+                    this.X -= 100;
                
                 Health = 0;
             }
