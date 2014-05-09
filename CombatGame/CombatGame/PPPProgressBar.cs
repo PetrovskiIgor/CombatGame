@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CombatGame
 {
-    class PPPProgressBar
+    public class PPPProgressBar
     {
-        int Value { get; set; }
-        int X { get; set; }
-        int Y { get; set; }
-        int Width { get; set; }
-        int Height { get; set; }
+        public int Value { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
         
         public PPPProgressBar(int x, int y,int width,int height)
         {

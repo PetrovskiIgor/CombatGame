@@ -30,8 +30,6 @@
         {
             this.lblPlayerOneName = new System.Windows.Forms.Label();
             this.lblPlayerTwoName = new System.Windows.Forms.Label();
-            this.pbarPlayerOne = new System.Windows.Forms.ProgressBar();
-            this.pbarPlayerTwo = new System.Windows.Forms.ProgressBar();
             this.lblHelthPlayerOne = new System.Windows.Forms.Label();
             this.lblHealthPlayerTwo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -39,50 +37,48 @@
             // lblPlayerOneName
             // 
             this.lblPlayerOneName.AutoSize = true;
+            this.lblPlayerOneName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerOneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerOneName.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblPlayerOneName.Location = new System.Drawing.Point(877, 19);
             this.lblPlayerOneName.Name = "lblPlayerOneName";
-            this.lblPlayerOneName.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayerOneName.Size = new System.Drawing.Size(70, 25);
             this.lblPlayerOneName.TabIndex = 2;
             this.lblPlayerOneName.Text = "label1";
             // 
             // lblPlayerTwoName
             // 
             this.lblPlayerTwoName.AutoSize = true;
+            this.lblPlayerTwoName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerTwoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerTwoName.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblPlayerTwoName.Location = new System.Drawing.Point(163, 19);
             this.lblPlayerTwoName.Name = "lblPlayerTwoName";
-            this.lblPlayerTwoName.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayerTwoName.Size = new System.Drawing.Size(70, 25);
             this.lblPlayerTwoName.TabIndex = 3;
             this.lblPlayerTwoName.Text = "label2";
-            // 
-            // pbarPlayerOne
-            // 
-            this.pbarPlayerOne.Location = new System.Drawing.Point(755, 46);
-            this.pbarPlayerOne.Name = "pbarPlayerOne";
-            this.pbarPlayerOne.Size = new System.Drawing.Size(461, 56);
-            this.pbarPlayerOne.TabIndex = 4;
-            // 
-            // pbarPlayerTwo
-            // 
-            this.pbarPlayerTwo.Location = new System.Drawing.Point(49, 46);
-            this.pbarPlayerTwo.Name = "pbarPlayerTwo";
-            this.pbarPlayerTwo.Size = new System.Drawing.Size(461, 56);
-            this.pbarPlayerTwo.TabIndex = 5;
             // 
             // lblHelthPlayerOne
             // 
             this.lblHelthPlayerOne.AutoSize = true;
+            this.lblHelthPlayerOne.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelthPlayerOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelthPlayerOne.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblHelthPlayerOne.Location = new System.Drawing.Point(1222, 56);
             this.lblHelthPlayerOne.Name = "lblHelthPlayerOne";
-            this.lblHelthPlayerOne.Size = new System.Drawing.Size(35, 13);
+            this.lblHelthPlayerOne.Size = new System.Drawing.Size(70, 25);
             this.lblHelthPlayerOne.TabIndex = 6;
             this.lblHelthPlayerOne.Text = "label3";
             // 
             // lblHealthPlayerTwo
             // 
             this.lblHealthPlayerTwo.AutoSize = true;
+            this.lblHealthPlayerTwo.BackColor = System.Drawing.Color.Transparent;
+            this.lblHealthPlayerTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHealthPlayerTwo.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblHealthPlayerTwo.Location = new System.Drawing.Point(516, 56);
             this.lblHealthPlayerTwo.Name = "lblHealthPlayerTwo";
-            this.lblHealthPlayerTwo.Size = new System.Drawing.Size(35, 13);
+            this.lblHealthPlayerTwo.Size = new System.Drawing.Size(70, 25);
             this.lblHealthPlayerTwo.TabIndex = 7;
             this.lblHealthPlayerTwo.Text = "label4";
             // 
@@ -94,8 +90,6 @@
             this.ClientSize = new System.Drawing.Size(1370, 709);
             this.Controls.Add(this.lblHealthPlayerTwo);
             this.Controls.Add(this.lblHelthPlayerOne);
-            this.Controls.Add(this.pbarPlayerTwo);
-            this.Controls.Add(this.pbarPlayerOne);
             this.Controls.Add(this.lblPlayerTwoName);
             this.Controls.Add(this.lblPlayerOneName);
             this.Name = "frmFight";
@@ -115,8 +109,6 @@
 
         private System.Windows.Forms.Label lblPlayerOneName;
         private System.Windows.Forms.Label lblPlayerTwoName;
-        private System.Windows.Forms.ProgressBar pbarPlayerOne;
-        private System.Windows.Forms.ProgressBar pbarPlayerTwo;
         private System.Windows.Forms.Label lblHelthPlayerOne;
         private System.Windows.Forms.Label lblHealthPlayerTwo;
 
