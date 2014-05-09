@@ -40,8 +40,8 @@ namespace CombatGame
         public static int StandPosition = 800; //treba da se smeni
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
-        public static int HandPower = 8 ;
-        public static int LegPower = 13;
+        public static int HandPower = 5 ;
+        public static int LegPower = 7;
         public Image currentImage;
         public int X {get; set;}
         public int Y {get; set;}
@@ -158,8 +158,16 @@ namespace CombatGame
         }
 
         //Checks in which state the player is and acts if needed
-        public void CheckAndActs()
+        public bool CheckAndActs()
         {
+            if (statePerson == State.DEAD)
+            {
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgDeadD;
+                else
+                    currentImage = imgDead;
+                return false;
+            }
             if (IsJumped)
             {
                 Jump();
@@ -208,13 +216,7 @@ namespace CombatGame
                 else
                     currentImage = imgKneel;
             }
-            else if (statePerson == State.DEAD)
-            {
-                if (DirectionPlayer == Direction.LEFT)
-                    currentImage = imgDeadD;
-                else
-                    currentImage = imgDead;
-            }
+            return true;
 
         }
 
@@ -319,11 +321,11 @@ namespace CombatGame
         public void DecreaseHealth(int decrease)
         {
             Health -= decrease;
-            if(Health<0)
-            {
+            if(Health<=0)
+            { 
 
-                // mozhebi ne treba ovde da se menuva slikata
-                this.currentImage = this.imgDead; //  RABOTI
+                this.statePerson = State.DEAD;
+                this.Y += 100;
                
                 Health = 0;
             }
