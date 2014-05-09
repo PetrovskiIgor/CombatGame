@@ -54,6 +54,10 @@ namespace CombatGame
 
             MainForm = mainForm;
 
+            
+
+            
+
             prbarPlayerOne = new PPPProgressBar(755, 46, 461, 56);
             prbarPlayerTwo = new PPPProgressBar(49, 46, 461, 56);
 
@@ -68,16 +72,22 @@ namespace CombatGame
             //if(frmOptions.musicOn)
             //    soundPlayer = new SoundPlayer("EyeOfTheTiger.wav");
 
-            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+            bmBackground = new PPPBitmap(new Bitmap("CombatGameBackground.gif"), "CombatGameBackground.gif");
 
             playerOne = first;
+            playerOne.X = this.Right - playerOne.Width - 200;
+            playerOne.Y = Player.StandPosition - playerOne.Height;
            
             playerOne.DirectionPlayer = Direction.LEFT;
             
             
             playerTwo = second;
+
+            playerTwo.X = this.Left + playerTwo.Width + 200; 
+            playerTwo.Y = Player.StandPosition - playerOne.Height;
            
             playerTwo.DirectionPlayer = Direction.RIGHT;
+           
 
 
             this.lblPlayerOneName.Text = playerOne.Name;
@@ -332,23 +342,23 @@ namespace CombatGame
             Rectangle intersect = intersection();
             if (a)
             {
-                if(intersect.Width  < collisionTolerance || playerOneIsRight) // ako e pomala kolizijata
+                if((intersect.Width  < collisionTolerance || playerOneIsRight) && playerTwo.Left-10 >= this.Left) // ako e pomala kolizijata
                     playerTwo.Move(Direction.LEFT);                           // ili ako se dvizhi vo nasoka koja ja namaluva kolizijata
                
             }
             if (d)
             {
-                if (intersect.Width < collisionTolerance || !playerOneIsRight)
+                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerTwo.Right + 15 <= this.Right))
                 playerTwo.Move(Direction.RIGHT);
             }
             if (left)
             {
-                if (intersect.Width < collisionTolerance || !playerOneIsRight)
+                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerOne.Left - 10 >= this.Left))
                 playerOne.Move(Direction.LEFT);
             }
             if(right)
             {
-                if (intersect.Width < collisionTolerance || playerOneIsRight)
+                if ((intersect.Width < collisionTolerance || playerOneIsRight) && (playerOne.Right + 15 <= this.Right))
                 playerOne.Move(Direction.RIGHT);
             }
 
@@ -472,28 +482,7 @@ namespace CombatGame
         void timer_Tick(object sender, EventArgs e)
         {
 
-            if (gameIsFinished)
-            {
-                
-
-                timer.Stop();
-
-                playAgainForm = new FrmPlayAgain();
-
-                
-                
-
-                if (playAgainForm.ShowDialog() == DialogResult.OK)
-                {
-                    pickPlayerForm = new frmPickPlayer(MainForm);
-
-                    pickPlayerForm.Show();
-                }
-
-                this.Hide();
-               
-                
-            }
+           
 
             if (playerOneIsRight != this.playerOneDirection())
             {
@@ -522,10 +511,16 @@ namespace CombatGame
             {
                 gameIsFinished = true;
             }
+
+            
             
 
             this.Moving();
             this.update();
+
+
+
+
 
             
             
@@ -533,6 +528,36 @@ namespace CombatGame
            // this.checkClashAndAct();
 
             Invalidate();
+
+
+            if (gameIsFinished)
+            {
+
+
+                timer.Stop();
+
+                playAgainForm = new FrmPlayAgain();
+
+
+
+
+                if (playAgainForm.ShowDialog() == DialogResult.OK)
+                {
+                    pickPlayerForm = new frmPickPlayer(MainForm);
+
+                    pickPlayerForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Application.Exit();
+
+                }
+
+
+
+
+            }
 
             
         }

@@ -39,7 +39,7 @@ namespace CombatGame
             InitializeComponent();
             MainMenu = menu;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+            bmBackground = new PPPBitmap(new Bitmap("CombatGameBackground.gif"), "CombatGameBackground.gif");
             numPlayers = 4;
 
             pb1.Image = Image.FromFile("imgVikiPeeva.jpg");

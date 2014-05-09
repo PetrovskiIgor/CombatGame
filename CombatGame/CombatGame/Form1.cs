@@ -31,9 +31,9 @@ namespace CombatGame
         public frmMenu()
         {
             InitializeComponent();
-          
-       
-            bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
+
+
+            bmBackground = new PPPBitmap(new Bitmap("CombatGameBackground.gif"), "CombatGameBackground.gif");
             
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
            // this.pbNewGame.Image = imgNewGameSelected;
