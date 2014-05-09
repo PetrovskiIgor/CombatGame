@@ -35,9 +35,9 @@ namespace CombatGame
         public String Description { get; set; }
         public List<Magic> magicList;
         public int Velocity { get; set; }
-        public int JumpForce = 30;
+        public int JumpForce = 64;
         public bool IsJumped { get; set; }
-        public static int StandPosition = 700; //treba da se smeni
+        public static int StandPosition = 800; //treba da se smeni
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
         public static int HandPower = 8 ;
@@ -45,8 +45,8 @@ namespace CombatGame
         public Image currentImage;
         public int X {get; set;}
         public int Y {get; set;}
-        public int Height { get { return currentImage.Height; } }
-        public int Width { get { return currentImage.Width; } }
+        public int Height { get { return currentImage.Height*5/4; } }
+        public int Width { get { return currentImage.Width*5/4; } }
         public int Left { get { return X - Width / 2; } }
         public int Right { get { return X + Width / 2; } }
         public int Top { get { return Y - Height / 2; } }
@@ -166,7 +166,7 @@ namespace CombatGame
             }
             else
             {
-                JumpForce = 80;
+                JumpForce = 64;
 
             }
             if (statePerson == State.STAND)
@@ -235,19 +235,20 @@ namespace CombatGame
         public void Jump ()
         {
             this.Y -= JumpForce;
-            JumpForce -= 10;
+            JumpForce -= 8;
             if (JumpForce == 0 && Y-this.Height/2 < StandPosition + currentImage.Height)
                 this.Y += 5;
-            if (Y-Height/2+currentImage.Height >= StandPosition)
+            if (Y + Height >= StandPosition)
             {
-                Y = StandPosition - currentImage.Height;
+                Y = StandPosition - Height;
                 IsJumped = false;
             }
         }
 
         public void DrawPlayer (Graphics g)
         {
-            g.DrawImage(currentImage,X-currentImage.Width/2,Y-currentImage.Height/2);
+            Rectangle r = new Rectangle(X - currentImage.Width / 2, Y - currentImage.Height / 2, this.Width, this.Height);
+            g.DrawImage(currentImage,r);
         }
 
         //Shows the magic and returns its reference
