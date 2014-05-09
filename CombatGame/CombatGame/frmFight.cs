@@ -21,6 +21,11 @@ namespace CombatGame
         Magic playerOneMagic;
         Magic playerTwoMagic;
 
+        PPPProgressBar prbarPlayerOne;
+        PPPProgressBar prbarPlayerTwo;
+
+        
+
         bool playerOneIsRight;
 
         bool a, s, d, left, right, down;
@@ -38,6 +43,9 @@ namespace CombatGame
         public frmFight(Player first, Player second)
         {
             InitializeComponent();
+
+            prbarPlayerOne = new PPPProgressBar(755, 46, 461, 56);
+            prbarPlayerTwo = new PPPProgressBar(49, 46, 461, 56);
 
 
             soundPunch = new SoundPlayer("punch.wav");
@@ -94,8 +102,8 @@ namespace CombatGame
             if(playerTwo.Health==0)
             {
                 gameIsFinished = true;
-                pbarPlayerTwo.Value = 0;
-                pbarPlayerOne.Value = playerOne.Health;
+                prbarPlayerTwo.Value = 0;
+                prbarPlayerOne.Value = playerOne.Health;
 
 
                 // TREBA DA SE DOPOLNI ( DA SE OZNACHI KRAJ NA IGRATA)
@@ -104,14 +112,14 @@ namespace CombatGame
             else if (playerOne.Health == 0)
             {
                 gameIsFinished = true;
-                pbarPlayerOne.Value = 0;
-                pbarPlayerTwo.Value = playerTwo.Health;
+                prbarPlayerOne.Value = 0;
+                prbarPlayerTwo.Value = playerTwo.Health;
 
                 // TREBA DA SE DOPOLNI ( DA SE OZNACHI KRAJ NA IGRATA)
             }
             else { 
-                this.pbarPlayerOne.Value = playerOne.Health;
-                this.pbarPlayerTwo.Value = playerTwo.Health;
+                this.prbarPlayerOne.Value = playerOne.Health;
+                this.prbarPlayerTwo.Value = playerTwo.Health;
             }   
             
             this.lblHelthPlayerOne.Text = playerOne.Health.ToString() + "%";
@@ -471,9 +479,17 @@ namespace CombatGame
                 }
             }
 
+
+            if (!playerOne.CheckAndActs())
+            {
+                MessageBox.Show(playerOne.Name + " e mrtov!");
+            }
+
+            if(!playerTwo.CheckAndActs())
+            {
+                MessageBox.Show(playerTwo.Name + " e mrtov!");
+            }
             
-            playerOne.CheckAndActs();
-            playerTwo.CheckAndActs();
 
             this.Moving();
             this.update();
@@ -494,6 +510,8 @@ namespace CombatGame
             e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
             this.playerOne.DrawPlayer(e.Graphics);
             this.playerTwo.DrawPlayer(e.Graphics);
+            this.prbarPlayerOne.Draw(e.Graphics);
+            this.prbarPlayerTwo.Draw(e.Graphics);
 
             if (playerOneMagic != null)
             {
