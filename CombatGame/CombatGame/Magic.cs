@@ -21,7 +21,7 @@ namespace CombatGame
         public int X;
         public int Y;
         public int Height { get { return MagicImageLeft.Height; } }
-        public int Widht { get { return MagicImageLeft.Width; } }
+        public int Width { get { return MagicImageLeft.Width; } }
 
         public Magic () // Default Constructor
         {
