@@ -81,9 +81,9 @@ namespace CombatGame
                 takenPb[i] = false;
             }
 
-            magicTricks[0] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"), 10);
-            magicTricks[1] = new Magic("Hurricane", 10, Image.FromFile("imgHurrucainVerticalTrans.png"), Image.FromFile("imgHurrucainVerticalTrans.png"), 10);
-            magicTricks[2] = new Magic("Lightning", 10, Image.FromFile("imgLightningMagicTrans.png"), Image.FromFile("imgLightningMagicTrans.png"), 10);
+            magicTricks[0] = new Magic("Fire", 10, Image.FromFile("imgFireMagicTrans.png"), Image.FromFile("imgFireMagicTrans.png"),30);
+            magicTricks[1] = new Magic("Hurricane", 10, Image.FromFile("imgHurrucainVerticalTrans.png"), Image.FromFile("imgHurrucainVerticalTrans.png"), 30);
+            magicTricks[2] = new Magic("Lightning", 10, Image.FromFile("imgLightningMagicTrans.png"), Image.FromFile("imgLightningMagicTrans.png"), 30);
            
             
 
@@ -194,19 +194,7 @@ namespace CombatGame
         private void lblStart_Click(object sender, EventArgs e)
         {
 
-            if (firstDone && secDone)
-            {
-                this.Hide();
-               
-                Game = new frmFight(players[currPosFirst], players[currPosSec]);
-                MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
-                if (!frmOptions.musicOn)
-                {
-                    MainMenu.wplayer.controls.stop();
-                }
-                
-                Game.Show();
-            }
+            
         }
 
         private void frmPickPlayer_FormClosing(object sender, FormClosingEventArgs e)
@@ -389,6 +377,23 @@ namespace CombatGame
         {
             this.Hide();
             MainMenu.Show();
+        }
+
+        private void pbStart_Click(object sender, EventArgs e)
+        {
+            if (firstDone && secDone)
+            {
+                this.Hide();
+
+                Game = new frmFight(players[currPosFirst], players[currPosSec]);
+                MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
+                if (!frmOptions.musicOn)
+                {
+                    MainMenu.wplayer.controls.stop();
+                }
+
+                Game.Show();
+            }
         }
     }
 }

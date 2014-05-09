@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPickPlayer));
-            this.lblStart = new System.Windows.Forms.Label();
             this.pb1Parent = new System.Windows.Forms.PictureBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
@@ -47,6 +46,7 @@
             this.lblPlayerTwo = new System.Windows.Forms.Label();
             this.lblPlayerTwoDesc = new System.Windows.Forms.Label();
             this.pbBack = new System.Windows.Forms.PictureBox();
+            this.pbStart = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb1Parent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -60,17 +60,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAbove3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAbove4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(1245, 648);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(43, 13);
-            this.lblStart.TabIndex = 1;
-            this.lblStart.Text = "START";
-            this.lblStart.Click += new System.EventHandler(this.lblStart_Click);
             // 
             // pb1Parent
             // 
@@ -190,7 +181,7 @@
             this.lblPlayerOneDesc.ForeColor = System.Drawing.Color.Red;
             this.lblPlayerOneDesc.Location = new System.Drawing.Point(38, 446);
             this.lblPlayerOneDesc.Name = "lblPlayerOneDesc";
-            this.lblPlayerOneDesc.Size = new System.Drawing.Size(276, 152);
+            this.lblPlayerOneDesc.Size = new System.Drawing.Size(367, 152);
             this.lblPlayerOneDesc.TabIndex = 18;
             this.lblPlayerOneDesc.Text = "label1";
             // 
@@ -223,7 +214,7 @@
             this.lblPlayerTwoDesc.ForeColor = System.Drawing.Color.Red;
             this.lblPlayerTwoDesc.Location = new System.Drawing.Point(966, 446);
             this.lblPlayerTwoDesc.Name = "lblPlayerTwoDesc";
-            this.lblPlayerTwoDesc.Size = new System.Drawing.Size(280, 152);
+            this.lblPlayerTwoDesc.Size = new System.Drawing.Size(305, 152);
             this.lblPlayerTwoDesc.TabIndex = 21;
             this.lblPlayerTwoDesc.Text = "label4";
             // 
@@ -238,11 +229,23 @@
             this.pbBack.TabStop = false;
             this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
+            // pbStart
+            // 
+            this.pbStart.Image = ((System.Drawing.Image)(resources.GetObject("pbStart.Image")));
+            this.pbStart.Location = new System.Drawing.Point(1070, 611);
+            this.pbStart.Name = "pbStart";
+            this.pbStart.Size = new System.Drawing.Size(216, 53);
+            this.pbStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStart.TabIndex = 23;
+            this.pbStart.TabStop = false;
+            this.pbStart.Click += new System.EventHandler(this.pbStart_Click);
+            // 
             // frmPickPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 698);
+            this.Controls.Add(this.pbStart);
             this.Controls.Add(this.pbBack);
             this.Controls.Add(this.lblPlayerTwoDesc);
             this.Controls.Add(this.lblPlayerTwo);
@@ -260,7 +263,6 @@
             this.Controls.Add(this.pb2Parent);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.pb1Parent);
-            this.Controls.Add(this.lblStart);
             this.DoubleBuffered = true;
             this.Name = "frmPickPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -284,14 +286,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAbove3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAbove4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStart)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.PictureBox pb1Parent;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.PictureBox pb2;
@@ -309,5 +310,6 @@
         private System.Windows.Forms.Label lblPlayerTwo;
         private System.Windows.Forms.Label lblPlayerTwoDesc;
         private System.Windows.Forms.PictureBox pbBack;
+        private System.Windows.Forms.PictureBox pbStart;
     }
 }

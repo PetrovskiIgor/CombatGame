@@ -32,9 +32,16 @@ namespace CombatGame
         int collisionTolerance = 10; // kolku mozhe da vleguva eden vo drug
 
 
+        SoundPlayer soundPunch;
+
+
         public frmFight(Player first, Player second)
         {
             InitializeComponent();
+
+
+            soundPunch = new SoundPlayer("punch.wav");
+
             playerOneIsRight = true;
 
             // za da go prepoznae file-ot  EyeOfTheTiger.wav
@@ -162,8 +169,11 @@ namespace CombatGame
                 {
                     f = true;
                     playerTwo.ChangeState(State.ATTACK);
-                    if (playerTwo.Attack(playerOne))
+                    if (playerTwo.Attack(playerOne)) 
+                    {
+                        soundPunch.Play();
                         playerOne.DecreaseHealth(Player.HandPower);
+                    }
                 }
             }
             else if (e.KeyCode==Keys.G)
@@ -194,7 +204,11 @@ namespace CombatGame
                     enter = true;
                     playerOne.ChangeState(State.ATTACK);
                     if (playerOne.Attack(playerTwo))
+                    {
+                        soundPunch.Play();
                         playerTwo.DecreaseHealth(Player.HandPower);
+                    }
+                        
                 }
             }
             else if(e.KeyCode==Keys.Add)

@@ -109,16 +109,7 @@ namespace CombatGame
             Invalidate();
         }
 
-        private void pbExit_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-
-            tt.SetToolTip(pbExit, "Don't exit, you will regret it..");
-
-            pbNewGame.Image = imgNewGame;
-            pbOptions.Image = imgOptions;
-            pbExit.Image = imgExitSelected;
-        }
+       
 
        
         private void selectForm(Boolean up)
@@ -144,18 +135,24 @@ namespace CombatGame
             pbExit.Image = imgExit;
 
 
+            pbNewGameSel.BackColor = Color.Transparent;
+            pbOptionsSel.BackColor = Color.Transparent;
+            pbExitSel.BackColor = Color.Transparent;
 
             if (pickAForm == 0)
             {
-                pbNewGame.Image = imgNewGameSelected;
+                
+                pbNewGameSel.BackColor = Color.Maroon;
             }
             else if (pickAForm == 1)
             {
-                pbOptions.Image = imgOptionsSelected;
+                
+                pbOptionsSel.BackColor = Color.Maroon;
             }
             else if (pickAForm == 2)
             {
-                pbExit.Image = imgExitSelected;
+                
+                pbExitSel.BackColor = Color.Maroon;
             }
             else
             {
@@ -192,19 +189,7 @@ namespace CombatGame
             }
         }
 
-        private void pbOptions_MouseHover(object sender, EventArgs e)
-        {
-            pbNewGame.Image = imgNewGame;
-            pbOptions.Image = imgOptionsSelected;
-            pbExit.Image = imgExit;
-        }
-
-        private void pbNewGame_MouseHover(object sender, EventArgs e)
-        {
-            pbNewGame.Image = imgNewGameSelected;
-            pbOptions.Image = imgOptions;
-            pbExit.Image = imgExit;
-        }
+        
 
 
         private void actOnEnter()
