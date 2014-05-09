@@ -199,6 +199,7 @@ namespace CombatGame
                     playerTwo.ChangeState(State.ATTACK);
                     if (playerTwo.Attack(playerOne)) 
                     {
+                        if(frmOptions.soundOn)
                         soundPunch.Play();
                         playerOne.DecreaseHealth(Player.HandPower);
                     }
@@ -233,6 +234,7 @@ namespace CombatGame
                     playerOne.ChangeState(State.ATTACK);
                     if (playerOne.Attack(playerTwo))
                     {
+                        if(frmOptions.soundOn)
                         soundPunch.Play();
                         playerTwo.DecreaseHealth(Player.HandPower);
                     }
@@ -342,23 +344,23 @@ namespace CombatGame
             Rectangle intersect = intersection();
             if (a)
             {
-                if((intersect.Width  < collisionTolerance || playerOneIsRight) && playerTwo.Left-10 >= this.Left) // ako e pomala kolizijata
+                if((intersect.Width  < collisionTolerance || playerOneIsRight) && playerTwo.Left-80 >= this.Left) // ako e pomala kolizijata
                     playerTwo.Move(Direction.LEFT);                           // ili ako se dvizhi vo nasoka koja ja namaluva kolizijata
                
             }
             if (d)
             {
-                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerTwo.Right + 15 <= this.Right))
+                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerTwo.Right + 80 <= this.Right))
                 playerTwo.Move(Direction.RIGHT);
             }
             if (left)
             {
-                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerOne.Left - 10 >= this.Left))
+                if ((intersect.Width < collisionTolerance || !playerOneIsRight) && (playerOne.Left - 80 >= this.Left))
                 playerOne.Move(Direction.LEFT);
             }
             if(right)
             {
-                if ((intersect.Width < collisionTolerance || playerOneIsRight) && (playerOne.Right + 15 <= this.Right))
+                if ((intersect.Width < collisionTolerance || playerOneIsRight) && (playerOne.Right + 80 <= this.Right))
                 playerOne.Move(Direction.RIGHT);
             }
 
@@ -502,15 +504,7 @@ namespace CombatGame
             }
 
 
-            if (!playerOne.CheckAndActs())
-            {
-                gameIsFinished = true;
-            }
-
-            if(!playerTwo.CheckAndActs())
-            {
-                gameIsFinished = true;
-            }
+           
 
             
             
@@ -519,7 +513,15 @@ namespace CombatGame
             this.update();
 
 
+            if (!playerOne.CheckAndActs())
+            {
+                gameIsFinished = true;
+            }
 
+            if (!playerTwo.CheckAndActs())
+            {
+                gameIsFinished = true;
+            }
 
 
             
@@ -553,8 +555,6 @@ namespace CombatGame
                     Application.Exit();
 
                 }
-
-
 
 
             }

@@ -164,12 +164,14 @@ namespace CombatGame
                 players[1].imgStand = Image.FromFile("petreStandTrans.png");
                 players[1].imgAttackLeg = Image.FromFile("petreNogaTrans.png");
                 players[1].imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
+                players[1].imgDead = Image.FromFile("petreLezi.png");
 
                 players[1].imgAttackD = Image.FromFile("petreUdarTransD.png");
                 players[1].imgDefenseD = Image.FromFile("petreGardTransD.png");
                 players[1].imgStandD = Image.FromFile("petreStandTransD.png");
                 players[1].imgAttackLegD = Image.FromFile("petreNogaTransD.png");
                 players[1].imgKneelD = Image.FromFile("petreKleciSecenaTransD.png");
+                players[1].imgDeadD = Image.FromFile("petreLeziD.png");
             
                 // HORNY
             
