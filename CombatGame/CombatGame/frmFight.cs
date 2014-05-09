@@ -46,13 +46,13 @@ namespace CombatGame
             bmBackground = new PPPBitmap(new Bitmap("backgroundMainMenu.jpg"), "backgroundMainMenu.jpg");
 
             playerOne = first;
-            playerOne.pbPlayer = pbPlayerOne;
+           
             playerOne.DirectionPlayer = Direction.LEFT;
             
             
 
             playerTwo = second;
-            playerTwo.pbPlayer = pbPlayerTwo;
+           
             playerTwo.DirectionPlayer = Direction.RIGHT;
 
            
@@ -273,7 +273,7 @@ namespace CombatGame
             {
                 playerTwo.ChangeState(State.ATTACKMAGIC);
                 playerTwoMagic=playerTwo.AttackMagic();
-                playerTwoMagic.PicBoxImage = pbMagic2;
+                
               
             }
             else if(e.KeyCode==Keys.H)
@@ -305,7 +305,7 @@ namespace CombatGame
 
                 playerOne.ChangeState(State.ATTACKMAGIC);
                 playerOneMagic = playerOne.AttackMagic();
-                playerOneMagic.PicBoxImage = pbMagic1;
+                
                 //pbMagic1.BackColor = Color.Transparent;
                 //pbMagic1.Image = playerOne.magicList.ElementAt(0).MagicImageLeft;
             }
@@ -443,11 +443,14 @@ namespace CombatGame
 
         public void LeftMagicAttack (Player player, Magic magic)
         {
-            if ((magic.PicBoxImage.Left < player.pbPlayer.Right - 50) && magic.PicBoxImage.Right >= player.pbPlayer.Right)
+
+
+            if (((magic.X - magic.Width / 2) < (player.X + player.Width / 2)) && magic.X + Width / 2 >= player.X + player.Width / 2)
             {
                 if (!player.AvoidMagicAttack())
                 {
-                    if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
+
+                    if (player.Y + player.Height / 2 >= (magic.Y - magic.Height / 2))
                     {
                         player.DecreaseHealth(magic.Power);
                         magic.HideMagic(); // treba da se poprave direkno na magic=null
@@ -459,11 +462,13 @@ namespace CombatGame
 
         public void RightMagicAttack (Player player, Magic magic)
         {
-            if (magic.PicBoxImage.Right > player.pbPlayer.Left + 50 && magic.PicBoxImage.Left <= player.pbPlayer.Left)
+
+            if (((magic.X + magic.Width / 2) > (player.X - player.Width/2 + 50)) && (magic.X - magic.Width/2 <= player.X - player.Width/2))
             {
                 if (!player.AvoidMagicAttack())
                 {
-                    if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
+
+                    if ((player.Y + player.Height / 2) >= (magic.Y - magic.Height / 2))
                     {
                         player.DecreaseHealth(magic.Power);
                         magic.HideMagic(); // treba da se trgne ovoj red isto kako gore
@@ -555,14 +560,14 @@ namespace CombatGame
             
             
             
-            this.checkClashAndAct();
+           // this.checkClashAndAct();
 
             Invalidate();
 
             
         }
         // proveruva dali dvata igrachi se sudrile i se spravuva so so sudarot
-        public void checkClashAndAct()
+        /*public void checkClashAndAct()
         {
             Rectangle checkInter = intersection();
 
@@ -593,7 +598,7 @@ namespace CombatGame
                 pbIntersection.Image = null;
             }
 
-        }
+        }*/
 
         private void frmFight_Paint(object sender, PaintEventArgs e)
         {
