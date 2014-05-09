@@ -467,8 +467,15 @@ namespace CombatGame
 
             if (gameIsFinished)
             {
-                playAgainForm = new FrmPlayAgain();
                 
+
+                timer.Stop();
+
+                playAgainForm = new FrmPlayAgain();
+
+                
+                
+
                 if (playAgainForm.ShowDialog() == DialogResult.OK)
                 {
                     pickPlayerForm = new frmPickPlayer(null);
@@ -476,9 +483,8 @@ namespace CombatGame
                     pickPlayerForm.Show();
                 }
 
-                Timer tempTimer = (Timer)sender;
-                tempTimer.Stop();
                 this.Close();
+               
                 
             }
 
