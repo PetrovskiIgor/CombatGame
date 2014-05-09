@@ -19,13 +19,11 @@ namespace CombatGame
         int pickAForm; // 0 znachi na enter da se selektira NewGame, 1 Options, 2 Exit
 
         Image imgNewGame = Image.FromFile("imgNewGame2.png");
-        Image imgNewGameSelected = Image.FromFile("imgNewGameSelected.png");
+       
 
         Image imgOptions = Image.FromFile("imgOptions2.png");
-        Image imgOptionsSelected = Image.FromFile("imgOptionsSelected.png");
 
         Image imgExit = Image.FromFile("imgExit.png");
-        Image imgExitSelected = Image.FromFile("imgExitSelected.png");
         public WindowsMediaPlayer wplayer;
         public IWMPPlaylist playlistMenu;
         public IWMPPlaylist playlistFight;

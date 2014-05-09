@@ -24,6 +24,9 @@ namespace CombatGame
         PPPProgressBar prbarPlayerOne;
         PPPProgressBar prbarPlayerTwo;
 
+        FrmPlayAgain playAgainForm;
+        frmPickPlayer pickPlayerForm;
+
         
 
         bool playerOneIsRight;
@@ -462,6 +465,23 @@ namespace CombatGame
         void timer_Tick(object sender, EventArgs e)
         {
 
+            if (gameIsFinished)
+            {
+                playAgainForm = new FrmPlayAgain();
+                
+                if (playAgainForm.ShowDialog() == DialogResult.OK)
+                {
+                    pickPlayerForm = new frmPickPlayer(null);
+
+                    pickPlayerForm.Show();
+                }
+
+                Timer tempTimer = (Timer)sender;
+                tempTimer.Stop();
+                this.Close();
+                
+            }
+
             if (playerOneIsRight != this.playerOneDirection())
             {
 
@@ -482,12 +502,12 @@ namespace CombatGame
 
             if (!playerOne.CheckAndActs())
             {
-                MessageBox.Show(playerOne.Name + " e mrtov!");
+                gameIsFinished = true;
             }
 
             if(!playerTwo.CheckAndActs())
             {
-                MessageBox.Show(playerTwo.Name + " e mrtov!");
+                gameIsFinished = true;
             }
             
 
