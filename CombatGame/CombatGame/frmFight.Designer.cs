@@ -39,12 +39,10 @@
             this.lblHealthPlayerTwo = new System.Windows.Forms.Label();
             this.pbMagic2 = new System.Windows.Forms.PictureBox();
             this.pbMagic1 = new System.Windows.Forms.PictureBox();
-            this.pbIntersection = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntersection)).BeginInit();
             this.SuspendLayout();
             // 
             // pbPlayerOne
@@ -139,23 +137,12 @@
             this.pbMagic1.TabIndex = 9;
             this.pbMagic1.TabStop = false;
             // 
-            // pbIntersection
-            // 
-            this.pbIntersection.BackColor = System.Drawing.Color.Transparent;
-            this.pbIntersection.Location = new System.Drawing.Point(403, 384);
-            this.pbIntersection.Name = "pbIntersection";
-            this.pbIntersection.Size = new System.Drawing.Size(10, 194);
-            this.pbIntersection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbIntersection.TabIndex = 10;
-            this.pbIntersection.TabStop = false;
-            // 
             // frmFight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1370, 709);
-            this.Controls.Add(this.pbIntersection);
             this.Controls.Add(this.pbMagic1);
             this.Controls.Add(this.pbMagic2);
             this.Controls.Add(this.lblHealthPlayerTwo);
@@ -178,7 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMagic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIntersection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +182,6 @@
         private System.Windows.Forms.Label lblHealthPlayerTwo;
         private System.Windows.Forms.PictureBox pbMagic2;
         private System.Windows.Forms.PictureBox pbMagic1;
-        private System.Windows.Forms.PictureBox pbIntersection;
 
 
     }

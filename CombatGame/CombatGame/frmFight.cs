@@ -50,16 +50,9 @@ namespace CombatGame
             playerOne.DirectionPlayer = Direction.LEFT;
             
             
-
             playerTwo = second;
            
             playerTwo.DirectionPlayer = Direction.RIGHT;
-
-           
-            
-            
-
-
 
 
             this.lblPlayerOneName.Text = playerOne.Name;
@@ -74,105 +67,19 @@ namespace CombatGame
             this.DoubleBuffered = true;
 
 
-            // funkcija koja gi postavuva transparentnite sliki
-
-            //fillPictureBoxes();
-
-
-            pbIntersection.Parent = pbPlayerTwo;
-            pbIntersection.BackColor = Color.Transparent;
-
+          
             Invalidate();
         }
 
 
-        private void fillPictureBoxes()
-        {
-
-
-
-            fillPictureBoxesPart2(playerOne, true);
-            
-            fillPictureBoxesPart2(playerTwo, false);
-           
-            
-    
-            
-                
-            
-        }
+        
 
         public Boolean playerOneDirection()
         {
             return playerOne.X > playerTwo.X;
         }
 
-        private void fillPictureBoxesPart2(Player player, bool firstPlayer)
-        {
-            if (player.Name.Equals("Igor"))
-            {
-                player.imgAttack = Image.FromFile("igorUdar.png");
-                player.imgDefense = Image.FromFile("igorGard.png");
-                player.imgStand = Image.FromFile("igorStand.png");
-                player.imgAttackLeg = Image.FromFile("igorNoga.png");
-                player.imgKneel = Image.FromFile("igorKleci.png");
-                player.imgDead = Image.FromFile("igorLezi.png");
-
-                player.imgAttackD = Image.FromFile("igorUdarD.png");
-                player.imgDefenseD = Image.FromFile("igorGardD.png");
-                player.imgStandD = Image.FromFile("igorStandD.png");
-                player.imgAttackLegD = Image.FromFile("igorNogaD.png");
-                player.imgKneelD = Image.FromFile("igorKleciD.png");
-                player.imgDeadD = Image.FromFile("igorLeziD.png");
-
-            }
-            else if (player.Name.Equals("Viki"))
-            {
-                player.imgAttack = Image.FromFile("vikiPunch.png");
-                player.imgDefense = Image.FromFile("vikiDefense.png");
-                player.imgStand = Image.FromFile("vikiStand.png");
-                player.imgAttackLeg = Image.FromFile("vikiLeg.png");
-                player.imgKneel = Image.FromFile("vikiKneel.png");
-                player.imgDead = Image.FromFile("vikiDead.png");
-
-                player.imgAttackD = Image.FromFile("vikiPunchD.png");
-                player.imgDefenseD = Image.FromFile("vikiDefenseD.png");
-                player.imgStandD = Image.FromFile("vikiStandD.png");
-                player.imgAttackLegD = Image.FromFile("vikiLegD.png");
-                player.imgKneelD = Image.FromFile("vikiKneelD.png");
-                player.imgDeadD = Image.FromFile("vikiDeadD.png");
-            }
-            else if (player.Name.Equals("Petre"))
-            {
-                player.imgAttack = Image.FromFile("petreUdarTrans.png");
-                player.imgDefense = Image.FromFile("petreGardTrans.png");
-                player.imgStand = Image.FromFile("petreStandTrans.png");
-                player.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
-                player.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
-
-                player.imgAttackD = Image.FromFile("petreUdarTransD.png");
-                player.imgDefenseD = Image.FromFile("petreGardTransD.png");
-                player.imgStandD = Image.FromFile("petreStandTransD.png");
-                player.imgAttackLegD = Image.FromFile("petreNogaTransD.png");
-                player.imgKneelD = Image.FromFile("petreKleciSecenaTransD.png");
-            }
-            else // HORNY
-            {
-                player.imgAttack = Image.FromFile("DavidPunch.png");
-                player.imgDefense = Image.FromFile("DavidDefense.png");
-                player.imgStand = Image.FromFile("DavidStand.png");
-                player.imgAttackLeg = Image.FromFile("DavidNogaTrans.png");
-                player.imgKneel = Image.FromFile("DavidKleciTrans.png");
-                player.imgDead = Image.FromFile("DavidDeadTrans.png");
-
-                player.imgAttackD = Image.FromFile("DavidPunchD.png");
-                player.imgDefenseD = Image.FromFile("DavidDefenseD.png");
-                player.imgStandD = Image.FromFile("DavidStandD.png");
-                player.imgAttackLegD = Image.FromFile("DavidNogaTransD.png");
-                player.imgKneelD = Image.FromFile("DavidKleciTransD.png");
-                player.imgDeadD = Image.FromFile("DavidDeadTransD.png");
-            }
-        }
+        
 
 
         public void update()
@@ -453,10 +360,19 @@ namespace CombatGame
                     if (player.Y + player.Height / 2 >= (magic.Y - magic.Height / 2))
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic(); // treba da se poprave direkno na magic=null
-                        magic = null;
+                        if (playerOneMagic == magic)
+                        {
+                            playerOneMagic = null;
+                        }
+                        else
+                        {
+                            playerTwoMagic = null;
+                        }
+                        
                     }
                 }
+
+               
             }
         }
 
@@ -471,10 +387,24 @@ namespace CombatGame
                     if ((player.Y + player.Height / 2) >= (magic.Y - magic.Height / 2))
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic(); // treba da se trgne ovoj red isto kako gore
-                        playerOneMagic = null;
+
+                        if (playerOneMagic == magic)
+                        {
+                            playerOneMagic = null;
+                        }
+                        else
+                        {
+                            playerTwoMagic = null;
+                        }
+                       
                     }
+
+
+
+                    
                 }
+
+               
             }
         }
 
@@ -531,11 +461,6 @@ namespace CombatGame
             playerOne.CheckAndActs();
             playerTwo.CheckAndActs();
 
-
-
-
-            
-
             this.Moving();
             this.update();
 
@@ -548,45 +473,23 @@ namespace CombatGame
 
             
         }
-        // proveruva dali dvata igrachi se sudrile i se spravuva so so sudarot
-        /*public void checkClashAndAct()
-        {
-            Rectangle checkInter = intersection();
-
-            if (checkInter.Height != -1)
-            {
-
-                pbIntersection.Width = checkInter.Width;
-                pbIntersection.Height = checkInter.Height;
-
-                Image partOfPlayerOne = cropImage(playerOne.pbPlayer.Image, checkInter);
-                pbIntersection.Image = partOfPlayerOne;
-
-                pbIntersection.SizeMode = PictureBoxSizeMode.StretchImage;
-                //pbIntersection.Location = new Point(pbPlayerOne.Left, pbPlayerOne.Top);
-
-                if (playerOneIsRight) // ako prviot igrac(pocetno levo) od desno vleguva vo vtoriot igrac
-                {
-                    pbIntersection.Location = new Point(pbPlayerTwo.Width - pbIntersection.Width, 0);
-                }
-                else
-                {
-                    pbIntersection.Location = new Point(0, 0);
-                }
-               
-            }
-            else
-            {
-                pbIntersection.Image = null;
-            }
-
-        }*/
+       
 
         private void frmFight_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
             this.playerOne.DrawPlayer(e.Graphics);
             this.playerTwo.DrawPlayer(e.Graphics);
+
+            if (playerOneMagic != null)
+            {
+                playerOneMagic.DrawMagic(e.Graphics);
+            }
+
+            if (playerTwoMagic != null)
+            {
+                playerTwoMagic.DrawMagic(e.Graphics);
+            }
         }
 
 
