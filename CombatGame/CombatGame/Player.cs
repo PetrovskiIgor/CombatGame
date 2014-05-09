@@ -44,8 +44,8 @@ namespace CombatGame
         public static int HandPower = 8 ;
         public static int LegPower = 13;
         public Image currentImage;
-        int X;
-        int Y;
+        public int X {get; set;}
+        public int Y {get; set;}
 
         public Image imgStand;
         public Image imgAttack;
@@ -94,7 +94,19 @@ namespace CombatGame
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
             this.X = 50;
             this.Y = 50;
-            this.currentImage = Image.FromFile("igorStandResized.png");
+        }
+
+        // Metod za setiranje na slikata pri startuvanje na borbata
+        public void SetCurrentImage (bool FirstPlayer)
+        {
+            if(FirstPlayer)
+            {
+                this.currentImage = imgStandD;
+            }
+            else
+            {
+                this.currentImage = imgStand;
+            }
         }
 
         public Player(int X, int Y,string name, string description, Magic mOne, Magic mTwo, Magic mThree)
