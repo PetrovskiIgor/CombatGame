@@ -110,22 +110,35 @@ namespace CombatGame
             }
         }
 
-        public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaying the Magic which the Player is using for attack
-        {
-            this.DirOfMoving = dir;
-            if (dir == Direction.LEFT)
+
+       public void DrawMagic (Graphics g)
+       {
+            if(this.DirOfMoving==Direction.LEFT)
             {
-                this.PicBoxImage.Left = playerPictureBox.Left - this.PicBoxImage.Width;
-                this.PicBoxImage.Image = MagicImageLeft;
-            } 
-            else if (dir == Direction.RIGHT)
-            {
-                this.PicBoxImage.Left = playerPictureBox.Right;
-                this.PicBoxImage.Image = MagicImageRight;
+                g.DrawImage(MagicImageLeft, this.X, this.Y);
             }
-            this.PicBoxImage.Top = (playerPictureBox.Bottom + playerPictureBox.Top) / 2;
-            this.PicBoxImage.Show();
+            else
+            {
+                g.DrawImage(MagicImageRight, this.X, this.Y);
+            }
+       }
+
+        public void InitializeMagicCordinates(int plX, int plY,Image player, Direction dir)
+        {
+            this.DirOfMoving = dir; ;
+            if(dir==Direction.LEFT)
+            {
+                this.X = plX;
+                this.Y = (plY + player.Height) / 2;
+            }
+            else
+            {
+                this.X = plX + player.Width;
+                this.Y = (plY + player.Height) / 2;
+            }
         }
+       
+       
 
         public void HideMagic () // Hides the Picture Box of the magic from the display
         {
