@@ -26,7 +26,7 @@ namespace CombatGame
 
         public void Draw(Graphics g)
         {
-            g.DrawRectangle(new Pen(Color.Black), this.X, this.Y, this.Width, this.Height);
+            //g.DrawRectangle(new Pen(Color.Black), this.X, this.Y, this.Width, this.Height);
             g.FillRectangle(new SolidBrush(Color.Green), this.X, this.Y, this.Width * this.Value / 100, this.Height);
             g.FillRectangle(new SolidBrush(Color.White), this.X + this.Width * this.Value / 100, this.Y, this.Width - this.Width * this.Value / 100, this.Height);
         }
