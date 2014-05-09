@@ -77,20 +77,6 @@ namespace CombatGame
             this.MagicImageRight = null;
         }
 
-   /*     public void Move () // Moving the Magic 
-        {
-            if (DirOfMoving == Direction.LEFT)
-            {
-                this.PicBoxImage.Left -= Velocity;
-            }
-            else
-            {
-                this.PicBoxImage.Left += Velocity;
-            }
-        }
-
-    */
-
         public void Move() // Moving the Magic 
         {
             if (DirOfMoving == Direction.LEFT)
@@ -131,14 +117,5 @@ namespace CombatGame
             }
         }
        
-       
-
-        public void HideMagic () // Hides the Picture Box of the magic from the display
-        {
-
-        }
-
-        
-
     }
 }
