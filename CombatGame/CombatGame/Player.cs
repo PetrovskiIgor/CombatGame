@@ -47,6 +47,10 @@ namespace CombatGame
         public int Y {get; set;}
         public int Height { get { return currentImage.Height; } }
         public int Width { get { return currentImage.Width; } }
+        public int Left { get { return X - Width / 2; } }
+        public int Right { get { return X + Width / 2; } }
+        public int Top { get { return Y - Height / 2; } }
+        public int Bottom { get { return Y + Height / 2; } }
 
         public Image imgStand;
         public Image imgAttack;
@@ -267,7 +271,7 @@ namespace CombatGame
         {
             if (this.DirectionPlayer == Direction.LEFT)
             {
-                if (this.X < opponent.X + opponent.currentImage.Width && this.X > opponent.X)
+                if (this.X-Width/2 < opponent.X+Width/4 && this.X-Width/2 > opponent.X && Math.Abs(this.Y-opponent.Y)<Height/4)
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
@@ -277,11 +281,10 @@ namespace CombatGame
             }
             else if (this.DirectionPlayer == Direction.RIGHT)
             {
-                if (this.X + this.currentImage.Width > opponent.X && this.X + this.currentImage.Width < opponent.X+opponent.currentImage.Width)
+                if (this.X + Width / 2 > opponent.X - Width / 4 && this.X + Width / 2 < opponent.X && Math.Abs(this.Y - opponent.Y) < Height / 4) 
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
-                       // MessageBox.Show("right");
                         return true;
                     }
                 }
@@ -329,32 +332,6 @@ namespace CombatGame
                 return true;
             return false;
         }
-
-        /*public void changeDirection(Direction newDireciton)
-        {
-            if (newDireciton==Direction.LEFT)
-            {
-                this.DirectionPlayer = Direction.LEFT;
-                if (this.statePerson == State.KNEEL) pbPlayer.Image = this.imgKneelD;
-                else if (statePerson == State.ATTACK) pbPlayer.Image = this.imgAttackD;
-                else if (statePerson == State.ATTACKLEG) pbPlayer.Image = this.imgAttackLegD;
-                else if (statePerson == State.STAND) pbPlayer.Image = this.imgStandD;
-                else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefenseD;
-                else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDeadD;
-                else MessageBox.Show("OVA NE TREBA DA SE JAVI");
-            }
-            else
-            {
-                this.DirectionPlayer = newDireciton;
-                if (this.statePerson == State.KNEEL) pbPlayer.Image = this.imgKneel;
-                else if (statePerson == State.ATTACK) pbPlayer.Image = this.imgAttack;
-                else if (statePerson == State.ATTACKLEG) pbPlayer.Image = this.imgAttackLeg;
-                else if (statePerson == State.STAND) pbPlayer.Image = this.imgStand;
-                else if (statePerson == State.DEFENSE) pbPlayer.Image = this.imgDefense;
-                else if (statePerson == State.DEAD) pbPlayer.Image = this.imgDead;
-                else MessageBox.Show("OVA NE TREBA DA SE JAVI");
-            }
-        }*/
 
         public void changeDirection(Direction newDirection)
         {

@@ -112,7 +112,7 @@ namespace CombatGame
             }
             else
             {
-                g.DrawImage(MagicImageRight, this.X, this.Y);
+                g.DrawImage(MagicImageRight, this.X - MagicImageLeft.Width / 2, this.Y - MagicImageLeft.Height / 2);
             }
        }
 
@@ -121,13 +121,13 @@ namespace CombatGame
             this.DirOfMoving = dir; ;
             if(dir==Direction.LEFT)
             {
-                this.X = plX;
-                this.Y = (plY + player.Height) / 2;
+                this.X = plX-player.Width/2;
+                this.Y = plY;
             }
             else
             {
-                this.X = plX + player.Width;
-                this.Y = (plY + player.Height) / 2;
+                this.X = plX + player.Width/2;
+                this.Y = plY;
             }
         }
        
