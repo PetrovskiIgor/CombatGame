@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="PPPBitmap.cs" />
+    <Compile Include="PPPProgressBar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
