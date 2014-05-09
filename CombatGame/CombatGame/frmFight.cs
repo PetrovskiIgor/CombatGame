@@ -29,7 +29,7 @@ namespace CombatGame
         Timer timer;
         public static int INTERVAL = 10;
 
-        int collisionTolerance = 40; // kolku mozhe da vleguva eden vo drug
+        int collisionTolerance = 10; // kolku mozhe da vleguva eden vo drug
 
 
         public frmFight(Player first, Player second)
@@ -104,7 +104,7 @@ namespace CombatGame
 
         public Boolean playerOneDirection()
         {
-            return pbPlayerOne.Left > pbPlayerTwo.Left;
+            return playerOne.X > playerTwo.X;
         }
 
         private void fillPictureBoxesPart2(Player player, bool firstPlayer)
@@ -478,46 +478,28 @@ namespace CombatGame
             }
         }
 
-        public static Image resizeImage(Image imgToResize, Size size)
-        {
-            return (Image)(new Bitmap(imgToResize, size));
-        }
-
-        public  Image cropImage(Image img, Rectangle cropArea)
-        {
-
-            Image newImg = resizeImage(img, pbPlayerOne.Size);
-            
-            
-            Bitmap bmpImage = new Bitmap(newImg);
-
-            
-
-            
-            Bitmap bmpCrop = bmpImage.Clone(cropArea, System.Drawing.Imaging.PixelFormat.DontCare);
-            
-           
-            return (Image)bmpCrop;
-        }
+     
         
         private Rectangle intersection()
         {
 
-            if (pbPlayerOne.Right < pbPlayerTwo.Left || pbPlayerOne.Left > pbPlayerTwo.Right || pbPlayerOne.Top != pbPlayerTwo.Top)
+
+            if (playerOne.Right < playerTwo.Left || playerOne.Left > playerTwo.Right || playerOne.Top != playerTwo.Top)
             {
                 return new Rectangle(-1,-1,-1,-1);
             }
-            if(pbPlayerOne.Left < pbPlayerTwo.Right && pbPlayerOne.Left > pbPlayerTwo.Left) 
+            if(playerOne.Left < playerTwo.Right && playerOne.Left > playerTwo.Left) 
             {
                 
-                Rectangle interArea = new Rectangle(0, 0, pbPlayerTwo.Right - pbPlayerOne.Left, pbPlayerOne.Height);
+                Rectangle interArea = new Rectangle(0, 0, playerTwo.Right - playerOne.Left, playerOne.Height);
                 //Rectangle iA = new Rectangle(0, 0, pbPlayerOne.Width, pbPlayerOne.Height);
                // Rectangle interArea = new Rectangle(pbPlayerOne.Left, pbPlayerOne.Top, 1, 1);
                 return interArea;
-            }else if(pbPlayerOne.Right > pbPlayerTwo.Left && pbPlayerOne.Left < pbPlayerTwo.Right)
+            }
+            else if ((playerOne.Right) > playerTwo.Left && playerOne.Left < playerTwo.Right)
             {
                 
-                return new Rectangle(pbPlayerOne.Width-(pbPlayerOne.Right-pbPlayerTwo.Left), 0, pbPlayerOne.Right - pbPlayerTwo.Left, pbPlayerOne.Height);
+                return new Rectangle(playerOne.Width-(playerOne.Right-playerTwo.Left), 0, playerOne.Right - playerTwo.Left, playerOne.Height);
             }
             else
             {
