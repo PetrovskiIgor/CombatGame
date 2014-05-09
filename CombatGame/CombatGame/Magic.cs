@@ -16,11 +16,12 @@ namespace CombatGame
         public int Power { get; set; }                  // Power of the Magic
         public Image MagicImageLeft { get; set; }       // Image of the Magic (Left)
         public Image MagicImageRight { get; set; }      // Image of the Magic (Right)
-        public PictureBox PicBoxImage { get; set; }     // Picture Box for the Image 
         public int Velocity { get; set; }               // Velocity of magic moving
         public Direction DirOfMoving { get; set; }      // Direcetion of Magic moving
         public int X;
         public int Y;
+        public int Height { get { return MagicImageLeft.Height; } }
+        public int Widht { get { return MagicImageLeft.Width; } }
 
         public Magic () // Default Constructor
         {
@@ -28,7 +29,6 @@ namespace CombatGame
            
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
-            this.PicBoxImage = new PictureBox();
             DirOfMoving = Direction.UNDEFINED;
         }
 
@@ -41,9 +41,7 @@ namespace CombatGame
             this.MagicImageRight = MagicImageRight;
             this.Velocity = Velocity;
             this.DirOfMoving = Direction.UNDEFINED;
-            this.PicBoxImage = new PictureBox();
-            this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
-            PicBoxImage.Hide();
+
         }
 
         public Magic(int X, int Y, string Name, int Power, Image MagicImageLeft, Image MagicImageRight, int Velocity) //constructor
@@ -55,9 +53,6 @@ namespace CombatGame
             this.MagicImageRight = MagicImageRight;
             this.Velocity = Velocity;
             this.DirOfMoving = Direction.UNDEFINED;
-            this.PicBoxImage = new PictureBox();
-            this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
-            PicBoxImage.Hide();
         }
 
 
@@ -68,7 +63,6 @@ namespace CombatGame
             this.Power = Power;
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
-            this.PicBoxImage = null;
             this.DirOfMoving = Direction.UNDEFINED;
         }
 
@@ -81,7 +75,6 @@ namespace CombatGame
             DirOfMoving = Direction.UNDEFINED;
             this.MagicImageLeft = null;
             this.MagicImageRight = null;
-            this.PicBoxImage = null;
         }
 
    /*     public void Move () // Moving the Magic 
@@ -115,7 +108,7 @@ namespace CombatGame
        {
             if(this.DirOfMoving==Direction.LEFT)
             {
-                g.DrawImage(MagicImageLeft, this.X, this.Y);
+                g.DrawImage(MagicImageLeft, this.X-MagicImageLeft.Width/2, this.Y-MagicImageLeft.Height/2);
             }
             else
             {
@@ -142,7 +135,7 @@ namespace CombatGame
 
         public void HideMagic () // Hides the Picture Box of the magic from the display
         {
-            this.PicBoxImage.Hide();
+
         }
 
         

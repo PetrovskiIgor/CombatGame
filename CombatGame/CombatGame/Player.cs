@@ -33,7 +33,6 @@ namespace CombatGame
         public String Name { get; set; }
         public int Health { get; set; }
         public String Description { get; set; }
-        public PictureBox pbPlayer;
         public List<Magic> magicList;
         public int Velocity { get; set; }
         public int JumpForce = 30;
@@ -46,6 +45,8 @@ namespace CombatGame
         public Image currentImage;
         public int X {get; set;}
         public int Y {get; set;}
+        public int Height { get { return currentImage.Height; } }
+        public int Width { get { return currentImage.Width; } }
 
         public Image imgStand;
         public Image imgAttack;
@@ -72,7 +73,6 @@ namespace CombatGame
             Health = 100;
             magicList = new List<Magic>();
             statePerson = State.STAND;
-            pbPlayer = null;
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10;
@@ -88,7 +88,6 @@ namespace CombatGame
             magicList.Add(mTwo);
             magicList.Add(mThree);
             statePerson = State.STAND;
-            pbPlayer = null;
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
@@ -121,7 +120,6 @@ namespace CombatGame
             magicList.Add(mTwo);
             magicList.Add(mThree);
             statePerson = State.STAND;
-            pbPlayer = null;
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
@@ -138,7 +136,6 @@ namespace CombatGame
             magicList.Add(mTwo);
             magicList.Add(mThree);
             statePerson = State.STAND;
-            pbPlayer = pb;
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
@@ -151,82 +148,12 @@ namespace CombatGame
             Health = 100;
             magicList = new List<Magic>();
             statePerson = State.STAND;
-            pbPlayer = null;
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10;
         }
 
         //Checks in which state the player is and acts if needed
-    /*    public void CheckAndActs()
-        {
-            if (IsJumped)
-            {
-                Jump();
-            }
-            else
-            {
-                JumpForce = 80;
-                
-            }
-            if (statePerson == State.STAND)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgStandD;
-                else
-                    pbPlayer.Image = imgStand;
-            }
-            else if (statePerson == State.ATTACK)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgAttackD;
-                else
-                    pbPlayer.Image = imgAttack;
-            }
-            else if (statePerson == State.ATTACKLEG)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgAttackLegD;
-                else
-                    pbPlayer.Image = imgAttackLeg;
-                
-            }
-            else if (statePerson == State.ATTACKMAGIC)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-            }
-            else if (statePerson == State.DEFENSE)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgDefenseD;
-                else
-                    pbPlayer.Image = imgDefense;
-            }
-            else if (statePerson == State.KNEEL)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgKneelD;
-                else
-                    pbPlayer.Image = imgKneel;
-            }
-            else if (statePerson == State.DEAD)
-            {
-                pbPlayer.BackColor = Color.Transparent;
-                if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgDeadD;
-                else
-                    pbPlayer.Image = imgDead;
-            }
-           
-        }
-
-     */
-
         public void CheckAndActs()
         {
             if (IsJumped)
@@ -240,7 +167,6 @@ namespace CombatGame
             }
             if (statePerson == State.STAND)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgStandD;
                 else
@@ -248,7 +174,6 @@ namespace CombatGame
             }
             else if (statePerson == State.ATTACK)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgAttackD;
                 else
@@ -256,7 +181,6 @@ namespace CombatGame
             }
             else if (statePerson == State.ATTACKLEG)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgAttackLegD;
                 else
@@ -265,11 +189,9 @@ namespace CombatGame
             }
             else if (statePerson == State.ATTACKMAGIC)
             {
-                pbPlayer.BackColor = Color.Transparent;
             }
             else if (statePerson == State.DEFENSE)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgDefenseD;
                 else
@@ -277,7 +199,6 @@ namespace CombatGame
             }
             else if (statePerson == State.KNEEL)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgKneelD;
                 else
@@ -285,7 +206,6 @@ namespace CombatGame
             }
             else if (statePerson == State.DEAD)
             {
-                pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
                     currentImage = imgDeadD;
                 else
@@ -295,20 +215,6 @@ namespace CombatGame
         }
 
         //The player moves in the given direction
-     /*   public void Move(Direction dir)
-        {
-            if(dir == Direction.LEFT)
-            {
-                this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
-            }
-            else if (dir == Direction.RIGHT)
-            {
-               
-                this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
-            }
-        }
-      */
- 
         public void Move (Direction dir)
         {
             if(dir==Direction.LEFT)
@@ -322,27 +228,13 @@ namespace CombatGame
         }
 
         //Simulates jumping
-      /*  public void Jump()
-        {
-            this.pbPlayer.Top -= JumpForce;
-            JumpForce-=10;
-            if (JumpForce == 0 && pbPlayer.Top < StandPosition+pbPlayer.Height)
-                this.pbPlayer.Top += 5;
-            if (pbPlayer.Bottom >= StandPosition)
-            {
-                pbPlayer.Top = StandPosition - pbPlayer.Height;
-                IsJumped = false;
-            }
-        }
-       */ 
-
         public void Jump ()
         {
             this.Y -= JumpForce;
             JumpForce -= 10;
-            if (JumpForce == 0 && Y < StandPosition + currentImage.Height)
+            if (JumpForce == 0 && Y-this.Height/2 < StandPosition + currentImage.Height)
                 this.Y += 5;
-            if (Y+currentImage.Height >= StandPosition)
+            if (Y-Height/2+currentImage.Height >= StandPosition)
             {
                 Y = StandPosition - currentImage.Height;
                 IsJumped = false;
@@ -351,7 +243,7 @@ namespace CombatGame
 
         public void DrawPlayer (Graphics g)
         {
-            g.DrawImage(currentImage,X,Y);
+            g.DrawImage(currentImage,X-currentImage.Width/2,Y-currentImage.Height/2);
         }
 
         //Shows the magic and returns its reference
@@ -367,8 +259,6 @@ namespace CombatGame
             }
             return null;
         }
-
-
 
 
 
