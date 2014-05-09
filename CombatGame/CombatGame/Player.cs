@@ -43,6 +43,9 @@ namespace CombatGame
         State statePerson { get; set; }
         public static int HandPower = 8 ;
         public static int LegPower = 13;
+        public Image currentImage;
+        int X;
+        int Y;
 
         public Image imgStand;
         public Image imgAttack;
@@ -89,6 +92,28 @@ namespace CombatGame
             IsJumped = false;
             DirectionPlayer = Direction.UNDEFINED;
             this.Velocity = 10; // treba da se smeni!!!!!!!!!
+            this.X = 50;
+            this.Y = 50;
+            this.currentImage = Image.FromFile("igorStandResized.png");
+        }
+
+        public Player(int X, int Y,string name, string description, Magic mOne, Magic mTwo, Magic mThree)
+        {
+            this.X = X;
+            this.Y = Y; 
+            Name = name;
+            Description = description;
+            Health = 100;
+            magicList = new List<Magic>();
+            magicList.Add(mOne);
+            magicList.Add(mTwo);
+            magicList.Add(mThree);
+            statePerson = State.STAND;
+            pbPlayer = null;
+            IsJumped = false;
+            DirectionPlayer = Direction.UNDEFINED;
+            this.Velocity = 10; // treba da se smeni!!!!!!!!!
+           
         }
 
         public Player(string name, string description, PictureBox pb, Magic mOne, Magic mTwo, Magic mThree)
@@ -121,7 +146,7 @@ namespace CombatGame
         }
 
         //Checks in which state the player is and acts if needed
-        public void CheckAndActs()
+    /*    public void CheckAndActs()
         {
             if (IsJumped)
             {
@@ -188,12 +213,80 @@ namespace CombatGame
            
         }
 
+     */
+
+        public void CheckAndActs()
+        {
+            if (IsJumped)
+            {
+                Jump();
+            }
+            else
+            {
+                JumpForce = 80;
+
+            }
+            if (statePerson == State.STAND)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgStandD;
+                else
+                    currentImage = imgStand;
+            }
+            else if (statePerson == State.ATTACK)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgAttackD;
+                else
+                    currentImage = imgAttack;
+            }
+            else if (statePerson == State.ATTACKLEG)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgAttackLegD;
+                else
+                    currentImage = imgAttackLeg;
+
+            }
+            else if (statePerson == State.ATTACKMAGIC)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+            }
+            else if (statePerson == State.DEFENSE)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgDefenseD;
+                else
+                    currentImage = imgDefense;
+            }
+            else if (statePerson == State.KNEEL)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgKneelD;
+                else
+                    currentImage = imgKneel;
+            }
+            else if (statePerson == State.DEAD)
+            {
+                pbPlayer.BackColor = Color.Transparent;
+                if (DirectionPlayer == Direction.LEFT)
+                    currentImage = imgDeadD;
+                else
+                    currentImage = imgDead;
+            }
+
+        }
+
         //The player moves in the given direction
-        public void Move(Direction dir)
+     /*   public void Move(Direction dir)
         {
             if(dir == Direction.LEFT)
             {
-                
                 this.pbPlayer.Left = this.pbPlayer.Left - Velocity;
             }
             else if (dir == Direction.RIGHT)
@@ -202,9 +295,22 @@ namespace CombatGame
                 this.pbPlayer.Left = this.pbPlayer.Left + Velocity;
             }
         }
+      */
+ 
+        public void Move (Direction dir)
+        {
+            if(dir==Direction.LEFT)
+            {
+                this.X -= Velocity;
+            }
+            else
+            {
+                this.X += Velocity;
+            }
+        }
 
         //Simulates jumping
-        public void Jump()
+      /*  public void Jump()
         {
             this.pbPlayer.Top -= JumpForce;
             JumpForce-=10;
@@ -216,9 +322,28 @@ namespace CombatGame
                 IsJumped = false;
             }
         }
+       */ 
+
+        public void Jump ()
+        {
+            this.Y -= JumpForce;
+            JumpForce -= 10;
+            if (JumpForce == 0 && Y < StandPosition + currentImage.Height)
+                this.Y += 5;
+            if (Y+currentImage.Height >= StandPosition)
+            {
+                Y = StandPosition - currentImage.Height;
+                IsJumped = false;
+            }
+        }
+
+        public void DrawPlayer (Graphics g)
+        {
+            g.DrawImage(currentImage,X,Y);
+        }
 
         //Shows the magic and returns its reference
-        public Magic AttackMagic()
+       public Magic AttackMagic()
         {
             if (magicList.Count!=0)
             {
@@ -230,6 +355,10 @@ namespace CombatGame
             }
             return null;
         }
+
+
+
+
 
         //Checks if the opponent was hurt
         public bool IsSuccessfulAttack(Player opponent)

@@ -19,7 +19,8 @@ namespace CombatGame
         public PictureBox PicBoxImage { get; set; }     // Picture Box for the Image 
         public int Velocity { get; set; }               // Velocity of magic moving
         public Direction DirOfMoving { get; set; }      // Direcetion of Magic moving
-
+        public int X;
+        public int Y;
 
         public Magic () // Default Constructor
         {
@@ -43,7 +44,22 @@ namespace CombatGame
             this.PicBoxImage = new PictureBox();
             this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
             PicBoxImage.Hide();
-        } 
+        }
+
+        public Magic(int X, int Y, string Name, int Power, Image MagicImageLeft, Image MagicImageRight, int Velocity) //constructor
+        {
+            this.Name = Name;
+
+            this.Power = Power;
+            this.MagicImageLeft = MagicImageLeft;
+            this.MagicImageRight = MagicImageRight;
+            this.Velocity = Velocity;
+            this.DirOfMoving = Direction.UNDEFINED;
+            this.PicBoxImage = new PictureBox();
+            this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
+            PicBoxImage.Hide();
+        }
+
 
         public Magic (string Name,int Power) // Constructor
         {
@@ -68,7 +84,7 @@ namespace CombatGame
             this.PicBoxImage = null;
         }
 
-        public void Move () // Moving the Magic 
+   /*     public void Move () // Moving the Magic 
         {
             if (DirOfMoving == Direction.LEFT)
             {
@@ -77,6 +93,20 @@ namespace CombatGame
             else
             {
                 this.PicBoxImage.Left += Velocity;
+            }
+        }
+
+    */
+
+        public void Move() // Moving the Magic 
+        {
+            if (DirOfMoving == Direction.LEFT)
+            {
+               this.X -= Velocity;
+            }
+            else
+            {
+                this.X += Velocity;
             }
         }
 
