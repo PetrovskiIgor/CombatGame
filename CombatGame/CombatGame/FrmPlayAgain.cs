@@ -31,7 +31,7 @@ namespace CombatGame
 
         private void FrmPlayAgain_Load(object sender, EventArgs e)
         {
-            //this.BackgroundImage
+          //  this.BackgroundImage = Image.FromFile("CombatGameBackground.gif");
         }
     }
 }

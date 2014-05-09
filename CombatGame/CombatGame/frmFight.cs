@@ -42,7 +42,7 @@ namespace CombatGame
         Timer timer;
         public static int INTERVAL = 10;
 
-        int collisionTolerance = 45; // kolku mozhe da vleguva eden vo drug
+        int collisionTolerance = 40; // kolku mozhe da vleguva eden vo drug
 
 
         SoundPlayer soundPunch;

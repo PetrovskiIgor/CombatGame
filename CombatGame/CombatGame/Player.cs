@@ -274,7 +274,7 @@ namespace CombatGame
         {
             if (this.DirectionPlayer == Direction.LEFT)
             {
-                if (this.X-Width/2 < opponent.X+Width/2 && this.X-Width/2 > opponent.X && Math.Abs(this.Y-opponent.Y)<Height/4)
+                if (this.X-Width/2 < opponent.X+Width/3 && this.X-Width/2 > opponent.X-Width/3 && Math.Abs(this.Y-opponent.Y)<Height/4)
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
@@ -284,7 +284,7 @@ namespace CombatGame
             }
             else if (this.DirectionPlayer == Direction.RIGHT)
             {
-                if (this.X + Width / 2 > opponent.X - Width / 2 && this.X + Width / 2 < opponent.X && Math.Abs(this.Y - opponent.Y) < Height / 4) 
+                if (this.X + Width / 2 > opponent.X - Width / 3 && this.X + Width / 2 < opponent.X+Width/3 && Math.Abs(this.Y - opponent.Y) < Height / 4) 
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
