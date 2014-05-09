@@ -6,6 +6,20 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombatGame", "CombatGame\CombatGame.csproj", "{9B2A918D-A0F6-4DAE-939C-8A376BCB6280}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5DC0AB59-E98B-409B-B385-1E2CD64BC5D4}"
+	ProjectSection(SolutionItems) = preProject
+		CombatGame\igorGardDResized.png = CombatGame\igorGardDResized.png
+		CombatGame\igorGardResized.png = CombatGame\igorGardResized.png
+		CombatGame\igorKleciDResized.png = CombatGame\igorKleciDResized.png
+		CombatGame\igorKleciResized.png = CombatGame\igorKleciResized.png
+		CombatGame\igorLeziDResized.png = CombatGame\igorLeziDResized.png
+		CombatGame\igorLeziResized.png = CombatGame\igorLeziResized.png
+		CombatGame\igorNogaDResized.png = CombatGame\igorNogaDResized.png
+		CombatGame\igorNogaResized.png = CombatGame\igorNogaResized.png
+		CombatGame\igorStandDResized.png = CombatGame\igorStandDResized.png
+		CombatGame\igorStandResized.png = CombatGame\igorStandResized.png
+		CombatGame\igorUdarDResized.png = CombatGame\igorUdarDResized.png
+		CombatGame\igorUdarResized.png = CombatGame\igorUdarResized.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

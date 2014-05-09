@@ -78,6 +78,7 @@ namespace CombatGame
 
             fillPictureBoxes();
 
+
             pbIntersection.Parent = pbPlayerTwo;
             pbIntersection.BackColor = Color.Transparent;
 
@@ -449,7 +450,7 @@ namespace CombatGame
                     if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic();
+                        magic.HideMagic(); // treba da se poprave direkno na magic=null
                         magic = null;
                     }
                 }
@@ -465,7 +466,7 @@ namespace CombatGame
                     if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic();
+                        magic.HideMagic(); // treba da se trgne ovoj red isto kako gore
                         playerOneMagic = null;
                     }
                 }
@@ -544,6 +545,8 @@ namespace CombatGame
             playerTwo.CheckAndActs();
 
 
+
+
             
 
             this.Moving();
@@ -553,6 +556,8 @@ namespace CombatGame
             
             
             this.checkClashAndAct();
+
+            Invalidate();
 
             
         }
@@ -593,6 +598,7 @@ namespace CombatGame
         private void frmFight_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(bmBackground.Bitmap, 0, 0, this.Width, this.Height);
+            this.playerOne.DrawPlayer(e.Graphics);
         }
 
 

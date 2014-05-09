@@ -19,7 +19,8 @@ namespace CombatGame
         public PictureBox PicBoxImage { get; set; }     // Picture Box for the Image 
         public int Velocity { get; set; }               // Velocity of magic moving
         public Direction DirOfMoving { get; set; }      // Direcetion of Magic moving
-
+        public int X;
+        public int Y;
 
         public Magic () // Default Constructor
         {
@@ -43,7 +44,22 @@ namespace CombatGame
             this.PicBoxImage = new PictureBox();
             this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
             PicBoxImage.Hide();
-        } 
+        }
+
+        public Magic(int X, int Y, string Name, int Power, Image MagicImageLeft, Image MagicImageRight, int Velocity) //constructor
+        {
+            this.Name = Name;
+
+            this.Power = Power;
+            this.MagicImageLeft = MagicImageLeft;
+            this.MagicImageRight = MagicImageRight;
+            this.Velocity = Velocity;
+            this.DirOfMoving = Direction.UNDEFINED;
+            this.PicBoxImage = new PictureBox();
+            this.PicBoxImage.Size = new Size(MagicImageLeft.Width, MagicImageRight.Width);
+            PicBoxImage.Hide();
+        }
+
 
         public Magic (string Name,int Power) // Constructor
         {
@@ -68,7 +84,7 @@ namespace CombatGame
             this.PicBoxImage = null;
         }
 
-        public void Move () // Moving the Magic 
+   /*     public void Move () // Moving the Magic 
         {
             if (DirOfMoving == Direction.LEFT)
             {
@@ -80,22 +96,49 @@ namespace CombatGame
             }
         }
 
-        public void ShowMagic (PictureBox playerPictureBox, Direction dir) // Displaying the Magic which the Player is using for attack
+    */
+
+        public void Move() // Moving the Magic 
         {
-            this.DirOfMoving = dir;
-            if (dir == Direction.LEFT)
+            if (DirOfMoving == Direction.LEFT)
             {
-                this.PicBoxImage.Left = playerPictureBox.Left - this.PicBoxImage.Width;
-                this.PicBoxImage.Image = MagicImageLeft;
-            } 
-            else if (dir == Direction.RIGHT)
-            {
-                this.PicBoxImage.Left = playerPictureBox.Right;
-                this.PicBoxImage.Image = MagicImageRight;
+               this.X -= Velocity;
             }
-            this.PicBoxImage.Top = (playerPictureBox.Bottom + playerPictureBox.Top) / 2;
-            this.PicBoxImage.Show();
+            else
+            {
+                this.X += Velocity;
+            }
         }
+
+
+       public void DrawMagic (Graphics g)
+       {
+            if(this.DirOfMoving==Direction.LEFT)
+            {
+                g.DrawImage(MagicImageLeft, this.X, this.Y);
+            }
+            else
+            {
+                g.DrawImage(MagicImageRight, this.X, this.Y);
+            }
+       }
+
+        public void InitializeMagicCordinates(int plX, int plY,Image player, Direction dir)
+        {
+            this.DirOfMoving = dir; ;
+            if(dir==Direction.LEFT)
+            {
+                this.X = plX;
+                this.Y = (plY + player.Height) / 2;
+            }
+            else
+            {
+                this.X = plX + player.Width;
+                this.Y = (plY + player.Height) / 2;
+            }
+        }
+       
+       
 
         public void HideMagic () // Hides the Picture Box of the magic from the display
         {
