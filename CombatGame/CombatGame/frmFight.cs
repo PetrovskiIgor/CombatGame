@@ -110,19 +110,19 @@ namespace CombatGame
         {
             if (player.Name.Equals("Igor"))
             {
-                player.imgAttack = Image.FromFile("igorUdar" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgDefense = Image.FromFile("igorGard" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgStand = Image.FromFile("igorStand" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLeg = Image.FromFile("igorNoga" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgKneel = Image.FromFile("igorKleci" + ((firstPlayer) ? "D" : "") + ".png");
-                player.imgDead = Image.FromFile("igorLezi" + ((firstPlayer) ? "D" : "") + ".png");
+                player.imgAttack = Image.FromFile("igorUdar.png");
+                player.imgDefense = Image.FromFile("igorGard.png");
+                player.imgStand = Image.FromFile("igorStand.png");
+                player.imgAttackLeg = Image.FromFile("igorNoga.png");
+                player.imgKneel = Image.FromFile("igorKleci.png");
+                player.imgDead = Image.FromFile("igorLezi.png");
 
-                player.imgAttackD = Image.FromFile("igorUdar" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgDefenseD = Image.FromFile("igorGard" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgStandD = Image.FromFile("igorStand" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgAttackLegD = Image.FromFile("igorNoga" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgKneelD = Image.FromFile("igorKleci" + ((!firstPlayer) ? "D" : "") + ".png");
-                player.imgDeadD = Image.FromFile("igorLezi" + ((!firstPlayer) ? "D" : "") + ".png");
+                player.imgAttackD = Image.FromFile("igorUdarD.png");
+                player.imgDefenseD = Image.FromFile("igorGardD.png");
+                player.imgStandD = Image.FromFile("igorStandD.png");
+                player.imgAttackLegD = Image.FromFile("igorNogaD.png");
+                player.imgKneelD = Image.FromFile("igorKleciD.png");
+                player.imgDeadD = Image.FromFile("igorLeziD.png");
 
             }
             else if (player.Name.Equals("Viki"))
@@ -149,11 +149,11 @@ namespace CombatGame
                 player.imgAttackLeg = Image.FromFile("petreNogaTrans.png");
                 player.imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
 
-                player.imgAttackD = Image.FromFile("petreUdarTrans.png");
-                player.imgDefenseD = Image.FromFile("petreGardTrans.png");
-                player.imgStandD = Image.FromFile("petreStandTrans.png");
-                player.imgAttackLegD = Image.FromFile("petreNogaTrans.png");
-                player.imgKneelD = Image.FromFile("petreKleciSecenaTrans.png");
+                player.imgAttackD = Image.FromFile("petreUdarTransD.png");
+                player.imgDefenseD = Image.FromFile("petreGardTransD.png");
+                player.imgStandD = Image.FromFile("petreStandTransD.png");
+                player.imgAttackLegD = Image.FromFile("petreNogaTransD.png");
+                player.imgKneelD = Image.FromFile("petreKleciSecenaTransD.png");
             }
             else // HORNY
             {
@@ -522,16 +522,6 @@ namespace CombatGame
         void timer_Tick(object sender, EventArgs e)
         {
 
-            
-            playerOne.CheckAndActs();
-            playerTwo.CheckAndActs();
-
-
-            
-
-            this.Moving();
-            this.update();
-
             if (playerOneIsRight != this.playerOneDirection())
             {
 
@@ -548,6 +538,18 @@ namespace CombatGame
                     playerTwo.changeDirection(Direction.LEFT);
                 }
             }
+
+            
+            playerOne.CheckAndActs();
+            playerTwo.CheckAndActs();
+
+
+            
+
+            this.Moving();
+            this.update();
+
+            
             
             
             this.checkClashAndAct();

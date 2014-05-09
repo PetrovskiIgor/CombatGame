@@ -165,7 +165,7 @@ namespace CombatGame
             {
                 pbPlayer.BackColor = Color.Transparent;
                 if (DirectionPlayer == Direction.LEFT)
-                    pbPlayer.Image = imgDefense;
+                    pbPlayer.Image = imgDefenseD;
                 else
                     pbPlayer.Image = imgDefense;
             }

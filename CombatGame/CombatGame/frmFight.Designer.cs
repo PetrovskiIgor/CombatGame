@@ -50,9 +50,9 @@
             // pbPlayerOne
             // 
             this.pbPlayerOne.BackColor = System.Drawing.Color.Transparent;
-            this.pbPlayerOne.Location = new System.Drawing.Point(661, 254);
+            this.pbPlayerOne.Location = new System.Drawing.Point(661, 384);
             this.pbPlayerOne.Name = "pbPlayerOne";
-            this.pbPlayerOne.Size = new System.Drawing.Size(83, 323);
+            this.pbPlayerOne.Size = new System.Drawing.Size(83, 193);
             this.pbPlayerOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerOne.TabIndex = 0;
             this.pbPlayerOne.TabStop = false;
@@ -60,9 +60,9 @@
             // pbPlayerTwo
             // 
             this.pbPlayerTwo.BackColor = System.Drawing.Color.Transparent;
-            this.pbPlayerTwo.Location = new System.Drawing.Point(127, 254);
+            this.pbPlayerTwo.Location = new System.Drawing.Point(127, 384);
             this.pbPlayerTwo.Name = "pbPlayerTwo";
-            this.pbPlayerTwo.Size = new System.Drawing.Size(83, 323);
+            this.pbPlayerTwo.Size = new System.Drawing.Size(83, 193);
             this.pbPlayerTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayerTwo.TabIndex = 1;
             this.pbPlayerTwo.TabStop = false;
@@ -142,9 +142,9 @@
             // pbIntersection
             // 
             this.pbIntersection.BackColor = System.Drawing.Color.Transparent;
-            this.pbIntersection.Location = new System.Drawing.Point(403, 255);
+            this.pbIntersection.Location = new System.Drawing.Point(403, 384);
             this.pbIntersection.Name = "pbIntersection";
-            this.pbIntersection.Size = new System.Drawing.Size(10, 323);
+            this.pbIntersection.Size = new System.Drawing.Size(10, 194);
             this.pbIntersection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbIntersection.TabIndex = 10;
             this.pbIntersection.TabStop = false;
@@ -154,7 +154,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1370, 709);
             this.Controls.Add(this.pbIntersection);
             this.Controls.Add(this.pbMagic1);
