@@ -343,12 +343,12 @@ namespace CombatGame
         }
 
         //Shows the magic and returns its reference
-       public Magic AttackMagic()
+         public Magic AttackMagic() // NE E NAPRAVENA
         {
             if (magicList.Count!=0)
             {
                 Magic m = magicList.ElementAt(0);
-                m.ShowMagic(this.pbPlayer, this.DirectionPlayer);
+                m.InitializeMagicCordinates(this.X, this.Y, this.currentImage, this.DirectionPlayer);
                 statePerson = State.STAND;
               //  magicList.RemoveAt(0);
                 return m;
@@ -365,7 +365,7 @@ namespace CombatGame
         {
             if (this.DirectionPlayer == Direction.LEFT)
             {
-                if (this.pbPlayer.Left < opponent.pbPlayer.Left + opponent.pbPlayer.Width && this.pbPlayer.Left > opponent.pbPlayer.Left)
+                if (this.X < opponent.X + opponent.currentImage.Width && this.X > opponent.X)
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
@@ -375,7 +375,7 @@ namespace CombatGame
             }
             else if (this.DirectionPlayer == Direction.RIGHT)
             {
-                if (this.pbPlayer.Left + this.pbPlayer.Width > opponent.pbPlayer.Left && this.pbPlayer.Left + this.pbPlayer.Width < opponent.pbPlayer.Right)
+                if (this.X + this.currentImage.Width > opponent.X && this.X + this.currentImage.Width < opponent.X+opponent.currentImage.Width)
                 {
                     if (opponent.statePerson != State.DEFENSE)
                     {
@@ -413,7 +413,7 @@ namespace CombatGame
             {
 
                 // mozhebi ne treba ovde da se menuva slikata
-                this.pbPlayer.Image = this.imgDead; //  RABOTI
+                this.currentImage = this.imgDead; //  RABOTI
                
                 Health = 0;
             }

@@ -450,7 +450,7 @@ namespace CombatGame
                     if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic();
+                        magic.HideMagic(); // treba da se poprave direkno na magic=null
                         magic = null;
                     }
                 }
@@ -466,7 +466,7 @@ namespace CombatGame
                     if (player.pbPlayer.Bottom >= magic.PicBoxImage.Top)
                     {
                         player.DecreaseHealth(magic.Power);
-                        magic.HideMagic();
+                        magic.HideMagic(); // treba da se trgne ovoj red isto kako gore
                         playerOneMagic = null;
                     }
                 }
