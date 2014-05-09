@@ -91,6 +91,12 @@ namespace CombatGame
             players[1] = new Player("Petre", "Petre doagja od gradot Radovis.", magicTricks[0], magicTricks[1], magicTricks[2]);
             players[2] = new Player("Igor", "Jas sum Igor Petrovski, dzverot Tetovski.", magicTricks[0], magicTricks[1], magicTricks[2]);
             players[3] = new Player("David", "Jas sum Horny i mnogu sum crazy!", magicTricks[0], magicTricks[1], magicTricks[2]);
+            this.fillPlayersImages();
+
+            players[0].SetCurrentImage(true);
+            players[1].SetCurrentImage(false);
+            players[2].SetCurrentImage(true);
+            players[3].SetCurrentImage(false);
 
 
             
@@ -114,6 +120,73 @@ namespace CombatGame
             lblPlayerTwoDesc.Text = players[1].Description;
 
             Invalidate();
+        }
+
+        private void fillPlayersImages()
+        {
+                // IGOR
+                players[2].imgAttack = Image.FromFile("igorUdar.png");
+                players[2].imgDefense = Image.FromFile("igorGard.png");
+                players[2].imgStand = Image.FromFile("igorStand.png");
+                players[2].imgAttackLeg = Image.FromFile("igorNoga.png");
+                players[2].imgKneel = Image.FromFile("igorKleci.png");
+                players[2].imgDead = Image.FromFile("igorLezi.png");
+
+                players[2].imgAttackD = Image.FromFile("igorUdarD.png");
+                players[2].imgDefenseD = Image.FromFile("igorGardD.png");
+                players[2].imgStandD = Image.FromFile("igorStandD.png");
+                players[2].imgAttackLegD = Image.FromFile("igorNogaD.png");
+                players[2].imgKneelD = Image.FromFile("igorKleciD.png");
+                players[2].imgDeadD = Image.FromFile("igorLeziD.png");
+
+            
+                
+
+                // VIKI
+                players[0].imgAttack = Image.FromFile("vikiPunch.png");
+                players[0].imgDefense = Image.FromFile("vikiDefense.png");
+                players[0].imgStand = Image.FromFile("vikiStand.png");
+                players[0].imgAttackLeg = Image.FromFile("vikiLeg.png");
+                players[0].imgKneel = Image.FromFile("vikiKneel.png");
+                players[0].imgDead = Image.FromFile("vikiDead.png");
+
+                players[0].imgAttackD = Image.FromFile("vikiPunchD.png");
+                players[0].imgDefenseD = Image.FromFile("vikiDefenseD.png");
+                players[0].imgStandD = Image.FromFile("vikiStandD.png");
+                players[0].imgAttackLegD = Image.FromFile("vikiLegD.png");
+                players[0].imgKneelD = Image.FromFile("vikiKneelD.png");
+                players[0].imgDeadD = Image.FromFile("vikiDeadD.png");
+            
+                
+                // PETRE
+                players[1].imgAttack = Image.FromFile("petreUdarTrans.png");
+                players[1].imgDefense = Image.FromFile("petreGardTrans.png");
+                players[1].imgStand = Image.FromFile("petreStandTrans.png");
+                players[1].imgAttackLeg = Image.FromFile("petreNogaTrans.png");
+                players[1].imgKneel = Image.FromFile("petreKleciSecenaTrans.png");
+
+                players[1].imgAttackD = Image.FromFile("petreUdarTransD.png");
+                players[1].imgDefenseD = Image.FromFile("petreGardTransD.png");
+                players[1].imgStandD = Image.FromFile("petreStandTransD.png");
+                players[1].imgAttackLegD = Image.FromFile("petreNogaTransD.png");
+                players[1].imgKneelD = Image.FromFile("petreKleciSecenaTransD.png");
+            
+                // HORNY
+            
+                players[3].imgAttack = Image.FromFile("DavidPunch.png");
+                players[3].imgDefense = Image.FromFile("DavidDefense.png");
+                players[3].imgStand = Image.FromFile("DavidStand.png");
+                players[3].imgAttackLeg = Image.FromFile("DavidNogaTrans.png");
+                players[3].imgKneel = Image.FromFile("DavidKleciTrans.png");
+                players[3].imgDead = Image.FromFile("DavidDeadTrans.png");
+
+                players[3].imgAttackD = Image.FromFile("DavidPunchD.png");
+                players[3].imgDefenseD = Image.FromFile("DavidDefenseD.png");
+                players[3].imgStandD = Image.FromFile("DavidStandD.png");
+                players[3].imgAttackLegD = Image.FromFile("DavidNogaTransD.png");
+                players[3].imgKneelD = Image.FromFile("DavidKleciTransD.png");
+                players[3].imgDeadD = Image.FromFile("DavidDeadTransD.png");
+            
         }
 
         
