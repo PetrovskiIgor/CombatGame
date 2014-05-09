@@ -258,7 +258,7 @@ namespace CombatGame
                 Magic m = magicList.ElementAt(0);
                 m.InitializeMagicCordinates(this.X, this.Y, this.currentImage, this.DirectionPlayer);
                 statePerson = State.STAND;
-              //  magicList.RemoveAt(0);
+                magicList.RemoveAt(0);
                 return m;
             }
             return null;
