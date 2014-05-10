@@ -40,8 +40,8 @@ namespace CombatGame
         public static int StandPosition = 800; //treba da se smeni
         public Direction DirectionPlayer { get; set; }
         State statePerson { get; set; }
-        public static int HandPower = 5 ;
-        public static int LegPower = 7;
+        public static int HandPower = 3 ;
+        public static int LegPower = 5 ;
         public Image currentImage;
         public int X {get; set;}
         public int Y {get; set;}
@@ -276,7 +276,7 @@ namespace CombatGame
             {
                 if (this.X-Width/2 < opponent.X+Width/3 && this.X-Width/2 > opponent.X-Width/3 && Math.Abs(this.Y-opponent.Y)<Height/4)
                 {
-                    if (opponent.statePerson != State.DEFENSE)
+                    if (opponent.statePerson != State.DEFENSE && opponent.statePerson != State.KNEEL)
                     {
                         return true;
                     }
@@ -286,7 +286,7 @@ namespace CombatGame
             {
                 if (this.X + Width / 2 > opponent.X - Width / 3 && this.X + Width / 2 < opponent.X+Width/3 && Math.Abs(this.Y - opponent.Y) < Height / 4) 
                 {
-                    if (opponent.statePerson != State.DEFENSE)
+                    if (opponent.statePerson != State.DEFENSE && opponent.statePerson != State.KNEEL)
                     {
                         return true;
                     }
