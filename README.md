@@ -3,6 +3,7 @@ CombatGame
 
 Оваа игра е многу закон.
 
+![alt tag](https://raw.githubusercontent.com/ProektVizuelno/CombatGame/master/CombatGame/CombatGame/prntScrGame1.png)
 
 1. Опис на апликацијата
 -----------------------
@@ -11,7 +12,6 @@ CombatGame
 
 Однапред се извинуваме на сите корисници кои ќе останат ненаспани поради оваа игра. :)
 
-![alt tag](https://raw.githubusercontent.com/ProektVizuelno/CombatGame/master/CombatGame/CombatGame/DavidKleciTrans.png)
 
 2. Упатство за играње
 ----------------------
