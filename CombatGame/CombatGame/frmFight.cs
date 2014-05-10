@@ -547,6 +547,17 @@ namespace CombatGame
                 {
                     pickPlayerForm = new frmPickPlayer(MainForm);
 
+
+                    if(frmOptions.musicOn) 
+                    {
+                        MainForm.wplayer.currentPlaylist = MainForm.playlistMenu;
+                    }
+                    else
+                    {
+                        MainForm.wplayer.controls.stop();
+                    }
+
+
                     pickPlayerForm.Show();
                     this.Hide();
                 }

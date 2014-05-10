@@ -254,8 +254,11 @@ namespace CombatGame
             {
                 if (firstDone && secDone)
                 {
-                    MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
-                    if (!frmOptions.musicOn)
+                    if (frmOptions.musicOn)
+                    {
+                        MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
+                    }
+                    else
                     {
                         MainMenu.wplayer.controls.stop();
                     }
@@ -388,8 +391,11 @@ namespace CombatGame
                 this.Hide();
 
                 Game = new frmFight(players[currPosFirst], players[currPosSec],MainMenu);
-                MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
-                if (!frmOptions.musicOn)
+                if (frmOptions.musicOn)
+                {
+                    MainMenu.wplayer.currentPlaylist = MainMenu.playlistFight;
+                }
+                else
                 {
                     MainMenu.wplayer.controls.stop();
                 }

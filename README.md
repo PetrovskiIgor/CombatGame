@@ -11,7 +11,7 @@ CombatGame
 
 Однапред се извинуваме на сите корисници кои ќе останат ненаспани поради оваа игра. :)
 
-![Image](https://github.com/ProektVizuelno/CombatGame/blob/master/CombatGame/CombatGame/DavidPunchD.png)
+![alt tag](https://raw.githubusercontent.com/ProektVizuelno/CombatGame/master/CombatGame/CombatGame/DavidKleciTrans.png)
 
 2. Упатство за играње
 ----------------------
