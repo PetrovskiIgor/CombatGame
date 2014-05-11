@@ -31,7 +31,7 @@ namespace CombatGame
         public frmMenu()
         {
             InitializeComponent();
-
+          
 
             bmBackground = new PPPBitmap(new Bitmap("CombatGameBackground.gif"), "CombatGameBackground.gif");
             

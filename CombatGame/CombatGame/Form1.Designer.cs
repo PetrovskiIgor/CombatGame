@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 606);
+            this.ClientSize = new System.Drawing.Size(1323, 666);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.pbOptions);
             this.Controls.Add(this.pbNewGame);
