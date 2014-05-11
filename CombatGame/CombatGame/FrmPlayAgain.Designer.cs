@@ -67,7 +67,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmPlayAgain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Play Again";
+            this.Text = "Combat Game";
             this.Load += new System.EventHandler(this.FrmPlayAgain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

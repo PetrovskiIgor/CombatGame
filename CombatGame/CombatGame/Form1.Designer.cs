@@ -117,7 +117,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "x";
+            this.Text = "Combat Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMenu_Paint);

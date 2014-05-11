@@ -266,7 +266,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmPickPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PICK A PLAYER";
+            this.Text = "Combat Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPickPlayer_FormClosing);
             this.Load += new System.EventHandler(this.frmPickPlayer_Load);

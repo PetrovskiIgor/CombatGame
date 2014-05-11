@@ -12,7 +12,6 @@ namespace CombatGame
     {
         STAND,          //player is steady
         
-        
         ATTACK,
         ATTACKLEG,
         ATTACKMAGIC,
